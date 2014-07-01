@@ -38,7 +38,7 @@ TileEntity entity = world.getTileEntity(x, y, z);
 			switch(ID){
 			case RPCore.guiIDalloySmelter:
 				if(entity instanceof TileEntityalloySmelter) {
-					return new GuialloySmelter(player.inventory, (TileEntityalloySmelter) entity);
+				//	return new GuialloySmelter(player.inventory, (TileEntityalloySmelter) entity);
 				}
 				return null;
 			}

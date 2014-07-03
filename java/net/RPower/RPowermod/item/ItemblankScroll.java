@@ -2,6 +2,6 @@ package net.RPower.RPowermod.item;
 
 import net.minecraft.item.Item;
 
-public class ItemPencil extends Item {
+public class ItemblankScroll extends Item{
 
 }

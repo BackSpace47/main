@@ -71,6 +71,7 @@ import net.RPower.RPowermod.item.ItemLeadDust;
 import net.RPower.RPowermod.item.ItemLeadIngot;
 import net.RPower.RPowermod.item.ItemNetherstarDust;
 import net.RPower.RPowermod.item.ItemNetherstarIngot;
+import net.RPower.RPowermod.item.ItemPencil;
 import net.RPower.RPowermod.item.ItemSilverDust;
 import net.RPower.RPowermod.item.ItemSilverIngot;
 import net.RPower.RPowermod.item.ItemSteelDust;
@@ -80,6 +81,7 @@ import net.RPower.RPowermod.item.ItemTinIngot;
 import net.RPower.RPowermod.item.ItemTugstenDust;
 import net.RPower.RPowermod.item.ItemTungstenIngot;
 import net.RPower.RPowermod.item.ItemTungstencarbideIngot;
+import net.RPower.RPowermod.item.ItemblankScroll;
 import net.RPower.RPowermod.item.ItemdustFlour;
 import net.RPower.RPowermod.item.ItemdustSugar;
 import net.RPower.RPowermod.item.ItemingotBronze;
@@ -89,6 +91,7 @@ import net.RPower.RPowermod.item.Itemmortar_and_pestle;
 import net.RPower.RPowermod.item.ItemquartcBowl;
 import net.RPower.RPowermod.item.ItemquartcStick;
 import net.RPower.RPowermod.item.ItemsandPaper;
+import net.RPower.RPowermod.item.ItemscrollCircle;
 import net.RPower.RPowermod.item.ItemyellowLeaf;
 import net.RPower.RPowermod.item.chunkCopper;
 import net.RPower.RPowermod.item.dropBig;
@@ -353,6 +356,9 @@ public class RPCore {
     public static Item quartzBowl;
     public static Item dustFlour;
     public static Item cookieSugar;
+    public static Item Pencil;
+    public static Item blankScroll;
+    public static Item scrollCircle;
     
     //Drops
     public static Item dropBig;
@@ -632,9 +638,9 @@ public class RPCore {
         quartzStick = new ItemquartcStick().setCreativeTab(RPCoreITab).setUnlocalizedName("Quartz Stick").setTextureName(modid + ":" + "quartzStick");
         quartzBowl = new ItemquartcBowl().setCreativeTab(RPCoreITab).setUnlocalizedName("Quartz Bowl").setTextureName(modid + ":" + "quartzBowl");
         dustFlour = new ItemdustFlour().setCreativeTab(RPCoreITab).setUnlocalizedName("Bag of Flour").setTextureName(modid + ":" + "Flour");
-		
-		
-		
+		Pencil = new ItemPencil().setCreativeTab(RPCoreITab).setUnlocalizedName("Pencil").setTextureName(modid + ":" + "Pencil");
+		blankScroll = new ItemblankScroll().setCreativeTab(RPCoreITab).setUnlocalizedName("Blank Scroll").setTextureName(modid + ":" + "blankScroll");
+		scrollCircle = new ItemscrollCircle().setCreativeTab(RPCoreITab).setUnlocalizedName("Circle Scroll").setTextureName(modid + ":" + "scrollCircle");
 		
 		
         
@@ -893,7 +899,9 @@ public class RPCore {
         Recipies.registerItem(quartzStick, "Quartc Stick");
         Recipies.registerItem(quartzBowl, "Quartc Bowl");
         Recipies.registerItem(mortar_and_pestle, "Mortar and Pestle");
-        
+        Recipies.registerItem(Pencil, "Pencil");
+        Recipies.registerItem(blankScroll, "Blank Scroll");
+        Recipies.registerItem(scrollCircle, "Circle Scroll");
         
         
         //Chunks
@@ -1082,9 +1090,9 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (TCAM), new ItemStack (Blocks.coal_block), new ItemStack (ingotTungsten));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustBronze,2), new ItemStack (dustCopper,3), new ItemStack (dustTin,1));
 		GameRegistry.addShapedRecipe(new ItemStack (Blocks.torch, 16), "x", "z", 'x', new ItemStack (anthracite), 'z', new ItemStack (Items.stick));
-		
-		
-		
+		GameRegistry.addShapedRecipe(new ItemStack (Pencil, 32), "xzx", "xzx", "xsx", 'x', new ItemStack(Blocks.planks), 'z', new ItemStack(Items.coal), 's', new ItemStack(ingotLead));
+		GameRegistry.addShapelessRecipe(new ItemStack (blankScroll), new ItemStack(Items.paper), new ItemStack(treatmentOil));
+		GameRegistry.addShapedRecipe(new ItemStack(scrollCircle), "xxx","xzx","xxx", 'x', new ItemStack(Pencil), 'z', new ItemStack(blankScroll));
 		
 		//Plants
 		
@@ -1522,8 +1530,7 @@ public class RPCore {
 	
 
 		
-		
-		
+
 		
 		
 	

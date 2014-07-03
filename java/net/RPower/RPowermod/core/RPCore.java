@@ -115,6 +115,7 @@ import net.RPower.RPowermod.item.hammerSilver;
 import net.RPower.RPowermod.item.hammerStone;
 import net.RPower.RPowermod.item.hammerWooden;
 import net.RPower.RPowermod.item.itemDustPN;
+import net.RPower.RPowermod.item.itemPencil;
 import net.RPower.RPowermod.item.itemSkinningtool;
 import net.RPower.RPowermod.item.itemacidS;
 import net.RPower.RPowermod.item.itembloodFirey;
@@ -638,7 +639,7 @@ public class RPCore {
         quartzStick = new ItemquartcStick().setCreativeTab(RPCoreITab).setUnlocalizedName("Quartz Stick").setTextureName(modid + ":" + "quartzStick");
         quartzBowl = new ItemquartcBowl().setCreativeTab(RPCoreITab).setUnlocalizedName("Quartz Bowl").setTextureName(modid + ":" + "quartzBowl");
         dustFlour = new ItemdustFlour().setCreativeTab(RPCoreITab).setUnlocalizedName("Bag of Flour").setTextureName(modid + ":" + "Flour");
-		Pencil = new ItemPencil().setCreativeTab(RPCoreITab).setUnlocalizedName("Pencil").setTextureName(modid + ":" + "Pencil");
+		Pencil = new itemPencil().setCreativeTab(RPCoreITab).setUnlocalizedName("Pencil").setTextureName(modid + ":" + "Pencil");
 		blankScroll = new ItemblankScroll().setCreativeTab(RPCoreITab).setUnlocalizedName("Blank Scroll").setTextureName(modid + ":" + "blankScroll");
 		scrollCircle = new ItemscrollCircle().setCreativeTab(RPCoreITab).setUnlocalizedName("Circle Scroll").setTextureName(modid + ":" + "scrollCircle");
 		

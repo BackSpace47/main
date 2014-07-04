@@ -71,7 +71,6 @@ import net.RPower.RPowermod.item.ItemLeadDust;
 import net.RPower.RPowermod.item.ItemLeadIngot;
 import net.RPower.RPowermod.item.ItemNetherstarDust;
 import net.RPower.RPowermod.item.ItemNetherstarIngot;
-import net.RPower.RPowermod.item.ItemPencil;
 import net.RPower.RPowermod.item.ItemSilverDust;
 import net.RPower.RPowermod.item.ItemSilverIngot;
 import net.RPower.RPowermod.item.ItemSteelDust;
@@ -318,6 +317,84 @@ public class RPCore {
     
     
     public static Item amuletofprotestas;
+    
+    
+    //Electronic Parts
+    
+    
+    //Capacitor 
+    public static Item foil;
+    public static Item foilAluminumoxide;
+    public static Item paperElectrolized;
+    //parts^^
+    
+    public static Item capacitorBasic;
+    public static Item capacitorCopper;
+    public static Item capacitorDiamond;
+    public static Item capacitorGold;
+    public static Item capacitorTungstencarbide;
+    
+    //Diode
+    public static Item anvilPostassembly;
+    public static Item Epoxy;
+    public static Item lenseReflective;
+    //parts^^
+    
+    public static Item diode;
+    
+    //Resistor
+    public static Item clayTreated;
+    public static Item clayTreatedbaked;
+    public static Item coiledNichrome;
+    //^^parts
+    
+    public static Item resistorCase;
+    public static Item resistorBasic;
+    public static Item resistorCopper;
+    public static Item resistorDiamond;
+    public static Item resistorGold;
+    public static Item resistorIron;
+    public static Item resistorTungstencarbide;
+    
+    //Transistors
+    
+    
+    public static Item kitTransistor;
+    //Parts^^
+    
+    public static Item transistorBasic;
+    public static Item transistorCopper;
+    public static Item transistorDiamond;
+    public static Item transistorGold;
+    public static Item transistorIron;
+    public static Item transistorTungstencarbide;
+    
+    //Protosprays
+    
+    public static Item protopaintCopper;
+    public static Item protopaintDiamond;
+    public static Item protopaintGold;
+    public static Item protopaintTungstencarbide;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     //Runes

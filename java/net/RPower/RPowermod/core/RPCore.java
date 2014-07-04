@@ -36,103 +36,9 @@ import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
 import net.RPower.RPowermod.block.blockRPOre;
-<<<<<<< HEAD
-import net.RPower.RPowermod.item.ItemAnthracite;
-import net.RPower.RPowermod.item.ItemBronzeDust;
-import net.RPower.RPowermod.item.ItemCopperDust;
-import net.RPower.RPowermod.item.ItemCopperIngot;
-import net.RPower.RPowermod.item.ItemDiamondDust;
-import net.RPower.RPowermod.item.ItemDiamondIngot;
-import net.RPower.RPowermod.item.ItemEmeraldDust;
-import net.RPower.RPowermod.item.ItemEmeraldIngot;
-import net.RPower.RPowermod.item.ItemFerrousDust;
-import net.RPower.RPowermod.item.ItemFerrousIngot;
-import net.RPower.RPowermod.item.ItemFoodbaconCooked;
-import net.RPower.RPowermod.item.ItemFoodbaconRaw;
-import net.RPower.RPowermod.item.ItemFoodcookieSugar;
-import net.RPower.RPowermod.item.ItemFoodghostCookie;
-import net.RPower.RPowermod.item.ItemFoodmegaCookie;
-import net.RPower.RPowermod.item.ItemFoodminiCookie;
-import net.RPower.RPowermod.item.ItemFoodoneupCookie;
-import net.RPower.RPowermod.item.ItemFoodpoisonCookie;
-import net.RPower.RPowermod.item.ItemFoodpropellerCookie;
-import net.RPower.RPowermod.item.ItemFoodrockCookie;
-import net.RPower.RPowermod.item.ItemFoodspringCookie;
-import net.RPower.RPowermod.item.ItemFoodsuperCookie;
-import net.RPower.RPowermod.item.ItemFoodtestCookie;
-import net.RPower.RPowermod.item.ItemGoldDust;
-import net.RPower.RPowermod.item.ItemHeadBspace;
-import net.RPower.RPowermod.item.ItemIronDust;
-import net.RPower.RPowermod.item.ItemJade;
-import net.RPower.RPowermod.item.ItemJadeAxe;
-import net.RPower.RPowermod.item.ItemJadeHoe;
-import net.RPower.RPowermod.item.ItemJadePickaxe;
-import net.RPower.RPowermod.item.ItemJadeSpade;
-import net.RPower.RPowermod.item.ItemJadeSword;
-import net.RPower.RPowermod.item.ItemLeadDust;
-import net.RPower.RPowermod.item.ItemLeadIngot;
-import net.RPower.RPowermod.item.ItemNetherstarDust;
-import net.RPower.RPowermod.item.ItemNetherstarIngot;
-import net.RPower.RPowermod.item.ItemSilverDust;
-import net.RPower.RPowermod.item.ItemSilverIngot;
-import net.RPower.RPowermod.item.ItemSteelDust;
-import net.RPower.RPowermod.item.ItemTCAI;
-import net.RPower.RPowermod.item.ItemTinDust;
-import net.RPower.RPowermod.item.ItemTinIngot;
-import net.RPower.RPowermod.item.ItemTugstenDust;
-import net.RPower.RPowermod.item.ItemTungstenIngot;
-import net.RPower.RPowermod.item.ItemTungstencarbideIngot;
-import net.RPower.RPowermod.item.ItemblankScroll;
-import net.RPower.RPowermod.item.ItemdustFlour;
-import net.RPower.RPowermod.item.ItemdustSugar;
-import net.RPower.RPowermod.item.ItemingotBronze;
-import net.RPower.RPowermod.item.ItemingotSteel;
-import net.RPower.RPowermod.item.Itemknife;
-import net.RPower.RPowermod.item.Itemmortar_and_pestle;
-import net.RPower.RPowermod.item.ItemquartcBowl;
-import net.RPower.RPowermod.item.ItemquartcStick;
-import net.RPower.RPowermod.item.ItemsandPaper;
-import net.RPower.RPowermod.item.ItemscrollCircle;
-import net.RPower.RPowermod.item.ItemyellowLeaf;
-import net.RPower.RPowermod.item.chunkCopper;
-import net.RPower.RPowermod.item.dropBig;
-import net.RPower.RPowermod.item.dropBounce;
-import net.RPower.RPowermod.item.dropDeath;
-import net.RPower.RPowermod.item.dropFly;
-import net.RPower.RPowermod.item.dropLife;
-import net.RPower.RPowermod.item.dropMagick;
-import net.RPower.RPowermod.item.dropPoisen;
-import net.RPower.RPowermod.item.dropRock;
-import net.RPower.RPowermod.item.dropSmall;
-import net.RPower.RPowermod.item.dropSuper;
-import net.RPower.RPowermod.item.dustMagick;
-import net.RPower.RPowermod.item.dustMagickcompound;
-import net.RPower.RPowermod.item.hammerCopper;
-import net.RPower.RPowermod.item.hammerDiamond;
-import net.RPower.RPowermod.item.hammerJade;
-import net.RPower.RPowermod.item.hammerNetherstar;
-import net.RPower.RPowermod.item.hammerSandstone;
-import net.RPower.RPowermod.item.hammerSilver;
-import net.RPower.RPowermod.item.hammerStone;
-import net.RPower.RPowermod.item.hammerWooden;
-import net.RPower.RPowermod.item.itemDustPN;
-import net.RPower.RPowermod.item.itemPencil;
-import net.RPower.RPowermod.item.itemSkinningtool;
-import net.RPower.RPowermod.item.itemacidS;
-import net.RPower.RPowermod.item.itembloodFirey;
-import net.RPower.RPowermod.item.itemcorpCaustic;
-import net.RPower.RPowermod.item.itemdustCharcoal;
-import net.RPower.RPowermod.item.itemmealCaustic;
-import net.RPower.RPowermod.item.runeAir;
-import net.RPower.RPowermod.item.runeEarth;
-import net.RPower.RPowermod.item.runeFire;
-import net.RPower.RPowermod.item.runePlate;
-import net.RPower.RPowermod.item.runeSpirit;
-import net.RPower.RPowermod.item.runeWater;
-=======
 import net.RPower.RPowermod.gui.GuiHandler;
 import net.RPower.RPowermod.item.*;
->>>>>>> ec95970406957eae8e3cdd0ac616691e205e3dc4
+import net.RPower.RPowermod.item.ItemHeadBspace;
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
 import net.RPower.RPowermod.tileentity.TileEntityalloySmelter;
@@ -366,27 +272,7 @@ public class RPCore {
     public static Item protopaintGold;
     public static Item protopaintTungstencarbide;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     //Runes
     public static Item runeAir;
     public static Item runeEarth;

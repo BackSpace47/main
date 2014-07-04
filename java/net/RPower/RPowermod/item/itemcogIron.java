@@ -2,7 +2,6 @@ package net.RPower.RPowermod.item;
 
 import net.minecraft.item.Item;
 
-public class itemcogIron extends Item {
+public class ItemcogIron extends Item{
 
 }
-

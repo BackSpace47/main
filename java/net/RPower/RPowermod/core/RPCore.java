@@ -28,6 +28,7 @@ package net.RPower.RPowermod.core;
 
 import net.RPower.RPowermod.block.BlockTCAM;
 import net.RPower.RPowermod.block.BlockoreAnthtracite;
+import net.RPower.RPowermod.block.BlocksandTreated;
 import net.RPower.RPowermod.block.ObsidianWhite;
 import net.RPower.RPowermod.block.blockREBL;
 import net.RPower.RPowermod.block.blockREBLo;
@@ -35,6 +36,7 @@ import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
 import net.RPower.RPowermod.block.blockRPOre;
+<<<<<<< HEAD
 import net.RPower.RPowermod.item.ItemAnthracite;
 import net.RPower.RPowermod.item.ItemBronzeDust;
 import net.RPower.RPowermod.item.ItemCopperDust;
@@ -127,10 +129,13 @@ import net.RPower.RPowermod.item.runeFire;
 import net.RPower.RPowermod.item.runePlate;
 import net.RPower.RPowermod.item.runeSpirit;
 import net.RPower.RPowermod.item.runeWater;
+=======
+import net.RPower.RPowermod.gui.GuiHandler;
+import net.RPower.RPowermod.item.*;
+>>>>>>> ec95970406957eae8e3cdd0ac616691e205e3dc4
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
 import net.RPower.RPowermod.tileentity.TileEntityalloySmelter;
-import net.RPower.RPowermod.gui.GuiHandler;
 import net.RPower.RPowermod.world.RPWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -207,7 +212,7 @@ public class RPCore {
 	//other
 	public static Block TCAM;
 	public static Block oreCrusher;
-	
+    public static Block sandTreated;
 	
 	//machines
 	
@@ -233,16 +238,7 @@ public class RPCore {
     public static Item dustPN;
     public static Item dustCharcoal;
     public static Item toolSkinning;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     //Food
     
     public static Item megaCookie;
@@ -286,15 +282,11 @@ public class RPCore {
     
     //Chunks
     
-	
-	
+
     public static Item chunkTungsten;
-    
     public static Item chunkCopper;
-   
     public static Item chunkFerrous;
     public static Item chunkLead;
-   
     public static Item chunkSilver;
     public static Item chunkTin;
     
@@ -313,9 +305,7 @@ public class RPCore {
     public static Item dustBronze;
     public static Item dustSteel;
     
-    
-    
-    
+    //random
     public static Item amuletofprotestas;
     
     
@@ -407,7 +397,6 @@ public class RPCore {
     public static Item dustMagick;
     public static Item dustMagickcompound;
     
-    
     //Stuff
     
     public static Item glue;
@@ -437,6 +426,38 @@ public class RPCore {
     public static Item Pencil;
     public static Item blankScroll;
     public static Item scrollCircle;
+    public static Item oilTreatment;
+
+
+    
+    
+    
+    //Gears/Cog
+    public static Item mouldCog;
+    
+    //unfired
+    public static Item cogUnfiredcopper;
+    public static Item cogUnfireddiamond;
+    public static Item cogUnfiredgold;
+    public static Item cogUnfirediron;
+    public static Item cogUnfiredtungstencarbide;
+    
+    
+    //fiered
+    public static Item cogCopper;
+    public static Item cogDiamond;
+    public static Item cogGold;
+    public static Item cogIron;
+    public static Item cogTungstencarbide;
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //Drops
     public static Item dropBig;
@@ -565,6 +586,11 @@ public class RPCore {
 		tinBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tin Block").setBlockTextureName(modid + ":" + "tin_block").setHardness(5F).setResistance(1F);
 		tungstenBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungsten Block").setBlockTextureName(modid + ":" + "tungsten_block").setHardness(5F).setResistance(1F);
 		tungstencarbideBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungstencarbide Block").setBlockTextureName(modid + ":" + "tungstencarbide_block").setHardness(5F).setResistance(1F);
+		
+		//
+		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreITab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
+		
+		
 		
 		//Alloys
 		TCAM = new BlockTCAM(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("TCAM").setBlockTextureName(modid + ":" + "TCAM").setHardness(50F).setResistance(5F);
@@ -717,18 +743,29 @@ public class RPCore {
         quartzBowl = new ItemquartcBowl().setCreativeTab(RPCoreITab).setUnlocalizedName("Quartz Bowl").setTextureName(modid + ":" + "quartzBowl");
         dustFlour = new ItemdustFlour().setCreativeTab(RPCoreITab).setUnlocalizedName("Bag of Flour").setTextureName(modid + ":" + "Flour");
 		Pencil = new itemPencil().setCreativeTab(RPCoreITab).setUnlocalizedName("Pencil").setTextureName(modid + ":" + "Pencil");
-		blankScroll = new ItemblankScroll().setCreativeTab(RPCoreITab).setUnlocalizedName("Blank Scroll").setTextureName(modid + ":" + "blankScroll");
+		blankScroll = new ItemblankScroll().setCreativeTab(RPCoreITab).setUnlocalizedName("Blank Scroll").setTextureName(modid + ":" + "scrollBlank");
 		scrollCircle = new ItemscrollCircle().setCreativeTab(RPCoreITab).setUnlocalizedName("Circle Scroll").setTextureName(modid + ":" + "scrollCircle");
+		oilTreatment = new ItemoilTreatment().setCreativeTab(RPCoreITab).setUnlocalizedName("Treatment Oil").setTextureName(modid + ":" + "oilTreatment");
+		mouldCog = new ItemmouldCog().setCreativeTab(RPCoreITab).setUnlocalizedName("Cog Mould").setTextureName(modid + ":" + "mouldCog");
+        
+        
+        //gears
 		
+		cogUnfiredcopper = new ItemcogUnfiredcopper().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredcopperCog").setTextureName(modid + ":" + "cogUnfiredcopper");
+		cogUnfireddiamond = new ItemcogUnfireddiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfireddiamondCog").setTextureName(modid + ":" + "cogUnfireddiamond");
+		cogUnfiredgold = new ItemcogUnfiredgold().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredgoldCog").setTextureName(modid + ":" + "cogUnfiredgold");
+		cogUnfirediron = new ItemcogUnfirediron().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredironCog").setTextureName(modid + ":" + "cogUnfirediron");
+		cogUnfiredtungstencarbide = new ItemcogUnfiredtungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredtungstencarbideCog").setTextureName(modid + ":" + "cogUnfiredtungstencarbide");
+        
+		//fiered
 		
-        
-        
-        
-        
-        
-        
-        
-        
+		cogCopper = new ItemcogCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("CopperCog").setTextureName(modid + ":" + "cogCopper");
+		cogDiamond = new ItemcogDiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("DiamondCog").setTextureName(modid + ":" + "cogDiamond");
+		cogGold = new ItemcogGold().setCreativeTab(RPCoreITab).setUnlocalizedName("GoldCog").setTextureName(modid + ":" + "cogGold");
+		cogIron = new ItemcogIron().setCreativeTab(RPCoreITab).setUnlocalizedName("IronCog").setTextureName(modid + ":" + "cogIron");
+		cogTungstencarbide = new ItemcogTungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("TungstencarbideCog").setTextureName(modid + ":" + "cogTungstencarbide");
+		
+  
         
         
         
@@ -879,10 +916,11 @@ public class RPCore {
 		Recipies.registerItem(magnusCookie, "Magnus Cookie");
 		Recipies.registerBlock(obsidianWhite,"White Obsidian");
 		Recipies.registerBlock(oreCrusher, "Ore Crusher");
+		Recipies.registerBlock(sandTreated, "Treated Sand");
 		//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
 		
 		
-		
+
 		Recipies.registerBlock(polymer, "Polymer");
 		Recipies.registerBlock(polymerWoven, "Polyester");
 		Recipies.registerBlock(oreExp, "Exp Ore");
@@ -980,6 +1018,27 @@ public class RPCore {
         Recipies.registerItem(Pencil, "Pencil");
         Recipies.registerItem(blankScroll, "Blank Scroll");
         Recipies.registerItem(scrollCircle, "Circle Scroll");
+        Recipies.registerItem(oilTreatment, "Treatment Oil");
+        Recipies.registerItem(mouldCog, "Cog Mould");
+        
+        
+        //gears
+    
+        
+        Recipies.registerItem(cogUnfiredcopper, "UnfiredcopperCog");
+        Recipies.registerItem(cogUnfireddiamond, "UnfireddiamondCog");
+        Recipies.registerItem(cogUnfiredgold, "CogUnfiredgold");
+        Recipies.registerItem(cogUnfirediron, "CogUnfirediron");
+        Recipies.registerItem(cogUnfiredtungstencarbide, "CogUnfiredtungstencarbide");
+        //fiered
+
+        
+        Recipies.registerItem(cogCopper, "CogCopper");
+        Recipies.registerItem(cogDiamond, "CogDiamond");
+        Recipies.registerItem(cogGold, "CogGold");
+        Recipies.registerItem(cogIron, "CogIron");
+        Recipies.registerItem(cogTungstencarbide, "CogTungstencarbide");
+        
         
         
         //Chunks
@@ -1091,8 +1150,15 @@ public class RPCore {
         Recipies.registerSmeltingItemWUM(chunkLead, ingotLead,5F);
         
         
+        //gears
+
+        Recipies.registerSmeltingItemWUM(cogUnfiredcopper, cogCopper,5F);
+        Recipies.registerSmeltingItemWUM(cogUnfireddiamond, cogDiamond,5F);
+        Recipies.registerSmeltingItemWUM(cogUnfiredgold, cogGold,5F);
+        Recipies.registerSmeltingItemWUM(cogUnfirediron, cogIron,5F);
+        Recipies.registerSmeltingItemWUM(cogUnfiredtungstencarbide, cogTungstencarbide,5F);
         
-        
+        //other
         
         
         Recipies.registerSmeltingItemWUM(dustFlour,Items.bread,5F);
@@ -1169,8 +1235,20 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustBronze,2), new ItemStack (dustCopper,3), new ItemStack (dustTin,1));
 		GameRegistry.addShapedRecipe(new ItemStack (Blocks.torch, 16), "x", "z", 'x', new ItemStack (anthracite), 'z', new ItemStack (Items.stick));
 		GameRegistry.addShapedRecipe(new ItemStack (Pencil, 32), "xzx", "xzx", "xsx", 'x', new ItemStack(Blocks.planks), 'z', new ItemStack(Items.coal), 's', new ItemStack(ingotLead));
-		GameRegistry.addShapelessRecipe(new ItemStack (blankScroll), new ItemStack(Items.paper), new ItemStack(treatmentOil));
+		GameRegistry.addShapelessRecipe(new ItemStack (blankScroll), new ItemStack(Items.paper), new ItemStack(oilTreatment));
 		GameRegistry.addShapedRecipe(new ItemStack(scrollCircle), "xxx","xzx","xxx", 'x', new ItemStack(Pencil), 'z', new ItemStack(blankScroll));
+		GameRegistry.addShapedRecipe(new ItemStack (sandTreated, 4), " z ", "zxz", " z ", 'z', new ItemStack(oilTreatment), 'x', new ItemStack(Blocks.sand));
+		GameRegistry.addShapedRecipe(new ItemStack(mouldCog), " x ", "xzx", " x ", 'x', new ItemStack(sandTreated), 'z', new ItemStack(scrollCircle));
+		
+		
+		
+		//gears
+
+		GameRegistry.addShapedRecipe(new ItemStack(cogUnfiredcopper), " x ", "xzx", " x ", 'x', new ItemStack(dustCopper), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack(cogUnfireddiamond), " x ", "xzx", " x ", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack(cogUnfiredgold), " x ", "xzx", " x ", 'x', new ItemStack(dustGold), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack(cogUnfirediron), " x ", "xzx", " x ", 'x', new ItemStack(dustIron), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack(cogUnfiredtungstencarbide), " x ", "xzx", " x ", 'x', new ItemStack(ingotCopper), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
 		
 		//Plants
 		

@@ -50,6 +50,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemAppleGold;
+import net.minecraft.item.ItemCoal;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
@@ -645,10 +647,10 @@ public class RPCore {
         
 		//fiered
 		
-		cogCopper = new ItemcogCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("CopperCog").setTextureName(modid + ":" + "cogCopper");
-		cogDiamond = new ItemcogDiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("DiamondCog").setTextureName(modid + ":" + "cogDiamond");
+		cogCopper = new ItemcogUnfiredcopper().setCreativeTab(RPCoreITab).setUnlocalizedName("CopperCog").setTextureName(modid + ":" + "cogCopper");
+		cogDiamond = new ItemcogUnfireddiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("DiamondCog").setTextureName(modid + ":" + "cogDiamond");
 		cogGold = new ItemcogGold().setCreativeTab(RPCoreITab).setUnlocalizedName("GoldCog").setTextureName(modid + ":" + "cogGold");
-		cogIron = new ItemcogIron().setCreativeTab(RPCoreITab).setUnlocalizedName("IronCog").setTextureName(modid + ":" + "cogIron");
+		cogIron = new cogIron().setCreativeTab(RPCoreITab).setUnlocalizedName("IronCog").setTextureName(modid + ":" + "cogIron");
 		cogTungstencarbide = new ItemcogTungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("TungstencarbideCog").setTextureName(modid + ":" + "cogTungstencarbide");
 		
   

@@ -544,11 +544,11 @@ public class RPCore {
 		tungstenCarbideHammer = new ItemHeadBspace().setUnlocalizedName("TungstenCarbideHammer").setTextureName(modid + ":" + "TugstenCarbide_Hammer").setNoRepair();
 		
 		//Tools->Mining
-		jadeSword = new ItemJadeSword(RPCore.jadeToolMaterial).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Sword").setTextureName(modid + ":" + "jade_Sword");
-        jadeHoe = new ItemJadeHoe(RPCore.jadeToolMaterial).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Hoe").setTextureName(modid + ":" + "jade_hoe");
-        jadeAxe = new ItemJadeAxe(RPCore.jadeToolMaterial).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Axe").setTextureName(modid + ":" + "jade_axe");
-        jadePickaxe = new ItemJadePickaxe(RPCore.jadeToolMaterial).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Pickaxe").setTextureName(modid + ":" + "jade_pickaxe");
-        jadeShovel = new ItemJadeSpade(RPCore.jadeToolMaterial).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Shovel").setTextureName(modid + ":" + "jade_shovel");
+		jadeSword = new ItemJadeSword(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Sword").setTextureName(modid + ":" + "jade_Sword");
+        jadeHoe = new ItemJadeHoe(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Hoe").setTextureName(modid + ":" + "jade_hoe");
+        jadeAxe = new ItemJadeAxe(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Axe").setTextureName(modid + ":" + "jade_axe");
+        jadePickaxe = new ItemJadePickaxe(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Pickaxe").setTextureName(modid + ":" + "jade_pickaxe");
+        jadeShovel = new ItemJadeSpade(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Shovel").setTextureName(modid + ":" + "jade_shovel");
 		
 		
 		
@@ -713,7 +713,7 @@ public class RPCore {
 		megaCookie = new ItemFoodmegaCookie(16, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Mega Cookie").setTextureName(modid + ":" + "Megacookie");
 		ghostCookie = new ItemFoodghostCookie(8, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Ghost Cookie").setTextureName(modid + ":" + "Ghostcookie");
 		poisonCookie = new ItemFoodpoisonCookie(-10, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Poison Cookie").setTextureName(modid + ":" + "Poisoncookie");
-		miniCookie = new ItemFoodminiCookie(8, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Mini Cookie").setTextureName(modid + ":" + "minicookie");
+		miniCookie = new ItemFoodminiCookie(8, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Mini Cookie").setTextureName(modid + ":" + "Minicookie");
 		oneupCookie = new ItemFoodoneupCookie(20, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("1Up Cookie").setTextureName(modid + ":" + "1Upcookie");
 		springCookie = new ItemFoodspringCookie(8, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Spring Cookie").setTextureName(modid + ":" + "Springcookie");
 		propellerCookie =  new ItemFoodpropellerCookie(8, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Propeller Cookie[WIP]").setTextureName(modid + ":" + "Propellercookie");

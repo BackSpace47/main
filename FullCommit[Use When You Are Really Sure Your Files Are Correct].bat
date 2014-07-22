@@ -107,9 +107,9 @@ echo Paradox Coders Team
 
 
 echo FINISHED
+pause
+exit
 
-color 21
-echo DONE CLOSE
 
 set /a i = i + 1
 if /i %i% leq 100 goto start

@@ -1,0 +1,9 @@
+<!X!doctype html>
+<html>
+  <head>
+    <title>!QUOTE!</title>
+  </head>
+  <body>
+    <p><strong>!QUOTE!</strong></p>
+  </body>
+</html>

@@ -124,4 +124,3 @@ title %1%% Completed
 exit /b
 endlocal
 
-pause

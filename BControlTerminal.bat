@@ -1,7 +1,3 @@
-
-
-
-
 @echo off
 
 cls

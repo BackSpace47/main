@@ -1,6 +1,12 @@
+
+
+
+
 @echo off
 
 cls
+
+color 12
 
 :Menu
 
@@ -20,7 +26,25 @@ echo 6 - Git Status
 ECHO 7 - EXIT
 ECHO.
 
-SET /P M=Type 1, 2, 3, 4, 5, 6, or 7 then press ENTER:
+
+
+
+CHOICE /C:1234567
+IF ERRORLEVEL 1 SET M=1
+IF ERRORLEVEL 2 SET M=2
+IF ERRORLEVEL 3 SET M=3
+IF ERRORLEVEL 4 SET M=4
+IF ERRORLEVEL 4 SET M=5
+IF ERRORLEVEL 4 SET M=6
+IF ERRORLEVEL 4 SET M=7
+
+
+
+
+
+
+
+
 IF %M%==1 GOTO VfullCOMMIT
 IF %M%==2 GOTO VADD
 IF %M%==3 GOTO VCOMMIT
@@ -30,20 +54,33 @@ IF %M%==6 GOTO VSTATUS
 IF %M%==7 GOTO VEXIT
 
 
+
+
+
+
+
+
+
 :VfullCOMMIT
 start FC.bat
+exit
 
 :VADD
 start GA.bat
+exit
 
 :VCOMMIT
 start GC.bat
+exit
 
 :VPUSH
 start GPSH.bat
+exit
 
 :VPULL
 start GPLL.bat
+exit
 
 :VSTATUS
 start GS.bat
+exit

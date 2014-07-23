@@ -92,8 +92,52 @@ git add -A
 pause
 
 
-git commit -m "Full Commit MineFacility, Update Gratz Bro You Have Done a YoloSwaggins"
+
+
+
+
+
+
+
+
+
+
+@echo off
+
+
+type NUL > Commit.txt
+
+
+
+
+set /p SomeVar=Enter Some Text Please
+
+
+
+
+
+
+
+echo %SomeVar%> Commit.txt
+
+dir Commit.txt
+
+
+
+git commit -m "%SomeVar%"
+
 pause
+
+type NUL > Commit.txt
+
+
+
+
+
+
+
+
+
 
 
 git push

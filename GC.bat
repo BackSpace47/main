@@ -96,3 +96,48 @@ title %1%% Completed
 exit /b
 endlocal
 
+
+
+
+
+
+
+
+
+
+
+BackSpace47 Notes
+
+
+@echo off
+title Git Commit
+color 12
+
+type NUL > Commit.txt
+
+
+
+
+set /p SomeVar=Enter Some Text Please
+
+
+
+
+
+
+
+echo %SomeVar%> Commit.txt
+
+dir Commit.txt
+
+
+
+git commit -m "%SomeVar%"
+
+pause
+
+type NUL > Commit.txt
+
+cls
+exit
+

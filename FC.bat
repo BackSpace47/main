@@ -82,7 +82,7 @@ ECHO.
 call :DisplayProgressBar %i%
 :replace the next line by the operation you want to do
 
-
+start CleanHouse
 
 git status
 
@@ -130,6 +130,7 @@ pause
 
 type NUL > Commit.txt
 
+start CleanHouse
 
 
 

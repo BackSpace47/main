@@ -91,7 +91,7 @@ echo Paradox Coders Team
 
 git push
 
-
+start CleanHouse
 echo FINISHED
 pause
 exit

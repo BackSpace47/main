@@ -90,7 +90,7 @@ call :DisplayProgressBar %i%
 echo Paradox Coders Team
 
 git add -A
-
+start CleanHouse
 
 echo FINISHED
 pause

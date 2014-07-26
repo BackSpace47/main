@@ -72,7 +72,7 @@ cls
 
 
 echo Paradox Coders Team
-
+start CleanHouse
 
 
 

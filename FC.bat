@@ -105,7 +105,7 @@ pause
 @echo off
 
 
-type NUL > Commit.txt
+
 
 
 
@@ -126,7 +126,6 @@ git commit -m "%SomeVar%"
 
 pause
 
-type NUL > Commit.txt
 
 start CleanHouse
 

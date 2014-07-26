@@ -81,7 +81,7 @@ ECHO.
 :Start
 call :DisplayProgressBar %i%
 :replace the next line by the operation you want to do
-
+start CleanHouse
 
 
 

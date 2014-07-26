@@ -84,26 +84,12 @@ call :DisplayProgressBar %i%
 
 
 
-git status
-
-pause
-
-git add -A
-pause
-
-
-git commit -m "Full Commit MineFacility, Update Gratz Bro You Have Done a YoloSwaggins"
-pause
-
-
-git push
-pause
 
 
 
 echo Paradox Coders Team
 
-
+git add -A
 
 
 echo FINISHED

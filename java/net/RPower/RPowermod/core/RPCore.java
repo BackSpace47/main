@@ -14,7 +14,7 @@
 //##
 //##
 //##
-//##                          Mod Made Possible by Magnus,Backspace & Rebel
+//##                          Mod Made Possible by Magnus,Backspace,Rebelricco & Chinthor
 //##
 //##
 //##
@@ -731,7 +731,7 @@ public class RPCore {
 		cogDiamond = new cogdiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("DiamondCog").setTextureName(modid + ":" + "cogDiamond");
 		cogGold = new cogGold().setCreativeTab(RPCoreITab).setUnlocalizedName("GoldCog").setTextureName(modid + ":" + "cogGold");
 		cogIron = new cogIron().setCreativeTab(RPCoreITab).setUnlocalizedName("IronCog").setTextureName(modid + ":" + "cogIron");
-		cogTungstencarbide = new ItemcogTungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("TungstencarbideCog").setTextureName(modid + ":" + "cogTungstencarbide");
+		cogTungstencarbide = new cogTungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("TungstencarbideCog").setTextureName(modid + ":" + "cogTungstencarbide");
 
 
 

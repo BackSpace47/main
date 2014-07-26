@@ -114,7 +114,7 @@ type NUL > Commit.txt
 
 
 
-set /p SomeVar=Enter Some Text Please
+set /p SomeVar=Enter Some Text Please: 
 
 
 

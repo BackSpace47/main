@@ -578,14 +578,15 @@ public class RPCore {
 
 
 		    //public static Item kitTransistor;
-		    //Parts^^
 
-		    //public static Item transistorBasic;
-		    //public static Item transistorCopper;
-		    //public static Item transistorDiamond;
-		    //public static Item transistorGold;
-		    //public static Item transistorIron;
-		    //public static Item transistorTungstencarbide;
+		    kitTransistor = new itemkitTransistor().setUnlocalizedName("Transistor Kit").setTextureName(modid + ":" + "kitTransistor").setCreativeTab(RPCoreITab);
+
+		    transistorBasic = new itemtransistorBasic().setUnlocalizedName("Basic Transistor").setTextureName(modid + ":" + "transistorBasic").setCreativeTab(RPCoreITab);
+		    transistorCopper = new itemransistorCopper().setUnlocalizedName("Copper Transistor").setTextureName(modid + ":" + "transistorCopper").setCreativeTab(RPCoreITab);
+		    transistorDiamond = new itemtransistorDiamond().setUnlocalizedName("Diamond Transistor").setTextureName(modid + ":" + "transistorDiamond").setCreativeTab(RPCoreITab);
+		    transistorGold = new itemtransistorGold().setUnlocalizedName("Gold Transistor").setTextureName(modid + ":" + "transistorGold").setCreativeTab(RPCoreITab);
+		    transistorIron = new itemtransistorIron().setUnlocalizedName("Iron Transistor").setTextureName(modid + ":" + "transistorIron").setCreativeTab(RPCoreITab);
+		    transistorTungstencarbide = new itemtransistorTungstencarbide().setUnlocalizedName("Tungsten Carbide Transistor").setTextureName(modid + ":" + "transistorTungstencarbide").setCreativeTab(RPCoreITab);
 
 		    //Protosprays
 
@@ -970,6 +971,17 @@ public class RPCore {
         Recipies.registerItem(diode,"Diode");
 
 
+        //transistors
+        Recipies.registerItem(kitTransistor,"Transistor Kit");
+        Recipies.registerItem(transistorBasic,"Basic Transistor");
+        Recipies.registerItem(transistorCopper,"Copper Transistor");
+        Recipies.registerItem(transistorDiamond,"Diamond Transistor");
+        Recipies.registerItem(transistorGold,"Gold Transistor");
+        Recipies.registerItem(transistorIron,"Iron Transistor");
+        Recipies.registerItem(transistorTungstencarbide,"Tungsten Carbide Transistor");
+
+
+
 
 
 
@@ -1323,6 +1335,18 @@ public class RPCore {
         LanguageRegistry.addName(Epoxy,"Epoxy");
         LanguageRegistry.addName(lenseReflective,"Reflective Lense");
         LanguageRegistry.addName(diode,"Diode");
+
+        //Transistors
+
+        LanguageRegistry.addName(kitTransistor,"Transistor Kit");
+        LanguageRegistry.addName(transistorBasic,"Basic Transistor");
+        LanguageRegistry.addName(transistorCopper,"Copper Transistor");
+        LanguageRegistry.addName(transistorDiamond,"Diamond Transistor");
+        LanguageRegistry.addName(transistorGold,"Gold Transistor");
+        LanguageRegistry.addName(transistorIron,"Iron Transistor");
+        LanguageRegistry.addName(transistorTungstencarbide,"Tungsten Carbide Transistor");
+
+
 
 
 

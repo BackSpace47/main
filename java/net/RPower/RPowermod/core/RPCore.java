@@ -63,6 +63,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 @Mod(modid = RPCore.modid, name = "Mine Facility", version = "1.0.9")
@@ -549,15 +550,10 @@ public class RPCore {
 		    anvilPostassembly = new itemanvilPostassembly().setUnlocalizedName("Postassembly Anvil").setTextureName(modid + ":" + "anvilPostAssembaly").setCreativeTab(RPCoreITab);
 		    Epoxy = new itemEpoxy().setUnlocalizedName("Epoxy").setTextureName(modid + ":" + "Epoxy").setCreativeTab(RPCoreITab);
 		    lenseReflective = new itemlenseReflective().setUnlocalizedName("Reflective Lense").setTextureName(modid + ":" + "lenseReflective").setCreativeTab(RPCoreITab);
-		    diode = new itemdiode().setUnlocalizedName("Diode").setTextureName(modid + ":" + "Diode1").setCreativeTab(RPCoreITab);
+		    diode = new itemdiode().setUnlocalizedName("Diode").setTextureName(modid + ":" + "Diode").setCreativeTab(RPCoreITab);
 
 
-		    //public static Item anvilPostassembly;
-		    //public static Item Epoxy;
-		    //public static Item lenseReflective;
-		    //parts^^
 
-		    //public static Item diode;
 
 
 
@@ -565,18 +561,18 @@ public class RPCore {
 
 
 		    //Resistor
-		    //public static Item clayTreated;
-		    //public static Item clayTreatedbaked;
-		    //public static Item coiledNichrome;
-		    //^^parts
+		    clayTreated = new itemclayTreated().setUnlocalizedName("Treated Clay").setTextureName(modid + ":" + "clayTreated").setCreativeTab(RPCoreITab);
+		    clayTreatedbaked = new itemclayTreatedbaked().setUnlocalizedName("Baked Treated Clay").setTextureName(modid + ":" + "clayTreatedbaked").setCreativeTab(RPCoreITab);
+		    coiledNichrome = new itemcoiledNichrome().setUnlocalizedName("Coiled Nichrome").setTextureName(modid + ":" + "coiledNichrome").setCreativeTab(RPCoreITab);
 
-		    //public static Item resistorCase;
-		    //public static Item resistorBasic;
-		    //public static Item resistorCopper;
-		    //public static Item resistorDiamond;
-		    //public static Item resistorGold;
-		    //public static Item resistorIron;
-		    //public static Item resistorTungstencarbide;
+		    resistorCase = new itemresistorCase().setUnlocalizedName("Resistor Case").setTextureName(modid + ":" + "resistorCase").setCreativeTab(RPCoreITab);
+		    resistorBasic = new itemresistorBasic().setUnlocalizedName("Basic Resistor").setTextureName(modid + ":" + "resistorBasic").setCreativeTab(RPCoreITab);
+		    resistorCopper = new itemresistorCopper().setUnlocalizedName("Copper Resistor").setTextureName(modid + ":" + "resistorCopper").setCreativeTab(RPCoreITab);
+		    resistorDiamond = new itemresistorDiamond().setUnlocalizedName("Diamond Resistor").setTextureName(modid + ":" + "resistorDiamond").setCreativeTab(RPCoreITab);
+		    resistorGold = new itemresistorGold().setUnlocalizedName("Gold Resistor").setTextureName(modid + ":" + "resistorGold").setCreativeTab(RPCoreITab);
+		    resistorIron = new itemresistorIron().setUnlocalizedName("Iron Resistor").setTextureName(modid + ":" + "resistorIron").setCreativeTab(RPCoreITab);
+		    resistorTungstencarbide = new itemresistorTungstencarbide().setUnlocalizedName("Tungsten Carbide Resistor").setTextureName(modid + ":" + "resistorTungstencarbide").setCreativeTab(RPCoreITab);
+
 
 		    //Transistors
 
@@ -1211,6 +1207,294 @@ public class RPCore {
 		Recipies.registerSmeltingItemWUM(baconRaw,baconCooked,5f);
 		//Smelting Alloys # Will need to be changed when we get the alloy smelter going
 		Recipies.registerSmeltingBlockToItemWUM(TCAM, TCAI, 5F);
+
+
+
+
+
+
+
+
+
+		//Lang Registry
+		LanguageRegistry.addName(magnusCookie, "Test Cookie Creative Only");
+		LanguageRegistry.addName(obsidianWhite,"White Obsidian");
+		LanguageRegistry.addName(oreCrusher, "Ore Crusher");
+		LanguageRegistry.addName(sandTreated, "Treated Sand");
+		//LanguageRegistry.addName(blueStabilizer, "Blue Stabilizer");
+
+
+
+		LanguageRegistry.addName(polymer, "Polymer");
+		LanguageRegistry.addName(polymerWoven, "Polyester");
+		LanguageRegistry.addName(oreExp, "Exp Ore");
+		LanguageRegistry.addName(oreTin, "Tin Ore");
+		LanguageRegistry.addName(oreSilver,"Silver Ore");
+		LanguageRegistry.addName(oreLead, "Lead Ore");
+		LanguageRegistry.addName(oreFerrous, "Ferrous Ore");
+		LanguageRegistry.addName(oreCopper, "Copper Ore");
+		LanguageRegistry.addName(oreJade, "Jade Ore");
+		LanguageRegistry.addName(jadeBlock, "Jade Block");
+		LanguageRegistry.addName(oreTungsten, "Tungsten Ore");
+		LanguageRegistry.addName(TCAM, "TCAM");
+		LanguageRegistry.addName(oreAnthtracite, "Anthracite Ore");
+		LanguageRegistry.addName(copperBlock, "Copper Block");
+        LanguageRegistry.addName(ferrousBlock, "Ferrous Block");
+        LanguageRegistry.addName(leadBlock, "Lead Block");
+        LanguageRegistry.addName(netherstarBlock, "Netherstar Block");
+        LanguageRegistry.addName(organizeddiamondBlock, "Organizeddiamond Block");
+        LanguageRegistry.addName(organizedemeraldBlock, "Organizedemerald Block");
+        LanguageRegistry.addName(silverBlock, "Silver Block");
+        LanguageRegistry.addName(tinBlock, "Tin Block");
+        LanguageRegistry.addName(tungstenBlock, "Tungsten Block");
+        LanguageRegistry.addName(tungstencarbideBlock, "Tungstencarbide Block");
+
+        //Trees
+        LanguageRegistry.addName(elderLog, "Red Elderberry Log");
+        LanguageRegistry.addName(elderLeaf, "Red Elderberry Leaf");
+        LanguageRegistry.addName(elderSap, "Red Elderberry Sapling");
+        LanguageRegistry.addName(elderPlanks, "Red Elderberry Planks");
+
+
+        //items
+
+      //Capacitor
+
+        LanguageRegistry.addName(foil,"Foil");
+        LanguageRegistry.addName(foilAluminumoxide,"Aluminum Oxide Foil");
+        LanguageRegistry.addName(paperElectrolized,"Electrolized Paper");
+        LanguageRegistry.addName(capacitorBasic,"Basic Capacitor");
+        LanguageRegistry.addName(capacitorCopper,"Copper Capacitor");
+        LanguageRegistry.addName(capacitorDiamond,"Diamond Capacitor");
+        LanguageRegistry.addName(capacitorGold,"Gold Capacitor");
+        LanguageRegistry.addName(capacitorTungstencarbide,"Tungsten Catbide Capacitor");
+
+
+
+      //ProtoSprays
+
+        LanguageRegistry.addName(protopaintDiamond,"Next Gen Diamond ProtoSpray");
+        LanguageRegistry.addName(protopaintCopper,"Next Gen Copper ProtoSpray");
+        LanguageRegistry.addName(protopaintGold,"Next Gen Gold ProtoSpray");
+        LanguageRegistry.addName(protopaintTungstencarbide,"Next Gen Tungsten Carbide ProtoSpray");
+
+
+
+
+      //public static Item anvilPostassembly;
+	    //public static Item Epoxy;
+	    //public static Item lenseReflective;
+	    //parts^^
+
+	    //public static Item diode;
+
+        LanguageRegistry.addName(anvilPostassembly,"Postassembly Anvil");
+        LanguageRegistry.addName(Epoxy,"Epoxy");
+        LanguageRegistry.addName(lenseReflective,"Reflective Lense");
+        LanguageRegistry.addName(diode,"Diode");
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Ingots
+        LanguageRegistry.addName(ingotSteel,"Steel Ingot");
+        LanguageRegistry.addName(ingotBronze,"Bronze Ingot");
+        LanguageRegistry.addName(ingotTin,"Tin Ingot");
+		LanguageRegistry.addName(ingotSilver, "Silver Ingot");
+		LanguageRegistry.addName(ingotLead, "Lead Ingot");
+		LanguageRegistry.addName(ingotFerrous, "Ferrous Ingot");
+		LanguageRegistry.addName(ingotCopper, "Copper Ingot");
+		LanguageRegistry.addName(ingotNetherstar, "Nether Star Ingot");
+		LanguageRegistry.addName(ingotTungsten, "Tungsten Ingot");
+	    LanguageRegistry.addName(TCAI, "TCAI");
+
+
+		//Gems
+	    LanguageRegistry.addName(gemDiamond, "Diamond Ingot");
+		LanguageRegistry.addName(gemEmerald, "Emerald Ingot");
+		LanguageRegistry.addName(gemJade, "Raw Jade");
+		LanguageRegistry.addName(gemJadepure, "Jade");
+
+		//Dusts
+		LanguageRegistry.addName(dustNetherstar, "Netherstar Dust");
+		LanguageRegistry.addName(dustCopper, "Copper Dust");
+		LanguageRegistry.addName(dustDiamond, "Diamond Dust");
+		LanguageRegistry.addName(dustEmerald, "Emerald Dust");
+		LanguageRegistry.addName(dustFerrous, "Ferrous Dust");
+		LanguageRegistry.addName(dustGold, "Gold Dust");
+		LanguageRegistry.addName(dustIron, "Iron Dust");
+		LanguageRegistry.addName(dustLead, "Lead Dust");
+		LanguageRegistry.addName(dustSilver, "Silver Dust");
+		LanguageRegistry.addName(dustTin, "Tin Dust");
+		LanguageRegistry.addName(dustTungsten, "Tungsten Dust");
+		LanguageRegistry.addName(dustBronze,"Bronze Dust");
+		LanguageRegistry.addName(dustSteel,"Steel Dust");
+
+		//Magick
+		LanguageRegistry.addName(dropBig, "Big Drop");
+        LanguageRegistry.addName(dropBounce,"Bounce Drop");
+        LanguageRegistry.addName(dropDeath, "Death Drop");
+        LanguageRegistry.addName(dropFly,"Fly Drop");
+        LanguageRegistry.addName(dropLife,"Life Drop");
+        LanguageRegistry.addName(dropMagick,"Magick Drop");
+        LanguageRegistry.addName(dropPoison,"Poisen Drop");
+        LanguageRegistry.addName(dropRock,"Rock Drop");
+        LanguageRegistry.addName(dropSmall,"Small Drop");
+        LanguageRegistry.addName(dropSuper, "Super Drop");
+        LanguageRegistry.addName(dustMagick, "Magick Dust");
+        LanguageRegistry.addName(dustMagickcompound, "Magick Compound");
+        LanguageRegistry.addName(runeFire, "Fire Rune");
+        LanguageRegistry.addName(runeWater, "Water Rune");
+        LanguageRegistry.addName(runeAir, "Air Rune");
+        LanguageRegistry.addName(runeSpirit, "Spirit Rune");
+        LanguageRegistry.addName(runeEarth, "Earth Rune");
+        LanguageRegistry.addName(runePlate, "Runic Plate");
+
+		//Misc
+        LanguageRegistry.addName(sandPaper,"Sand Paper");
+		LanguageRegistry.addName(anthracite, "Anthracite");
+        LanguageRegistry.addName(quartzStick, "Quartc Stick");
+        LanguageRegistry.addName(quartzBowl, "Quartc Bowl");
+        LanguageRegistry.addName(mortar_and_pestle, "Mortar and Pestle");
+        LanguageRegistry.addName(Pencil, "Pencil");
+        LanguageRegistry.addName(blankScroll, "Blank Scroll");
+        LanguageRegistry.addName(scrollCircle, "Circle Scroll");
+        LanguageRegistry.addName(oilTreatment, "Treatment Oil");
+        LanguageRegistry.addName(mouldCog, "Cog Mould");
+
+
+        //gears
+
+
+        LanguageRegistry.addName(cogUnfiredcopper, "UnfiredcopperCog");
+        LanguageRegistry.addName(cogUnfireddiamond, "UnfireddiamondCog");
+        LanguageRegistry.addName(cogUnfiredgold, "CogUnfiredgold");
+        LanguageRegistry.addName(cogUnfirediron, "CogUnfirediron");
+        LanguageRegistry.addName(cogUnfiredtungstencarbide, "CogUnfiredtungstencarbide");
+        //fiered
+
+
+        LanguageRegistry.addName(cogCopper, "CogCopper");
+        LanguageRegistry.addName(cogDiamond, "CogDiamond");
+        LanguageRegistry.addName(cogGold, "CogGold");
+        LanguageRegistry.addName(cogIron, "CogIron");
+        LanguageRegistry.addName(cogTungstencarbide, "CogTungstencarbide");
+
+
+
+        //Chunks
+        LanguageRegistry.addName(chunkCopper, "Copper Chunk");
+        LanguageRegistry.addName(chunkTin, "Tin Chunk");
+        LanguageRegistry.addName(chunkFerrous, "Ferrous Chunk");
+        LanguageRegistry.addName(chunkSilver, "Silver Chunk");
+        LanguageRegistry.addName(chunkTungsten, "Tungsten Chunk");
+        LanguageRegistry.addName(chunkLead, "Lead Chunk");
+
+        //Tools
+        LanguageRegistry.addName(hammerDiamond,"Diamond Hammer");
+			LanguageRegistry.addName(hammerJade,"Jade Hammer");
+				LanguageRegistry.addName(hammerNetherstar,"Netherstar Hammer");
+						LanguageRegistry.addName(hammerSandstone,"Sandstone Hammer");
+								LanguageRegistry.addName(hammerWooden ,"Wooden Hammer");
+										LanguageRegistry.addName(hammerCopper,"Copper Hammer");
+												LanguageRegistry.addName(hammerSilver,"Silver Hammer");
+														LanguageRegistry.addName(tungstenCarbideHammer, "Tungsten Carbide Hammer");
+																LanguageRegistry.addName(stoneHammer, "Stone Hammer");
+
+
+												//Tools->Mining
+												LanguageRegistry.addName(jadeSword, "Jade Sword");
+										        LanguageRegistry.addName(jadePickaxe, "Jade Pickaxe");
+										        LanguageRegistry.addName(jadeAxe, "Jade Axe");
+										        LanguageRegistry.addName(jadeHoe, "Jade Hoe");
+										        LanguageRegistry.addName(jadeShovel, "Jade Shovel");
+
+
+
+        //Tool Heads
+        LanguageRegistry.addName(headDiamond,"Diamond Hammer Head");
+        		LanguageRegistry.addName(headJade,"Jade Hammer Head");
+        				LanguageRegistry.addName(headNetherstar,"Netherstar Hammer Head");
+        						LanguageRegistry.addName(headSandstone,"Sandstone Hammer Head");
+        								LanguageRegistry.addName(headWooden ,"Wooden Hammer Head");
+        										LanguageRegistry.addName(headCopper,"Copper Hammer Head");
+        												LanguageRegistry.addName(headSilver,"Silver Hammer Head");
+        														LanguageRegistry.addName(tungstenCarbideHead, "Tungsten Carbide Hammer Head");
+        																LanguageRegistry.addName(stoneHamHead, "Stone Hammer Head");
+
+
+        												//Tools->Mining
+        												    LanguageRegistry.addName(jadeHeadAx, "JadeAxeHead");
+        											        LanguageRegistry.addName(jadeHeadSw, "JadeSwordHead");
+        											        LanguageRegistry.addName(jadeHeadSh, "JadeShovHead");
+        											        LanguageRegistry.addName(jadeHeadHo, "JadeHoeHead");
+        											        LanguageRegistry.addName(jadeHeadPi, "JadePickHead");
+
+
+
+
+
+
+        //Handle Modifiers
+
+
+
+
+        //Caustic Items
+        LanguageRegistry.addName(causticMeal, "Caustic Mix");
+        LanguageRegistry.addName(causticCorpuscles, "Caustic Corpuscles ");
+        LanguageRegistry.addName(bloodFirey, "Firey Blood");
+        LanguageRegistry.addName(acidSulfuric, "Sulferic Acid");
+        LanguageRegistry.addName(dustPN,"Potassium Nitrate");
+        LanguageRegistry.addName(dustCharcoal, "Charcoal Dust");
+        LanguageRegistry.addName(toolSkinning, "Skinning Tool");
+
+
+
+
+
+        //Food
+        LanguageRegistry.addName(megaCookie, "Mega Cookie");
+        LanguageRegistry.addName(ghostCookie, "Ghost Cookie");
+        LanguageRegistry.addName(poisonCookie, "Poison Cookie");
+        LanguageRegistry.addName(miniCookie, "Mini Cookie");
+        LanguageRegistry.addName(oneupCookie, "1Up Cookie");
+        LanguageRegistry.addName(springCookie, "Spring Cookie");
+        LanguageRegistry.addName(propellerCookie, "Propeller Cookie[WIP]");
+        LanguageRegistry.addName(rockCookie, "Rock Cookie");
+        LanguageRegistry.addName(superCookie, "Super Cookie");
+        LanguageRegistry.addName(cookieSugar, "Sugar Cookie");
+        LanguageRegistry.addName(baconRaw, "Raw Bacon");
+        LanguageRegistry.addName(baconCooked,"Cooked Bacon");
+        LanguageRegistry.addName(knife,"Knife");
+        LanguageRegistry.addName(dustSugar,"Pouch Of Sugar");
+        LanguageRegistry.addName(dustFlour, "Bag Of Flour");
+
+
+        //Plants
+        LanguageRegistry.addName(yellowLeaf, "Yellow Leaf");
+
+
+
+        //test
+        LanguageRegistry.addName(testCookie, "Item Of Testing");
+
+
+
+
+
+
+
+
 
 
 		//Crafting

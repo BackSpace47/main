@@ -477,7 +477,7 @@ public class RPCore {
 		tungstencarbideBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungstencarbide Block").setBlockTextureName(modid + ":" + "tungstencarbide_block").setHardness(5F).setResistance(1F);
 
 		//
-		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreITab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
+		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
 
 
 
@@ -931,6 +931,22 @@ public class RPCore {
 
 
 
+        //Resistors
+        //Parts
+        Recipies.registerItem(clayTreated,"Treated Clay");
+        Recipies.registerItem(clayTreatedbaked,"Baked Treated Clay");
+        Recipies.registerItem(coiledNichrome,"Coiled Nichrome");
+
+
+        Recipies.registerItem(resistorCase,"Resistor Case");
+        Recipies.registerItem(resistorBasic,"Basic Resistor");
+        Recipies.registerItem(resistorCopper,"Copper Resistor");
+        Recipies.registerItem(resistorDiamond,"Diamond Resistor");
+        Recipies.registerItem(resistorGold,"Gold Resistor");
+        Recipies.registerItem(resistorIron,"Iron Resistor");
+        Recipies.registerItem(resistorTungstencarbide,"Tungsten Carbide Resistor");
+
+
       //ProtoSprays
 
         Recipies.registerItem(protopaintDiamond,"Next Gen Diamond ProtoSpray");
@@ -1269,6 +1285,21 @@ public class RPCore {
         LanguageRegistry.addName(capacitorGold,"Gold Capacitor");
         LanguageRegistry.addName(capacitorTungstencarbide,"Tungsten Catbide Capacitor");
 
+
+
+        //Resistors
+        LanguageRegistry.addName(clayTreated,"Treated Clay");
+        LanguageRegistry.addName(clayTreatedbaked,"Baked Treated Clay");
+        LanguageRegistry.addName(coiledNichrome,"Coiled Nichrome");
+
+
+        LanguageRegistry.addName(resistorCase,"Resistor Case");
+        LanguageRegistry.addName(resistorBasic,"Basic Resistor");
+        LanguageRegistry.addName(resistorCopper,"Copper Resistor");
+        LanguageRegistry.addName(resistorDiamond,"Diamond Resistor");
+        LanguageRegistry.addName(resistorGold,"Gold Resistor");
+        LanguageRegistry.addName(resistorIron,"Iron Resistor");
+        LanguageRegistry.addName(resistorTungstencarbide,"Tungsten Carbide Resistor");
 
 
       //ProtoSprays

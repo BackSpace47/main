@@ -294,4 +294,11 @@
 
 
 
+        //Machines and misc
+        tile.alloySmelterIdle.name=Alloy Smelter
+        itemGroup.rpower=Mine Facility Platinum Edition
+
+
+
+
 

@@ -1239,11 +1239,6 @@ public class RPCore {
 
 
 
-
-
-
-
-
 		//Lang Registry
 		LanguageRegistry.addName(magnusCookie, "Test Cookie Creative Only");
 		LanguageRegistry.addName(obsidianWhite,"White Obsidian");
@@ -1542,6 +1537,10 @@ public class RPCore {
 
         //test
         LanguageRegistry.addName(testCookie, "Item Of Testing");
+
+
+
+
 
 
 

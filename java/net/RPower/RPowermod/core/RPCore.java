@@ -84,11 +84,11 @@ public class RPCore {
 
 
 	//Blocks
-	/*
-	To add a block first do these lines (public static Block <name of block>;) then inside preInit do (<name of block> = new Block<name of block>(Material.rock).setCreativeTab(CreativeTabs.tabBlock).setBlockName("<name of block whit capital leters and space if two or more words>").setBlockTextureName(modid + ":" + "<texture name of block>"); then under init do (Recipies.registerBlock(<name of block>, "<name of block whit capital leters and space if two or more words>");))
-	*/
-
-	//NOTE BACKSPACE CREATE STEELDUST, BRONZEDUST
+	/**
+	 * Add Smelting of Steel Dust into ingots as well as bronze dust
+	 *
+	 *
+	 */
 	//ADD ZINK ORE & BRASSDUST
 
 	//Ores
@@ -328,7 +328,7 @@ public class RPCore {
 
 
 
-    //Gears/Cog
+    //Gears/Cogs
     public static Item mouldCog;
 
     //unfired
@@ -411,7 +411,7 @@ public class RPCore {
     public static Item hammerCopper;
     public static Item hammerSilver;
 
-    //Rtools
+    //MFtools
     public static Item axeJadeR;
     public static Item hoeJadeR;
     public static Item pickaxeJadeR;
@@ -597,8 +597,6 @@ public class RPCore {
 		    //Transistors
 
 
-		    //public static Item kitTransistor;
-
 		    kitTransistor = new itemkitTransistor().setUnlocalizedName("Transistor Kit").setTextureName(modid + ":" + "kitTransistor").setCreativeTab(RPCoreITab);
 
 		    transistorBasic = new itemtransistorBasic().setUnlocalizedName("Basic Transistor").setTextureName(modid + ":" + "transistorBasic").setCreativeTab(RPCoreITab);
@@ -739,7 +737,7 @@ public class RPCore {
 		oilTreatment = new ItemoilTreatment().setCreativeTab(RPCoreITab).setUnlocalizedName("Treatment Oil").setTextureName(modid + ":" + "oilTreatment");
 		mouldCog = new ItemmouldCog().setCreativeTab(RPCoreITab).setUnlocalizedName("Cog Mould").setTextureName(modid + ":" + "mouldCog");
 		mouldPlate = new ItemmouldPlate().setCreativeTab(RPCoreITab).setUnlocalizedName("Plate Mould").setTextureName(modid + ":" + "plateMould");
-// plateMould.png or mouldCog.png should be renamed. Pick one.
+		// plateMould.png or mouldCog.png should be renamed. Pick one.
 
         //gears
 
@@ -778,12 +776,6 @@ public class RPCore {
 
 
 
-
-
-        //public static Item ingotSteel;
-        //public static Item ingotBronze;
-
-        //^^ Priority
 
 
         //public static Item ingotBrass;
@@ -860,7 +852,7 @@ public class RPCore {
 
 
 
-		//OreDictionary
+		//OreDictionary -Broken For Blocks
 
 		OreDictionary.registerOre("ingotBronze",new ItemStack(ingotBronze));
 		OreDictionary.registerOre("ingotSteel",new ItemStack(ingotSteel));
@@ -924,7 +916,7 @@ public class RPCore {
 		Recipies.registerBlock(obsidianWhite,"White Obsidian");
 		Recipies.registerBlock(oreCrusher, "Ore Crusher");
 		Recipies.registerBlock(sandTreated, "Treated Sand");
-		//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
+		//WIP//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
 
 
 
@@ -999,14 +991,6 @@ public class RPCore {
         Recipies.registerItem(protopaintTungstencarbide,"Next Gen Tungsten Carbide ProtoSpray");
 
 
-
-
-      //public static Item anvilPostassembly;
-	    //public static Item Epoxy;
-	    //public static Item lenseReflective;
-	    //parts^^
-
-	    //public static Item diode;
 
         Recipies.registerItem(anvilPostassembly,"Postassembly Anvil");
         Recipies.registerItem(Epoxy,"Epoxy");
@@ -1150,43 +1134,43 @@ public class RPCore {
 
         //Tools
         Recipies.registerItem(hammerDiamond,"Diamond Hammer");
-			Recipies.registerItem(hammerJade,"Jade Hammer");
-				Recipies.registerItem(hammerNetherstar,"Netherstar Hammer");
-						Recipies.registerItem(hammerSandstone,"Sandstone Hammer");
-								Recipies.registerItem(hammerWooden ,"Wooden Hammer");
-										Recipies.registerItem(hammerCopper,"Copper Hammer");
-												Recipies.registerItem(hammerSilver,"Silver Hammer");
-														Recipies.registerItem(tungstenCarbideHammer, "Tungsten Carbide Hammer");
-																Recipies.registerItem(stoneHammer, "Stone Hammer");
+		Recipies.registerItem(hammerJade,"Jade Hammer");
+		Recipies.registerItem(hammerNetherstar,"Netherstar Hammer");
+		Recipies.registerItem(hammerSandstone,"Sandstone Hammer");
+		Recipies.registerItem(hammerWooden ,"Wooden Hammer");
+		Recipies.registerItem(hammerCopper,"Copper Hammer");
+		Recipies.registerItem(hammerSilver,"Silver Hammer");
+		Recipies.registerItem(tungstenCarbideHammer, "Tungsten Carbide Hammer");
+		Recipies.registerItem(stoneHammer, "Stone Hammer");
 
 
 												//Tools->Mining
-												Recipies.registerItem(jadeSword, "Jade Sword");
-										        Recipies.registerItem(jadePickaxe, "Jade Pickaxe");
-										        Recipies.registerItem(jadeAxe, "Jade Axe");
-										        Recipies.registerItem(jadeHoe, "Jade Hoe");
-										        Recipies.registerItem(jadeShovel, "Jade Shovel");
+		Recipies.registerItem(jadeSword, "Jade Sword");
+		Recipies.registerItem(jadePickaxe, "Jade Pickaxe");
+		Recipies.registerItem(jadeAxe, "Jade Axe");
+		Recipies.registerItem(jadeHoe, "Jade Hoe");
+		Recipies.registerItem(jadeShovel, "Jade Shovel");
 
 
 
         //Tool Heads
         Recipies.registerItem(headDiamond,"Diamond Hammer Head");
-        		Recipies.registerItem(headJade,"Jade Hammer Head");
-        				Recipies.registerItem(headNetherstar,"Netherstar Hammer Head");
-        						Recipies.registerItem(headSandstone,"Sandstone Hammer Head");
-        								Recipies.registerItem(headWooden ,"Wooden Hammer Head");
-        										Recipies.registerItem(headCopper,"Copper Hammer Head");
-        												Recipies.registerItem(headSilver,"Silver Hammer Head");
-        														Recipies.registerItem(tungstenCarbideHead, "Tungsten Carbide Hammer Head");
-        																Recipies.registerItem(stoneHamHead, "Stone Hammer Head");
+        Recipies.registerItem(headJade,"Jade Hammer Head");
+        Recipies.registerItem(headNetherstar,"Netherstar Hammer Head");
+        Recipies.registerItem(headSandstone,"Sandstone Hammer Head");
+        Recipies.registerItem(headWooden ,"Wooden Hammer Head");
+        Recipies.registerItem(headCopper,"Copper Hammer Head");
+        Recipies.registerItem(headSilver,"Silver Hammer Head");
+        Recipies.registerItem(tungstenCarbideHead, "Tungsten Carbide Hammer Head");
+        Recipies.registerItem(stoneHamHead, "Stone Hammer Head");
 
 
         												//Tools->Mining
-        												    Recipies.registerItem(jadeHeadAx, "JadeAxeHead");
-        											        Recipies.registerItem(jadeHeadSw, "JadeSwordHead");
-        											        Recipies.registerItem(jadeHeadSh, "JadeShovHead");
-        											        Recipies.registerItem(jadeHeadHo, "JadeHoeHead");
-        											        Recipies.registerItem(jadeHeadPi, "JadePickHead");
+        Recipies.registerItem(jadeHeadAx, "JadeAxeHead");
+        Recipies.registerItem(jadeHeadSw, "JadeSwordHead");
+        Recipies.registerItem(jadeHeadSh, "JadeShovHead");
+        Recipies.registerItem(jadeHeadHo, "JadeHoeHead");
+        Recipies.registerItem(jadeHeadPi, "JadePickHead");
 
 
 
@@ -1625,40 +1609,6 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 
 		//#addironhammer
-
-
-
-
-
-	    //public static Item headDiamond;
-	    //public static Item headJade;
-	   //public static Item headNetherstar;
-	    //public static Item headSandstone;
-	   //public static Item headWooden;
-	    //public static Item headCopper;
-	    //public static Item headSilver;
-
-
-
-
-
-
-
-		//public static Item hammerDiamond;
-	    //public static Item hammerJade;
-	   // public static Item hammerNetherstar;
-	   // public static Item hammerSandstone;
-	   // public static Item hammerWooden;
-	   // public static Item hammerCopper;
-	   // public static Item hammerSilver;
-
-
-
-
-
-
-
-
 		//Hammer Crafting
 
 
@@ -1712,6 +1662,8 @@ public class RPCore {
 				GameRegistry.addShapelessRecipe(new ItemStack (dustPN,1),new ItemStack(RPCore.bloodFirey), new ItemStack(acidSulfuric));
 
 				GameRegistry.addShapedRecipe(new ItemStack (Items.gunpowder,4),"###","#0#","###", '#', new ItemStack (RPCore.dustCharcoal),'0',new ItemStack(RPCore.dustPN));
+
+
 				//###
 				//#0#
 				//###
@@ -1814,5 +1766,3 @@ public class RPCore {
 		return null;
 	}
 }
-
-//test Sync

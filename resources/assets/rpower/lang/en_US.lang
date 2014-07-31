@@ -183,8 +183,13 @@ item.Sugar Cookie.name=Sugar Cookie
 item.Raw Bacon.name=Raw Bacon
 item.Cooked Bacon.name=Cooked Bacon
 item.Knife.name=Knife
-item.Pouch Of Cugar.name=Pouch Of Cugar
+item.Pouch Of Cugar.name=Pouch Of Sugar
 item.Bag of Flour.name=Bag of Flour
 item.Yellow Leaf.name=Yellow Leaf
 item.Item Of Testing.name=Item Of Testing
+item.Advanced Chip.name=Advanced Chipset
+item.Basic Chip.name=Basic Chipset
+item.Elite Chip.name=Elite Chipset
+item.Low-Voltage Chip.name=Low-Voltage Chipset
+
 itemGroup.rpower=Mine Facility Platinum Edition

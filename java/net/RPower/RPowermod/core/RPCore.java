@@ -268,6 +268,13 @@ public class RPCore {
     public static Item transistorIron;
     public static Item transistorTungstencarbide;
 
+    //chips
+    public static Item chipAdvanced;
+    public static Item chipBasic;
+    public static Item chipElite;
+    public static Item chipLV;
+    
+    
     //Protosprays
 
     public static Item protopaintCopper;
@@ -601,6 +608,12 @@ public class RPCore {
 		    transistorIron = new itemtransistorIron().setUnlocalizedName("Iron Transistor").setTextureName(modid + ":" + "transistorIron").setCreativeTab(RPCoreITab);
 		    transistorTungstencarbide = new itemtransistorTungstencarbide().setUnlocalizedName("Tungsten Carbide Transistor").setTextureName(modid + ":" + "transistorTungstencarbide").setCreativeTab(RPCoreITab);
 
+		    //chips
+		    chipAdvanced = new itemchipAdvanced().setUnlocalizedName("Advanced Chip").setTextureName(modid + ":" + "chipAdvanced").setCreativeTab(RPCoreITab);
+		    chipBasic = new itemchipBasic().setUnlocalizedName("Basic Chip").setTextureName(modid + ":" + "chipBasic").setCreativeTab(RPCoreITab);
+		    chipElite = new itemchipElite().setUnlocalizedName("Elite Chip").setTextureName(modid + ":" + "chipElite").setCreativeTab(RPCoreITab);
+		    chipLV = new itemchipLV().setUnlocalizedName("Low-Voltage Chip").setTextureName(modid + ":" + "chipLV").setCreativeTab(RPCoreITab);
+		    
 		    //Protosprays
 
 		    protopaintCopper = new itemprotopaintCopper().setUnlocalizedName("Next Gen Copper ProtoSpray").setTextureName(modid + ":" + "protopaintCopper").setCreativeTab(RPCoreITab);
@@ -725,8 +738,8 @@ public class RPCore {
 		scrollCircle = new ItemscrollCircle().setCreativeTab(RPCoreITab).setUnlocalizedName("Circle Scroll").setTextureName(modid + ":" + "scrollCircle");
 		oilTreatment = new ItemoilTreatment().setCreativeTab(RPCoreITab).setUnlocalizedName("Treatment Oil").setTextureName(modid + ":" + "oilTreatment");
 		mouldCog = new ItemmouldCog().setCreativeTab(RPCoreITab).setUnlocalizedName("Cog Mould").setTextureName(modid + ":" + "mouldCog");
-		mouldPlate = new ItemmouldPlate().setCreativeTab(RPCoreITab).setUnlocalizedName("Plate Mould").setTextureName(modid + ":" + "mouldPlate");
-
+		mouldPlate = new ItemmouldPlate().setCreativeTab(RPCoreITab).setUnlocalizedName("Plate Mould").setTextureName(modid + ":" + "plateMould");
+// plateMould.png or mouldCog.png should be renamed. Pick one.
 
         //gears
 
@@ -976,7 +989,8 @@ public class RPCore {
         Recipies.registerItem(resistorIron,"Iron Resistor");
         Recipies.registerItem(resistorTungstencarbide,"Tungsten Carbide Resistor");
 
-
+        //chips
+        
       //ProtoSprays
 
         Recipies.registerItem(protopaintDiamond,"Next Gen Diamond ProtoSpray");
@@ -1010,8 +1024,11 @@ public class RPCore {
         Recipies.registerItem(transistorTungstencarbide,"Tungsten Carbide Transistor");
 
 
-
-
+      //chips
+        Recipies.registerItem(chipAdvanced, "Advanced Chip");
+        Recipies.registerItem(chipBasic, "Basic Chip");
+        Recipies.registerItem(chipElite, "Elite Chip");
+        Recipies.registerItem(chipLV, "Low-Voltage Chip");
 
 
 
@@ -1353,6 +1370,11 @@ public class RPCore {
         LanguageRegistry.addName(resistorTungstencarbide,"Tungsten Carbide Resistor");
 
 
+      //chips
+        LanguageRegistry.addName(chipAdvanced,"Advanced Chip");
+        LanguageRegistry.addName(chipBasic,"Basic Chip");
+        LanguageRegistry.addName(chipElite,"Elite Chip");
+        LanguageRegistry.addName(chipLV,"Low-Voltage Chip");
       //ProtoSprays
 
         LanguageRegistry.addName(protopaintDiamond,"Next Gen Diamond ProtoSpray");
@@ -1464,6 +1486,7 @@ public class RPCore {
         LanguageRegistry.addName(scrollCircle, "Circle Scroll");
         LanguageRegistry.addName(oilTreatment, "Treatment Oil");
         LanguageRegistry.addName(mouldCog, "Cog Mould");
+        LanguageRegistry.addName(mouldPlate, "Plate Mould");
 
 
         //gears

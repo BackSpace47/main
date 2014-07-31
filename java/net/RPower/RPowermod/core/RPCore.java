@@ -332,7 +332,7 @@ public class RPCore {
     public static Item cogUnfiredtungstencarbide;
 
 
-    //fiered
+    //fired
     public static Item cogCopper;
     public static Item cogDiamond;
     public static Item cogGold;
@@ -340,9 +340,22 @@ public class RPCore {
     public static Item cogTungstencarbide;
 
 
+    //Plates
+    public static Item mouldPlate;
 
+    //unfired
+    public static Item plateUnfiredcopper;
+    public static Item plateUnfireddiamond;
+    public static Item plateUnfiredgold;
+    public static Item plateUnfirediron;
+    public static Item plateUnfiredtungstencarbide;
 
-
+    //fired
+    public static Item plateCopper;
+    public static Item plateDiamond;
+    public static Item plateGold;
+    public static Item plateIron;
+    public static Item plateTungstencarbide;
 
 
 
@@ -452,7 +465,7 @@ public class RPCore {
 
 
 		//Ores
-		oreExp = new blockRPOreExp(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Exp Ore").setBlockTextureName(modid + ":" + "exp_ore").setHardness(5F).setResistance(1F);
+		oreExp = new blockRPOreExp(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Exp Ore").setBlockTextureName(modid + ":" + "exp_ore").setHardness(5F).setResistance(1F).setLightLevel(0.3F);
 		oreTin = new blockRPOreTin(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tin Ore").setBlockTextureName(modid + ":" + "tin_ore").setHardness(1F).setResistance(0F);
 		oreSilver = new blockRPOreSilver(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Silver Ore").setBlockTextureName(modid + ":" + "silver_ore").setHardness(1F).setResistance(1F);
 		oreJade = new blockRPOre(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Jade Ore").setBlockTextureName(modid + ":" + "Jade Ore").setHardness(50F).setResistance(5F);
@@ -712,6 +725,7 @@ public class RPCore {
 		scrollCircle = new ItemscrollCircle().setCreativeTab(RPCoreITab).setUnlocalizedName("Circle Scroll").setTextureName(modid + ":" + "scrollCircle");
 		oilTreatment = new ItemoilTreatment().setCreativeTab(RPCoreITab).setUnlocalizedName("Treatment Oil").setTextureName(modid + ":" + "oilTreatment");
 		mouldCog = new ItemmouldCog().setCreativeTab(RPCoreITab).setUnlocalizedName("Cog Mould").setTextureName(modid + ":" + "mouldCog");
+		mouldPlate = new ItemmouldPlate().setCreativeTab(RPCoreITab).setUnlocalizedName("Plate Mould").setTextureName(modid + ":" + "mouldPlate");
 
 
         //gears
@@ -732,8 +746,23 @@ public class RPCore {
 
 
 
+		
+		//gears
 
+		plateUnfiredcopper = new plateUnfiredcopper().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredCopperplate").setTextureName(modid + ":" + "plateUnfiredCopper");
+		plateUnfireddiamond = new plateUnfiredDiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredDiamondplate").setTextureName(modid + ":" + "plateUnfiredDiamond");
+		plateUnfiredgold = new plateUnfiredgold().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredGoldplate").setTextureName(modid + ":" + "plateUnfiredGold");
+		plateUnfirediron = new plateUnfirediron().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredIronplate").setTextureName(modid + ":" + "plateUnfiredIron");
+		plateUnfiredtungstencarbide = new plateUnfiredtungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("UnfiredTungstencarbideplate").setTextureName(modid + ":" + "plateUnfiredTungstencarbide");
 
+		//fired
+
+		plateCopper = new plateCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Copperplate").setTextureName(modid + ":" + "plateCopper");
+		plateDiamond = new plateDiamond().setCreativeTab(RPCoreITab).setUnlocalizedName("Diamondplate").setTextureName(modid + ":" + "plateDiamond");
+		plateGold = new plateGold().setCreativeTab(RPCoreITab).setUnlocalizedName("Goldplate").setTextureName(modid + ":" + "plateGold");
+		plateIron = new plateIron().setCreativeTab(RPCoreITab).setUnlocalizedName("Ironplate").setTextureName(modid + ":" + "plateIron");
+		plateTungstencarbide = new plateTungstencarbide().setCreativeTab(RPCoreITab).setUnlocalizedName("Tungstencarbideplate").setTextureName(modid + ":" + "plateTungstencarbide");
+		
 
 
 
@@ -1058,26 +1087,41 @@ public class RPCore {
         Recipies.registerItem(scrollCircle, "Circle Scroll");
         Recipies.registerItem(oilTreatment, "Treatment Oil");
         Recipies.registerItem(mouldCog, "Cog Mould");
+        Recipies.registerItem(mouldPlate, "Plate Mould");
 
 
         //gears
 
 
-        Recipies.registerItem(cogUnfiredcopper, "UnfiredcopperCog");
-        Recipies.registerItem(cogUnfireddiamond, "UnfireddiamondCog");
-        Recipies.registerItem(cogUnfiredgold, "CogUnfiredgold");
-        Recipies.registerItem(cogUnfirediron, "CogUnfirediron");
-        Recipies.registerItem(cogUnfiredtungstencarbide, "CogUnfiredtungstencarbide");
-        //fiered
+        Recipies.registerItem(cogUnfiredcopper, "Unfired Copper Cog");
+        Recipies.registerItem(cogUnfireddiamond, "Unfired Diamond Cog");
+        Recipies.registerItem(cogUnfiredgold, "Unfired Gold Cog");
+        Recipies.registerItem(cogUnfirediron, "Unfired Iron Cog");
+        Recipies.registerItem(cogUnfiredtungstencarbide, "Unfired Tungsten Carbide Cog");
+        //fired
 
 
-        Recipies.registerItem(cogCopper, "CogCopper");
-        Recipies.registerItem(cogDiamond, "CogDiamond");
-        Recipies.registerItem(cogGold, "CogGold");
-        Recipies.registerItem(cogIron, "CogIron");
-        Recipies.registerItem(cogTungstencarbide, "CogTungstencarbide");
-
-
+        Recipies.registerItem(cogCopper, "Copper Cog");
+        Recipies.registerItem(cogDiamond, "Diamond Cog");
+        Recipies.registerItem(cogGold, "Gold Cog");
+        Recipies.registerItem(cogIron, "Iron Cog");
+        Recipies.registerItem(cogTungstencarbide, "Tungsten Carbide Cog");
+        
+        //Plates
+        
+        //unfired
+        Recipies.registerItem(plateUnfiredcopper, "Unfired Copper Plate");
+        Recipies.registerItem(plateUnfireddiamond, "Unfired Diamond Plate");
+        Recipies.registerItem(plateUnfiredgold, "Unfired Gold Plate");
+        Recipies.registerItem(plateUnfirediron, "Unfired Iron Plate");
+        Recipies.registerItem(plateUnfiredtungstencarbide, "Unfired Tungsten Carbide Plate");
+        
+        //fired
+        Recipies.registerItem(plateCopper, "Copper Plate");
+        Recipies.registerItem(plateDiamond, "Diamond Plate");
+        Recipies.registerItem(plateGold, "Gold Plate");
+        Recipies.registerItem(plateIron, "Iron Plate");
+        Recipies.registerItem(plateTungstencarbide, "Tungsten Carbide Plate");
 
         //Chunks
         Recipies.registerItem(chunkCopper, "Copper Chunk");
@@ -1439,6 +1483,21 @@ public class RPCore {
         LanguageRegistry.addName(cogIron, "CogIron");
         LanguageRegistry.addName(cogTungstencarbide, "CogTungstencarbide");
 
+        //Plates
+        
+        //unfired
+        LanguageRegistry.addName(plateUnfiredcopper, "Unfired Copper Plate");
+        LanguageRegistry.addName(plateUnfireddiamond, "Unfired Diamond Plate");
+        LanguageRegistry.addName(plateUnfiredgold, "Unfired Gold Plate");
+        LanguageRegistry.addName(plateUnfirediron, "Unfired Iron Plate");
+        LanguageRegistry.addName(plateUnfiredtungstencarbide, "Unfired Tungsten Carbide Plate");
+        
+        //fired
+        LanguageRegistry.addName(plateCopper, "Copper Plate");
+        LanguageRegistry.addName(plateDiamond, "Diamond Plate");
+        LanguageRegistry.addName(plateGold, "Gold Plate");
+        LanguageRegistry.addName(plateIron, "Iron Plate");
+        LanguageRegistry.addName(plateTungstencarbide, "Tungsten Carbide Plate");
 
 
         //Chunks

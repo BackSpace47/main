@@ -1326,12 +1326,12 @@ public class RPCore {
         LanguageRegistry.addName(ferrousBlock, "Ferrous Block");
         LanguageRegistry.addName(leadBlock, "Lead Block");
         LanguageRegistry.addName(netherstarBlock, "Netherstar Block");
-        LanguageRegistry.addName(organizeddiamondBlock, "Organizeddiamond Block");
-        LanguageRegistry.addName(organizedemeraldBlock, "Organizedemerald Block");
+        LanguageRegistry.addName(organizeddiamondBlock, "Organized Diamond Block");
+        LanguageRegistry.addName(organizedemeraldBlock, "Organized Emerald Block");
         LanguageRegistry.addName(silverBlock, "Silver Block");
         LanguageRegistry.addName(tinBlock, "Tin Block");
         LanguageRegistry.addName(tungstenBlock, "Tungsten Block");
-        LanguageRegistry.addName(tungstencarbideBlock, "Tungstencarbide Block");
+        LanguageRegistry.addName(tungstencarbideBlock, "Tungsten Carbide Block");
 
         //Trees
         LanguageRegistry.addName(elderLog, "Red Elderberry Log");
@@ -1431,7 +1431,7 @@ public class RPCore {
 		LanguageRegistry.addName(ingotCopper, "Copper Ingot");
 		LanguageRegistry.addName(ingotNetherstar, "Nether Star Ingot");
 		LanguageRegistry.addName(ingotTungsten, "Tungsten Ingot");
-	    LanguageRegistry.addName(TCAI, "TCAI");
+	    LanguageRegistry.addName(TCAI, "Tungsten Carbide Aloy Ingot");
 
 
 		//Gems
@@ -1462,7 +1462,7 @@ public class RPCore {
         LanguageRegistry.addName(dropFly,"Fly Drop");
         LanguageRegistry.addName(dropLife,"Life Drop");
         LanguageRegistry.addName(dropMagick,"Magick Drop");
-        LanguageRegistry.addName(dropPoison,"Poisen Drop");
+        LanguageRegistry.addName(dropPoison,"Poison Drop");
         LanguageRegistry.addName(dropRock,"Rock Drop");
         LanguageRegistry.addName(dropSmall,"Small Drop");
         LanguageRegistry.addName(dropSuper, "Super Drop");
@@ -1478,8 +1478,8 @@ public class RPCore {
 		//Misc
         LanguageRegistry.addName(sandPaper,"Sand Paper");
 		LanguageRegistry.addName(anthracite, "Anthracite");
-        LanguageRegistry.addName(quartzStick, "Quartc Stick");
-        LanguageRegistry.addName(quartzBowl, "Quartc Bowl");
+        LanguageRegistry.addName(quartzStick, "Quartz Stick");
+        LanguageRegistry.addName(quartzBowl, "Quartz Bowl");
         LanguageRegistry.addName(mortar_and_pestle, "Mortar and Pestle");
         LanguageRegistry.addName(Pencil, "Pencil");
         LanguageRegistry.addName(blankScroll, "Blank Scroll");
@@ -1492,19 +1492,19 @@ public class RPCore {
         //gears
 
 
-        LanguageRegistry.addName(cogUnfiredcopper, "UnfiredcopperCog");
-        LanguageRegistry.addName(cogUnfireddiamond, "UnfireddiamondCog");
-        LanguageRegistry.addName(cogUnfiredgold, "CogUnfiredgold");
-        LanguageRegistry.addName(cogUnfirediron, "CogUnfirediron");
-        LanguageRegistry.addName(cogUnfiredtungstencarbide, "CogUnfiredtungstencarbide");
+        LanguageRegistry.addName(cogUnfiredcopper, "Unfired Copper Cog");
+        LanguageRegistry.addName(cogUnfireddiamond, "Unfired Diamond Cog");
+        LanguageRegistry.addName(cogUnfiredgold, "Unfired Gold Cog");
+        LanguageRegistry.addName(cogUnfirediron, "Unfired Iron Cog");
+        LanguageRegistry.addName(cogUnfiredtungstencarbide, "Unfired Tungsten Carbide Cog");
         //fiered
 
 
-        LanguageRegistry.addName(cogCopper, "CogCopper");
-        LanguageRegistry.addName(cogDiamond, "CogDiamond");
-        LanguageRegistry.addName(cogGold, "CogGold");
-        LanguageRegistry.addName(cogIron, "CogIron");
-        LanguageRegistry.addName(cogTungstencarbide, "CogTungstencarbide");
+        LanguageRegistry.addName(cogCopper, "Copper Cog");
+        LanguageRegistry.addName(cogDiamond, "Diamond Cog");
+        LanguageRegistry.addName(cogGold, "Gold Cog");
+        LanguageRegistry.addName(cogIron, "Iron Cog");
+        LanguageRegistry.addName(cogTungstencarbide, "Tungsten Carbide Cog");
 
         //Plates
         
@@ -1533,48 +1533,42 @@ public class RPCore {
 
         //Tools
         LanguageRegistry.addName(hammerDiamond,"Diamond Hammer");
-			LanguageRegistry.addName(hammerJade,"Jade Hammer");
-				LanguageRegistry.addName(hammerNetherstar,"Netherstar Hammer");
-						LanguageRegistry.addName(hammerSandstone,"Sandstone Hammer");
-								LanguageRegistry.addName(hammerWooden ,"Wooden Hammer");
-										LanguageRegistry.addName(hammerCopper,"Copper Hammer");
-												LanguageRegistry.addName(hammerSilver,"Silver Hammer");
-														LanguageRegistry.addName(tungstenCarbideHammer, "Tungsten Carbide Hammer");
-																LanguageRegistry.addName(stoneHammer, "Stone Hammer");
+		LanguageRegistry.addName(hammerJade,"Jade Hammer");
+		LanguageRegistry.addName(hammerNetherstar,"Netherstar Hammer");
+		LanguageRegistry.addName(hammerSandstone,"Sandstone Hammer");
+		LanguageRegistry.addName(hammerWooden ,"Wooden Hammer");
+		LanguageRegistry.addName(hammerCopper,"Copper Hammer");
+		LanguageRegistry.addName(hammerSilver,"Silver Hammer");
+		LanguageRegistry.addName(tungstenCarbideHammer, "Tungsten Carbide Hammer");
+		LanguageRegistry.addName(stoneHammer, "Stone Hammer");
 
 
-												//Tools->Mining
-												LanguageRegistry.addName(jadeSword, "Jade Sword");
-										        LanguageRegistry.addName(jadePickaxe, "Jade Pickaxe");
-										        LanguageRegistry.addName(jadeAxe, "Jade Axe");
-										        LanguageRegistry.addName(jadeHoe, "Jade Hoe");
-										        LanguageRegistry.addName(jadeShovel, "Jade Shovel");
+		//Tools->Mining
+		LanguageRegistry.addName(jadeSword, "Jade Sword");
+		LanguageRegistry.addName(jadePickaxe, "Jade Pickaxe");
+		LanguageRegistry.addName(jadeAxe, "Jade Axe");
+		LanguageRegistry.addName(jadeHoe, "Jade Hoe");
+		LanguageRegistry.addName(jadeShovel, "Jade Shovel");
 
 
 
         //Tool Heads
         LanguageRegistry.addName(headDiamond,"Diamond Hammer Head");
-        		LanguageRegistry.addName(headJade,"Jade Hammer Head");
-        				LanguageRegistry.addName(headNetherstar,"Netherstar Hammer Head");
-        						LanguageRegistry.addName(headSandstone,"Sandstone Hammer Head");
-        								LanguageRegistry.addName(headWooden ,"Wooden Hammer Head");
-        										LanguageRegistry.addName(headCopper,"Copper Hammer Head");
-        												LanguageRegistry.addName(headSilver,"Silver Hammer Head");
-        														LanguageRegistry.addName(tungstenCarbideHead, "Tungsten Carbide Hammer Head");
-        																LanguageRegistry.addName(stoneHamHead, "Stone Hammer Head");
+   		LanguageRegistry.addName(headJade,"Jade Hammer Head");
+  		LanguageRegistry.addName(headNetherstar,"Netherstar Hammer Head");
+  		LanguageRegistry.addName(headSandstone,"Sandstone Hammer Head");
+  		LanguageRegistry.addName(headWooden ,"Wooden Hammer Head");
+  		LanguageRegistry.addName(headCopper,"Copper Hammer Head");
+  		LanguageRegistry.addName(headSilver,"Silver Hammer Head");
+  		LanguageRegistry.addName(tungstenCarbideHead, "Tungsten Carbide Hammer Head");
+  		LanguageRegistry.addName(stoneHamHead, "Stone Hammer Head");
 
-
-        												//Tools->Mining
-        												    LanguageRegistry.addName(jadeHeadAx, "JadeAxeHead");
-        											        LanguageRegistry.addName(jadeHeadSw, "JadeSwordHead");
-        											        LanguageRegistry.addName(jadeHeadSh, "JadeShovHead");
-        											        LanguageRegistry.addName(jadeHeadHo, "JadeHoeHead");
-        											        LanguageRegistry.addName(jadeHeadPi, "JadePickHead");
-
-
-
-
-
+		//Tools->Mining
+	    LanguageRegistry.addName(jadeHeadAx, "Jade Axe Head");
+        LanguageRegistry.addName(jadeHeadSw, "Jade Sword Blade");
+        LanguageRegistry.addName(jadeHeadSh, "Jade Shovel Head");
+        LanguageRegistry.addName(jadeHeadHo, "Jade Hoe Head");
+        LanguageRegistry.addName(jadeHeadPi, "Jade Pickaxe Head");
 
         //Handle Modifiers
 
@@ -1583,7 +1577,7 @@ public class RPCore {
 
         //Caustic Items
         LanguageRegistry.addName(causticMeal, "Caustic Mix");
-        LanguageRegistry.addName(causticCorpuscles, "Caustic Corpuscles ");
+        LanguageRegistry.addName(causticCorpuscles, "Caustic Corpuscles");
         LanguageRegistry.addName(bloodFirey, "Firey Blood");
         LanguageRegistry.addName(acidSulfuric, "Sulferic Acid");
         LanguageRegistry.addName(dustPN,"Potassium Nitrate");

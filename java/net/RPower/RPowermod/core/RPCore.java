@@ -782,7 +782,7 @@ public class RPCore {
         //public static Item ingotZink;;   <----OreGen REMEMBER
 
 
-        //^^meh
+
 
         //Chunks
         chunkCopper = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Copper Chunk").setTextureName(modid + ":" + "Copper_Chunk");
@@ -1220,11 +1220,12 @@ public class RPCore {
 
         //test
         Recipies.registerItem(testCookie, "Item Of Testing");
-
+        Recipies.registerSmeltingItemWUM(Items.redstone,testCookie,5F);
 
 
         //Smelting
-
+        Recipies.registerSmeltingItemWUM(dustSteel,ingotSteel,5F);
+        Recipies.registerSmeltingItemWUM(dustBronze,ingotBronze,5f);
         Recipies.registerSmeltingItemWUM(chunkCopper, ingotCopper,5F);
         Recipies.registerSmeltingItemWUM(chunkTin, ingotTin,5F);
         Recipies.registerSmeltingItemWUM(chunkFerrous, ingotFerrous,5F);
@@ -1324,6 +1325,19 @@ public class RPCore {
 		GameRegistry.addShapedRecipe(new ItemStack (sandTreated, 4), " z ", "zxz", " z ", 'z', new ItemStack(oilTreatment), 'x', new ItemStack(Blocks.sand));
 		GameRegistry.addShapedRecipe(new ItemStack(mouldCog), " x ", "xzx", " x ", 'x', new ItemStack(sandTreated), 'z', new ItemStack(scrollCircle));
 
+
+
+		//protosprays
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintDiamond), "yxy", "xzx", "yxy", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintCopper), "yxy", "xzx", "yxy", 'x', new ItemStack(dustCopper), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintGold), "yxy", "xzx", "yxy", 'x', new ItemStack(dustBronze), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintTungstencarbide), "yxy", "xzx", "yxy", 'x', new ItemStack(testCookie), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (capacitorDiamond), new ItemStack (protopaintDiamond, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
 
 
 		//gears

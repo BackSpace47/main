@@ -36,6 +36,7 @@ import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
 import net.RPower.RPowermod.block.blockRPOre;
+import net.RPower.RPowermod.block.blockwoodPetrified;
 import net.RPower.RPowermod.gui.GuiHandler;
 import net.RPower.RPowermod.item.*;
 import net.RPower.RPowermod.item.ItemHeadBspace;
@@ -138,6 +139,10 @@ public class RPCore {
     public static Block blueStabilizer;
     public static Block polymer;
     public static Block polymerWoven;
+
+
+
+    public static Block woodPetrified;
     //Caustic Items
 
     public static Item causticMeal;
@@ -483,6 +488,10 @@ public class RPCore {
 		oreAnthtracite = new BlockoreAnthtracite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Anthracite Ore").setBlockTextureName(modid + ":" + "anthracite_ore").setHardness(50F).setResistance(2000F);
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
+		woodPetrified = new blockwoodPetrified (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeWood);
+
+
+
 		//Blocks Of items
 		jadeBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Jade Block").setBlockTextureName(modid + ":" + "jade_block").setHardness(50F).setResistance(5F);
 		copperBlock = new blockRPBlock (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Copper Block").setBlockTextureName(modid + ":" + "copper_block").setHardness(5F).setResistance(1F);
@@ -919,7 +928,7 @@ public class RPCore {
 		//WIP//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
 
 
-
+		Recipies.registerBlock(woodPetrified,"Petrified Wood");
 		Recipies.registerBlock(polymer, "Polymer");
 		Recipies.registerBlock(polymerWoven, "Polyester");
 		Recipies.registerBlock(oreExp, "Exp Ore");

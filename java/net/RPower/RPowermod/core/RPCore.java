@@ -36,6 +36,10 @@ import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
 import net.RPower.RPowermod.block.blockRPOre;
+import net.RPower.RPowermod.block.blocktrollDiamond;
+import net.RPower.RPowermod.block.blocktrollEmerald;
+import net.RPower.RPowermod.block.blocktrollGold;
+import net.RPower.RPowermod.block.blocktrollIron;
 import net.RPower.RPowermod.block.blockwoodPetrified;
 import net.RPower.RPowermod.gui.GuiHandler;
 import net.RPower.RPowermod.item.*;
@@ -104,6 +108,17 @@ public class RPCore {
 	public static Block oreAnthtracite;
 	public static Block obsidianWhite;
 	public static Block oreZinc;
+
+
+
+
+	//Troll Items
+	public static Block trollGold;
+	public static Block trollEmerald;
+	public static Block trollDiamond;
+	public static Block trollIron;
+
+
 
 	//Blocks of items
 	public static Block copperBlock;
@@ -287,6 +302,16 @@ public class RPCore {
     public static Item protopaintGold;
     public static Item protopaintTungstencarbide;
 
+
+
+
+
+
+    //Troll Items
+    public static Item trollNugetdiamond;
+    public static Item trollNugetiron;
+    public static Item trollNugetemerald;
+    public static Item trollNugetGold;
 
     //Runes
     public static Item runeAir;
@@ -504,6 +529,35 @@ public class RPCore {
 		tinBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tin Block").setBlockTextureName(modid + ":" + "tin_block").setHardness(5F).setResistance(1F);
 		tungstenBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungsten Block").setBlockTextureName(modid + ":" + "tungsten_block").setHardness(5F).setResistance(1F);
 		tungstencarbideBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungstencarbide Block").setBlockTextureName(modid + ":" + "tungstencarbide_block").setHardness(5F).setResistance(1F);
+
+
+
+
+		//TrollBlocks
+		trollDiamond = new blocktrollDiamond(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Diamond").setBlockTextureName(modid + ":" + "diamond_block").setHardness(50F).setResistance(5F);
+		trollIron = new blocktrollIron(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Iron").setBlockTextureName(modid + ":" + "iron_block").setHardness(50F).setResistance(5F);
+		trollEmerald = new blocktrollEmerald(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Emerald").setBlockTextureName(modid + ":" + "emerald_block").setHardness(50F).setResistance(5F);
+		trollGold = new blocktrollGold(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Gold").setBlockTextureName(modid + ":" + "gold_block").setHardness(50F).setResistance(5F);
+
+
+
+
+		//TrollItems
+		trollNugetdiamond = new itemtrollNugetdiamond().setUnlocalizedName("Diamond Troll Nugget").setTextureName(modid + ":" + "nuggetDiamond").setCreativeTab(RPCoreITab);
+		trollNugetiron = new itemtrollNugetiron().setUnlocalizedName("Iron Troll Nugget").setTextureName(modid + ":" + "nuggetIron").setCreativeTab(RPCoreITab);
+		trollNugetemerald = new itemtrollNugetemerald().setUnlocalizedName("Emerald Troll Nugget").setTextureName(modid + ":" + "nuggetEmerald").setCreativeTab(RPCoreITab);
+		trollNugetGold = new itemtrollNugetGold().setUnlocalizedName("Gold Troll Nugget").setTextureName(modid + ":" + "nuggetGold").setCreativeTab(RPCoreITab);
+
+
+
+
+
+		/**
+		public static Item trollNuggetdiamond;
+	    public static Item trollNugetiron;
+	    public static Item trollNugetemerald;
+	    public static Item trollNugetGold;
+	    **/
 
 		//
 		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
@@ -921,6 +975,18 @@ public class RPCore {
 
 		//Blocks
 
+
+
+		//troll items & Blocks
+		Recipies.registerBlock(trollEmerald, "Emerald Block?");
+		Recipies.registerBlock(trollDiamond, "Diamond Block?");
+		Recipies.registerBlock(trollIron, "Iron Block?");
+		Recipies.registerBlock(trollGold, "Gold Block?");
+
+		Recipies.registerItem(trollNugetiron, "Iron Nugget?");
+		Recipies.registerItem(trollNugetGold, "Gold Nugget?");
+		Recipies.registerItem(trollNugetdiamond, "Diamond Nugget?");
+		Recipies.registerItem(trollNugetemerald, "Emerald Nugget?");
 
 		Recipies.registerItem(magnusCookie, "Test Cookie Creative Only");
 		Recipies.registerBlock(obsidianWhite,"White Obsidian");

@@ -43,6 +43,11 @@ import net.RPower.RPowermod.block.blockRPOreSilver;
 import net.RPower.RPowermod.block.blockRPOreTin;
 import net.RPower.RPowermod.block.blockRPOreTungsten;
 import net.RPower.RPowermod.block.blockRPOreZinc;
+import net.RPower.RPowermod.block.blocktrollDiamond;
+import net.RPower.RPowermod.block.blocktrollEmerald;
+import net.RPower.RPowermod.block.blocktrollGold;
+import net.RPower.RPowermod.block.blocktrollIron;
+import net.RPower.RPowermod.block.blockwoodPetrified;
 import net.RPower.RPowermod.item.*;
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
@@ -95,6 +100,11 @@ public class RPCore {
 	public static Block oreAnthtracite;
 	public static Block obsidianWhite;
 	public static Block oreZinc;
+	//Troll Items
+	public static Block trollGold;
+	public static Block trollEmerald;
+	public static Block trollDiamond;
+	public static Block trollIron;
 	//Blocks of items
 	public static Block copperBlock;
 	public static Block ferrousBlock;
@@ -123,6 +133,7 @@ public class RPCore {
     public static Block blueStabilizer;
     public static Block polymer;
     public static Block polymerWoven;
+    public static Block woodPetrified;
     //Caustic Items
     public static Item causticMeal;
     public static Item causticCorpuscles;
@@ -131,6 +142,7 @@ public class RPCore {
     public static Item dustPN;
     public static Item dustCharcoal;
     public static Item toolSkinning;
+    public static Item lagUnit;
     //Food
     public static Item megaCookie;
     public static Item ghostCookie;
@@ -238,6 +250,11 @@ public class RPCore {
     public static Item protopaintDiamond;
     public static Item protopaintGold;
     public static Item protopaintTungstencarbide;
+    //Troll Items
+    public static Item trollNugetdiamond;
+    public static Item trollNugetiron;
+    public static Item trollNugetemerald;
+    public static Item trollNugetGold;
     //Runes
     public static Item runeAir;
     public static Item runeEarth;
@@ -385,6 +402,10 @@ public class RPCore {
 		oreAnthtracite = new BlockoreAnthtracite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Anthracite Ore").setBlockTextureName(modid + ":" + "anthracite_ore").setHardness(50F).setResistance(2000F);
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
+		woodPetrified = new blockwoodPetrified (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeWood);
+
+
+
 		//Blocks Of items
 		jadeBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Jade Block").setBlockTextureName(modid + ":" + "jade_block").setHardness(50F).setResistance(5F);
 		copperBlock = new blockRPBlock (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Copper Block").setBlockTextureName(modid + ":" + "copper_block").setHardness(5F).setResistance(1F);
@@ -397,6 +418,22 @@ public class RPCore {
 		tinBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tin Block").setBlockTextureName(modid + ":" + "tin_block").setHardness(5F).setResistance(1F);
 		tungstenBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungsten Block").setBlockTextureName(modid + ":" + "tungsten_block").setHardness(5F).setResistance(1F);
 		tungstencarbideBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungstencarbide Block").setBlockTextureName(modid + ":" + "tungstencarbide_block").setHardness(5F).setResistance(1F);
+    	//TrollBlocks
+		trollDiamond = new blocktrollDiamond(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Diamond").setBlockTextureName(modid + ":" + "diamond_block").setHardness(50F).setResistance(5F);
+		trollIron = new blocktrollIron(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Iron").setBlockTextureName(modid + ":" + "iron_block").setHardness(50F).setResistance(5F);
+		trollEmerald = new blocktrollEmerald(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Emerald").setBlockTextureName(modid + ":" + "emerald_block").setHardness(50F).setResistance(5F);
+		trollGold = new blocktrollGold(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Gold").setBlockTextureName(modid + ":" + "gold_block").setHardness(50F).setResistance(5F);
+		//TrollItems
+		trollNugetdiamond = new itemtrollNugetdiamond().setUnlocalizedName("Diamond Troll Nugget").setTextureName(modid + ":" + "nuggetDiamond").setCreativeTab(RPCoreITab);
+		trollNugetiron = new itemtrollNugetiron().setUnlocalizedName("Iron Troll Nugget").setTextureName(modid + ":" + "nuggetIron").setCreativeTab(RPCoreITab);
+		trollNugetemerald = new itemtrollNugetemerald().setUnlocalizedName("Emerald Troll Nugget").setTextureName(modid + ":" + "nuggetEmerald").setCreativeTab(RPCoreITab);
+		trollNugetGold = new itemtrollNugetGold().setUnlocalizedName("Gold Troll Nugget").setTextureName(modid + ":" + "nuggetGold").setCreativeTab(RPCoreITab);
+		/**
+		public static Item trollNuggetdiamond;
+	    public static Item trollNugetiron;
+	    public static Item trollNugetemerald;
+	    public static Item trollNugetGold;
+	    **/
 		//
 		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
 		//Alloys
@@ -467,6 +504,51 @@ public class RPCore {
 	    protopaintDiamond = new itemprotopaintDiamond().setUnlocalizedName("Next Gen Diamond ProtoSpray").setTextureName(modid + ":" + "protopaintDiamond").setCreativeTab(RPCoreITab);
 	    protopaintGold = new itemprotopaintGold().setUnlocalizedName("Next Gen Gold ProtoSpray").setTextureName(modid + ":" + "protopaintGold").setCreativeTab(RPCoreITab);
 	    protopaintTungstencarbide = new itemprotopaintTungstencarbide().setUnlocalizedName("Next Gen Tungsten Carbide ProtoSpray").setTextureName(modid + ":" + "protopaintTungstencarbide").setCreativeTab(RPCoreITab);
+	    //Capacitor
+	    foil = new itemFoil().setUnlocalizedName("Foil").setTextureName(modid + ":" + "Foil").setCreativeTab(RPCoreITab);
+	    foilAluminumoxide = new itemFoilaluminumoxide().setUnlocalizedName("Aluminum Oxide Foil").setTextureName(modid + ":" + "foilAluminumoxide").setCreativeTab(RPCoreITab);
+	    paperElectrolized = new itempaperElectrolized().setUnlocalizedName("Electrolized Paper").setTextureName(modid + ":" + "paperElectrolized").setCreativeTab(RPCoreITab);
+	    capacitorBasic = new itemmcapacitorBasic().setUnlocalizedName("Basic Capacitor").setTextureName(modid + ":" + "capacitorBasic").setCreativeTab(RPCoreITab);
+	    capacitorCopper = new itemcapacitorCopper().setUnlocalizedName("Copper Capacitor").setTextureName(modid + ":" + "capacitorCopper").setCreativeTab(RPCoreITab);
+	    capacitorDiamond = new itemcapacitorDiamond().setUnlocalizedName("Diamond Capacitor").setTextureName(modid + ":" + "capacitorDiamond").setCreativeTab(RPCoreITab);
+	    capacitorGold = new itemcapacitorGold().setUnlocalizedName("Gold Capacitor").setTextureName(modid + ":" + "capacitorGold").setCreativeTab(RPCoreITab);
+	    capacitorTungstencarbide = new itemcapacitorTungstencarbide().setUnlocalizedName("Tungstencarbide Capacitor").setTextureName(modid + ":" + "capacitorTungstencarbide").setCreativeTab(RPCoreITab);
+	    //Diode
+	    anvilPostassembly = new itemanvilPostassembly().setUnlocalizedName("Postassembly Anvil").setTextureName(modid + ":" + "anvilPostAssembaly").setCreativeTab(RPCoreITab);
+	    Epoxy = new itemEpoxy().setUnlocalizedName("Epoxy").setTextureName(modid + ":" + "Epoxy").setCreativeTab(RPCoreITab);
+	    lenseReflective = new itemlenseReflective().setUnlocalizedName("Reflective Lense").setTextureName(modid + ":" + "lenseReflective").setCreativeTab(RPCoreITab);
+	    diode = new itemdiode().setUnlocalizedName("Diode").setTextureName(modid + ":" + "Diode").setCreativeTab(RPCoreITab);
+	    //Resistor
+	    clayTreated = new itemclayTreated().setUnlocalizedName("Treated Clay").setTextureName(modid + ":" + "clayTreated").setCreativeTab(RPCoreITab);
+	    clayTreatedbaked = new itemclayTreatedbaked().setUnlocalizedName("Baked Treated Clay").setTextureName(modid + ":" + "clayTreatedbaked").setCreativeTab(RPCoreITab);
+	    coiledNichrome = new itemcoiledNichrome().setUnlocalizedName("Coiled Nichrome").setTextureName(modid + ":" + "coiledNichrome").setCreativeTab(RPCoreITab);
+	    resistorCase = new itemresistorCase().setUnlocalizedName("Resistor Case").setTextureName(modid + ":" + "resistorCase").setCreativeTab(RPCoreITab);
+	    resistorBasic = new itemresistorBasic().setUnlocalizedName("Basic Resistor").setTextureName(modid + ":" + "resistorBasic").setCreativeTab(RPCoreITab);
+	    resistorCopper = new itemresistorCopper().setUnlocalizedName("Copper Resistor").setTextureName(modid + ":" + "resistorCopper").setCreativeTab(RPCoreITab);
+	    resistorDiamond = new itemresistorDiamond().setUnlocalizedName("Diamond Resistor").setTextureName(modid + ":" + "resistorDiamond").setCreativeTab(RPCoreITab);
+	    resistorGold = new itemresistorGold().setUnlocalizedName("Gold Resistor").setTextureName(modid + ":" + "resistorGold").setCreativeTab(RPCoreITab);
+	    resistorIron = new itemresistorIron().setUnlocalizedName("Iron Resistor").setTextureName(modid + ":" + "resistorIron").setCreativeTab(RPCoreITab);
+	    resistorTungstencarbide = new itemresistorTungstencarbide().setUnlocalizedName("Tungsten Carbide Resistor").setTextureName(modid + ":" + "resistorTungstencarbide").setCreativeTab(RPCoreITab);
+	    //Transistors
+	    kitTransistor = new itemkitTransistor().setUnlocalizedName("Transistor Kit").setTextureName(modid + ":" + "kitTransistor").setCreativeTab(RPCoreITab);
+		transistorBasic = new itemtransistorBasic().setUnlocalizedName("Basic Transistor").setTextureName(modid + ":" + "transistorBasic").setCreativeTab(RPCoreITab);
+	    transistorCopper = new itemransistorCopper().setUnlocalizedName("Copper Transistor").setTextureName(modid + ":" + "transistorCopper").setCreativeTab(RPCoreITab);
+	    transistorDiamond = new itemtransistorDiamond().setUnlocalizedName("Diamond Transistor").setTextureName(modid + ":" + "transistorDiamond").setCreativeTab(RPCoreITab);
+	    transistorGold = new itemtransistorGold().setUnlocalizedName("Gold Transistor").setTextureName(modid + ":" + "transistorGold").setCreativeTab(RPCoreITab);
+	    transistorIron = new itemtransistorIron().setUnlocalizedName("Iron Transistor").setTextureName(modid + ":" + "transistorIron").setCreativeTab(RPCoreITab);
+	    transistorTungstencarbide = new itemtransistorTungstencarbide().setUnlocalizedName("Tungsten Carbide Transistor").setTextureName(modid + ":" + "transistorTungstencarbide").setCreativeTab(RPCoreITab);
+	    //chips
+	    chipAdvanced = new itemchipAdvanced().setUnlocalizedName("Advanced Chip").setTextureName(modid + ":" + "chipAdvanced").setCreativeTab(RPCoreITab);
+	    chipBasic = new itemchipBasic().setUnlocalizedName("Basic Chip").setTextureName(modid + ":" + "chipBasic").setCreativeTab(RPCoreITab);
+	    chipElite = new itemchipElite().setUnlocalizedName("Elite Chip").setTextureName(modid + ":" + "chipElite").setCreativeTab(RPCoreITab);
+	    chipLV = new itemchipLV().setUnlocalizedName("Low-Voltage Chip").setTextureName(modid + ":" + "chipLV").setCreativeTab(RPCoreITab);
+	    //Protosprays
+	    protopaintCopper = new itemprotopaintCopper().setUnlocalizedName("Next Gen Copper ProtoSpray").setTextureName(modid + ":" + "protopaintCopper").setCreativeTab(RPCoreITab);
+	    protopaintDiamond = new itemprotopaintDiamond().setUnlocalizedName("Next Gen Diamond ProtoSpray").setTextureName(modid + ":" + "protopaintDiamond").setCreativeTab(RPCoreITab);
+	    protopaintGold = new itemprotopaintGold().setUnlocalizedName("Next Gen Gold ProtoSpray").setTextureName(modid + ":" + "protopaintGold").setCreativeTab(RPCoreITab);
+	    protopaintTungstencarbide = new itemprotopaintTungstencarbide().setUnlocalizedName("Next Gen Tungsten Carbide ProtoSpray").setTextureName(modid + ":" + "protopaintTungstencarbide").setCreativeTab(RPCoreITab);
+	    //Lag
+		lagUnit = new itemplagUnit().setUnlocalizedName("Unit Of Lag").setTextureName(modid + ":" + "33021_64").setCreativeTab(RPCoreITab);
 		//Tools->Hammers
 		hammerDiamond = new hammerDiamond().setUnlocalizedName("Diamond Hammer").setTextureName(modid + ":" + "hammerDiamond").setCreativeTab(RPCoreITab);
 		hammerJade = new hammerJade().setUnlocalizedName("Jade Hammer Head").setTextureName(modid + ":" + "hammerJade").setCreativeTab(RPCoreITab);
@@ -665,11 +747,22 @@ public class RPCore {
 		//Recipies.registerBlock(alloySmelterIdle, "AlloySmelterIdle");
 		//Recipies.registerBlock(alloySmelterActive, "AlloySmelterActive");
 		//Blocks
+		//troll items & Blocks
+		Recipies.registerBlock(trollEmerald, "Emerald Block?");
+		Recipies.registerBlock(trollDiamond, "Diamond Block?");
+		Recipies.registerBlock(trollIron, "Iron Block?");
+		Recipies.registerBlock(trollGold, "Gold Block?");
+
+		Recipies.registerItem(trollNugetiron, "Iron Nugget?");
+		Recipies.registerItem(trollNugetGold, "Gold Nugget?");
+		Recipies.registerItem(trollNugetdiamond, "Diamond Nugget?");
+		Recipies.registerItem(trollNugetemerald, "Emerald Nugget?");
 		Recipies.registerItem(magnusCookie, "Test Cookie Creative Only");
 		Recipies.registerBlock(obsidianWhite,"White Obsidian");
 		Recipies.registerBlock(oreCrusher, "Ore Crusher");
 		Recipies.registerBlock(sandTreated, "Treated Sand");
 		//WIP//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
+		Recipies.registerBlock(woodPetrified,"Petrified Wood");
 		Recipies.registerBlock(polymer, "Polymer");
 		Recipies.registerBlock(polymerWoven, "Polyester");
 		Recipies.registerBlock(oreExp, "Exp Ore");
@@ -726,6 +819,8 @@ public class RPCore {
         Recipies.registerItem(protopaintCopper,"Next Gen Copper ProtoSpray");
         Recipies.registerItem(protopaintGold,"Next Gen Gold ProtoSpray");
         Recipies.registerItem(protopaintTungstencarbide,"Next Gen Tungsten Carbide ProtoSpray");
+        //lag
+        Recipies.registerItem(lagUnit,"Unit Of Lag");
         Recipies.registerItem(anvilPostassembly,"Postassembly Anvil");
         Recipies.registerItem(Epoxy,"Epoxy");
         Recipies.registerItem(lenseReflective,"Reflective Lense");
@@ -898,6 +993,10 @@ public class RPCore {
         //test
         Recipies.registerItem(testCookie, "Item Of Testing");
         //Smelting
+        Recipies.registerSmeltingItemWUM(Items.redstone,testCookie,5F);
+        //Smelting
+        Recipies.registerSmeltingItemWUM(dustSteel,ingotSteel,5F);
+        Recipies.registerSmeltingItemWUM(dustBronze,ingotBronze,5f);
         Recipies.registerSmeltingItemWUM(chunkCopper, ingotCopper,5F);
         Recipies.registerSmeltingItemWUM(chunkTin, ingotTin,5F);
         Recipies.registerSmeltingItemWUM(chunkFerrous, ingotFerrous,5F);
@@ -982,6 +1081,12 @@ public class RPCore {
 		GameRegistry.addShapedRecipe(new ItemStack(scrollCircle), "xxx","xzx","xxx", 'x', new ItemStack(Pencil), 'z', new ItemStack(blankScroll));
 		GameRegistry.addShapedRecipe(new ItemStack (sandTreated, 4), " z ", "zxz", " z ", 'z', new ItemStack(oilTreatment), 'x', new ItemStack(Blocks.sand));
 		GameRegistry.addShapedRecipe(new ItemStack(mouldCog), " x ", "xzx", " x ", 'x', new ItemStack(sandTreated), 'z', new ItemStack(scrollCircle));
+		//protosprays
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintDiamond), "yxy", "xzx", "yxy", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintCopper), "yxy", "xzx", "yxy", 'x', new ItemStack(dustCopper), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintGold), "yxy", "xzx", "yxy", 'x', new ItemStack(dustBronze), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapedRecipe(new ItemStack(protopaintTungstencarbide), "yxy", "xzx", "yxy", 'x', new ItemStack(testCookie), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+		GameRegistry.addShapelessRecipe(new ItemStack (capacitorDiamond), new ItemStack (protopaintDiamond, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
 		//gears
 		GameRegistry.addShapedRecipe(new ItemStack(cogUnfiredcopper), " x ", "xzx", " x ", 'x', new ItemStack(dustCopper), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapedRecipe(new ItemStack(cogUnfireddiamond), " x ", "xzx", " x ", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));

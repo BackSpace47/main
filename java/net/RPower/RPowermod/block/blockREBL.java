@@ -6,6 +6,7 @@ import net.RPower.RPowermod.core.RPCore;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -15,21 +16,22 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
- 
 import java.util.ArrayList;
 import java.util.Random;
- 
- 
- 
- 
- 
+
 public class blockREBL extends BlockLeavesBase implements IShearable {
+	
+	public static final String[][] field_150130_N = new String[][] {{"leaves_redelderberry_overlay"}, {"leaves_redelderberry"}};
  
     int[] field_150128_a;
+    private int var25;
+    protected int field_150127_b;
+    protected IIcon[][] field_150129_M = new IIcon[2][];
  
     public blockREBL(Material m) {
         super(m, false);
         this.setStepSound(soundTypeGrass);
+        this.setTickRandomly(true);
    
    
    
@@ -173,6 +175,26 @@ public class blockREBL extends BlockLeavesBase implements IShearable {
             }
         }
     }
+    
+    @SideOnly(Side.CLIENT)
+    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
+    {
+        return this.field_150129_M[this.field_150127_b][0];
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public void registerBlockIcons(IIconRegister p_149651_1_)
+    {
+        for (int i = 0; i < field_150130_N.length; ++i)
+        {
+            this.field_150129_M[i] = new IIcon[field_150130_N[i].length];
+
+            for (int j = 0; j < field_150130_N[i].length; ++j)
+            {
+                this.field_150129_M[i][j] = p_149651_1_.registerIcon(RPCore.modid + ":" + field_150130_N[i][j]);
+            }
+        }
+    }
  
     /**
      * A randomly called display update to be able to add particles or other items for display
@@ -200,40 +222,20 @@ public class blockREBL extends BlockLeavesBase implements IShearable {
      */
     public int quantityDropped(Random p_149745_1_)
     {
-        return p_149745_1_.nextInt(20) == 0 ? 2 : 0;
+        return p_149745_1_.nextInt(2) == 0 ? 2 : 0;
     }
  
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-       
-       
-        int var25;{
-                for (var25 = 0; var25 < 3; ++var25){
-                this.dropItemWithOffset(Blocks.planks);
-                }
-                for (var25 = 0; var25 < 2; ++var25){
-                this.dropItemWithOffset(Items.stick);
-                }
-                }
-                return null;
-               
- 
-                }
-   
-   
- 
-    private void dropItemWithOffset(Block planks) {
-                // TODO Auto-generated method stub
-               
-        }
-        private void dropItemWithOffset(Item stick) {
-                // TODO Auto-generated method stub
-               
-        }
-        private void dropItemWithOffset(Block planks, int i, float f) {
-                // TODO Auto-generated method stub
-               
-        }
+    	var25 = p_149650_2_.nextInt(2);
+    		if(var25 == 0){
+    			return Item.getItemFromBlock(RPCore.elderSap);
+    		} else if(var25 == 1){
+    			return RPCore.yellowLeaf;
+    		} else {
+    			return Items.stick;
+    		}
+    }
         /**
      * Drops the block items with a specified chance of dropping the specified items
      */
@@ -274,7 +276,7 @@ public class blockREBL extends BlockLeavesBase implements IShearable {
      */
     public boolean isOpaqueCube()
     {
-        return !this.field_150121_P;
+        return true;
     }
  
    

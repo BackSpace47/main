@@ -192,5 +192,7 @@ item.Basic Chip.name=Basic Chipset
 item.Elite Chip.name=Elite Chipset
 item.Low-Voltage Chip.name=Low-Voltage Chipset
 item.Pouch Of Sugar.name=Sugar Pouch
-
+//Tabs
 itemGroup.rpower=Mine Facility Platinum Edition
+//Guis
+container.AlloySmelter=Alloy Smelter

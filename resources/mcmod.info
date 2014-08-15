@@ -1,14 +1,14 @@
 [
 {
-  "modid": "RPower",
-  "name": "Realistic Power Mod",
-  "description": "A Realistic Power Mod Whit More",
+  "modid": "MF",
+  "name": "MineFacility",
+  "description": "WHUT",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authors": ["magnus97, lRavenheart"],
-  "credits": "Secret",
+  "authors": ["magnus97, Backspace47, rebelricco, Chinthor, MacAttack_UK"],
+  "credits": "Betatesters: ",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -8,7 +8,7 @@ public class ItemHeadBspace extends Item{
 
 public boolean hasContainerItem(ItemStack stack)
 {
-    return stack.getItemDamage()<145;}
+    return stack.getItemDamage()<500;}
 
 
 

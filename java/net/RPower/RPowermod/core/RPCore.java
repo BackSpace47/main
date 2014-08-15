@@ -152,7 +152,7 @@ public class RPCore {
     public static Item dustPN;
     public static Item dustCharcoal;
     public static Item toolSkinning;
-
+    public static Item lagUnit;
     //Food
 
     public static Item megaCookie;
@@ -632,8 +632,9 @@ public class RPCore {
 
 
 
+		    //Lag
 
-
+		    lagUnit = new itemplagUnit().setUnlocalizedName("Unit Of Lag").setTextureName(modid + ":" + "33021_64").setCreativeTab(RPCoreITab);
 
 
 
@@ -999,7 +1000,8 @@ public class RPCore {
         Recipies.registerItem(protopaintGold,"Next Gen Gold ProtoSpray");
         Recipies.registerItem(protopaintTungstencarbide,"Next Gen Tungsten Carbide ProtoSpray");
 
-
+        //lag
+        Recipies.registerItem(lagUnit,"Unit Of Lag");
 
         Recipies.registerItem(anvilPostassembly,"Postassembly Anvil");
         Recipies.registerItem(Epoxy,"Epoxy");

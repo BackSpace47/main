@@ -428,13 +428,7 @@ public class RPCore {
 		trollNugetiron = new itemtrollNugetiron().setUnlocalizedName("Iron Troll Nugget").setTextureName(modid + ":" + "nuggetIron").setCreativeTab(RPCoreITab);
 		trollNugetemerald = new itemtrollNugetemerald().setUnlocalizedName("Emerald Troll Nugget").setTextureName(modid + ":" + "nuggetEmerald").setCreativeTab(RPCoreITab);
 		trollNugetGold = new itemtrollNugetGold().setUnlocalizedName("Gold Troll Nugget").setTextureName(modid + ":" + "nuggetGold").setCreativeTab(RPCoreITab);
-		/**
-		public static Item trollNuggetdiamond;
-	    public static Item trollNugetiron;
-	    public static Item trollNugetemerald;
-	    public static Item trollNugetGold;
-	    **/
-		//
+
 		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
 		//Alloys
 		TCAM = new BlockTCAM(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("TCAM").setBlockTextureName(modid + ":" + "TCAM").setHardness(50F).setResistance(5F);
@@ -1397,7 +1391,7 @@ public class RPCore {
 		GameRegistry.registerWorldGenerator(new RPWorldGen(), 1);
 
 		GameRegistry.registerFuelHandler(new RPFuelHandler());
-		
+
 
 	}
 

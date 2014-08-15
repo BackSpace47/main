@@ -25,6 +25,7 @@
 
 package net.RPower.RPowermod.core;
 
+import net.RPower.RPowermod.block.BlockJadeBomb;
 import net.RPower.RPowermod.block.BlockTCAM;
 import net.RPower.RPowermod.block.BlockoreAnthtracite;
 import net.RPower.RPowermod.block.BlockoreCrusher;
@@ -134,6 +135,8 @@ public class RPCore {
     public static Block polymer;
     public static Block polymerWoven;
     public static Block woodPetrified;
+    //The Bombs Of Awsomnes
+    public static Block blockJadeBomb;
     //Caustic Items
     public static Item causticMeal;
     public static Item causticCorpuscles;
@@ -403,9 +406,6 @@ public class RPCore {
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
 		woodPetrified = new blockwoodPetrified (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeWood);
-
-
-
 		//Blocks Of items
 		jadeBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Jade Block").setBlockTextureName(modid + ":" + "jade_block").setHardness(50F).setResistance(5F);
 		copperBlock = new blockRPBlock (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Copper Block").setBlockTextureName(modid + ":" + "copper_block").setHardness(5F).setResistance(1F);
@@ -451,6 +451,7 @@ public class RPCore {
 		polymer = new blockRPBlock(Material.glass).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeGrass).setBlockName("Polymer").setBlockTextureName(modid + ":" + "polymer").setHardness(0.5F).setResistance(1F);
 		polymerWoven = new blockRPBlock(Material.glass).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeGrass).setBlockName("Woven Polyester").setBlockTextureName(modid + ":" + "woven_polyester").setHardness(0.5F).setResistance(0.5F);
 		//WIP	//blueStabilizer =new Plants(Material.plants).setBlockName("Blue Stabilizer").setHardness(0.0F).setCreativeTab(RPCoreBTab).setBlockTextureName(modid + ":" + "flowerBlue").setBlockTextureName("flowerB");
+		blockJadeBomb = new BlockJadeBomb(Material.tnt).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeCloth).setBlockName("The Bomb Of Epic Jade").setBlockTextureName(modid + ":" + "jade_block");
 		//Blocks End----------
 		//Caustic Items
 		causticMeal = new itemmealCaustic().setUnlocalizedName("Caustic Mix").setTextureName(modid + ":" + "mealCaustic").setCreativeTab(RPCoreITab);
@@ -791,6 +792,7 @@ public class RPCore {
         Recipies.registerBlock(elderLeaf, "Red Elderberry Leaf");
         Recipies.registerBlock(elderSap, "Red Elderberry Sapling");
         Recipies.registerBlock(elderPlanks, "Red Elderberry Planks");
+        Recipies.registerBlock(blockJadeBomb, "Jade Bomb");
         //items
         //Capacitor
         Recipies.registerItem(foil,"Foil");

@@ -35,6 +35,7 @@ import net.RPower.RPowermod.block.blockREBLo;
 import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
+import net.RPower.RPowermod.block.blockRPBlockoreSilicon;
 import net.RPower.RPowermod.block.blockRPOre;
 import net.RPower.RPowermod.block.blockRPOreExp;
 import net.RPower.RPowermod.block.blockRPOreFerrous;
@@ -100,6 +101,7 @@ public class RPCore {
 	public static Block oreAnthtracite;
 	public static Block obsidianWhite;
 	public static Block oreZinc;
+	public static Block oreSilicon;
 	//Troll Items
 	public static Block trollGold;
 	public static Block trollEmerald;
@@ -186,6 +188,7 @@ public class RPCore {
     public static Item chunkLead;
     public static Item chunkSilver;
     public static Item chunkTin;
+    public static Item chunkSilicon;
     //Dust
     public static Item dustNetherstar;
     public static Item dustCopper;
@@ -402,6 +405,15 @@ public class RPCore {
 		oreAnthtracite = new BlockoreAnthtracite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Anthracite Ore").setBlockTextureName(modid + ":" + "anthracite_ore").setHardness(50F).setResistance(2000F);
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
+
+
+
+
+		oreSilicon= new blockRPBlockoreSilicon (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreSilicon").setBlockTextureName(modid + ":" + "oreSilicon").setHardness(5F).setResistance(1F);
+
+
+
+
 		woodPetrified = new blockwoodPetrified (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeWood);
 
 
@@ -655,6 +667,7 @@ public class RPCore {
         chunkLead = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Lead Chunk").setTextureName(modid + ":" + "Lead_Chunk");
         chunkTin = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Tin Chunk").setTextureName(modid + ":" + "Tin_Chunk");
         chunkFerrous = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Ferrous Chunk").setTextureName(modid + ":" + "Ferrous_Chunk");
+
         //Magic
         dustMagickcompound = new ItemMagic().setUnlocalizedName("Magick Compound").setTextureName(modid + ":" + "magick_compound");
         dustMagick = new ItemMagic().setUnlocalizedName("Magick Dust").setTextureName(modid + ":" + "magick_dust");
@@ -768,6 +781,10 @@ public class RPCore {
 		Recipies.registerBlock(oreJade, "Jade Ore");
 		Recipies.registerBlock(jadeBlock, "Jade Block");
 		Recipies.registerBlock(oreTungsten, "Tungsten Ore");
+
+		Recipies.registerBlock(oreSilicon,"oreSilicon");
+
+
 		Recipies.registerBlock(TCAM, "TCAM");
 		Recipies.registerBlock(oreAnthtracite, "Anthracite Ore");
 		Recipies.registerBlock(copperBlock, "Copper Block");

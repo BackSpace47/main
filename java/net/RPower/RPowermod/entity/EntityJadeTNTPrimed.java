@@ -20,12 +20,6 @@ public class EntityJadeTNTPrimed extends Entity
 	private int exYcord;
 	private int exZcord;
 
-
-	private int r;
-	private int x;
-	private int z;
-	private int y;
-
     /** How long the fuse is */
     public int fuse;
     private EntityLivingBase tntPlacedBy;
@@ -125,13 +119,6 @@ public class EntityJadeTNTPrimed extends Entity
             //http://minecraft.gamepedia.com/Data_values/Entity_IDs
             //^^Magnus
 
-
-
-
-            this.setDead();
-            this.explode(world);
-
->>>>>>> 41dbe22b4acd4ca8e6c23cfdee291233acdb03d5
         }
     }
 

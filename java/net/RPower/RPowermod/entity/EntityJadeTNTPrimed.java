@@ -1,5 +1,8 @@
 package net.RPower.RPowermod.entity;
 
+import java.util.Random;
+
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Blocks;
@@ -8,6 +11,8 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.RPower.RPowermod.core.RPCore;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.storage.WorldInfo;
 
 public class EntityJadeTNTPrimed extends Entity
 {
@@ -15,9 +20,15 @@ public class EntityJadeTNTPrimed extends Entity
 	private int exYcord;
 	private int exZcord;
 	
+	private int r;
+	private int x;
+	private int z;
+	private int y;
+	
     /** How long the fuse is */
     public int fuse;
     private EntityLivingBase tntPlacedBy;
+	private boolean doBlockNotify;
     private static final String __OBFID = "CL_00001681";
 
     public EntityJadeTNTPrimed(World par1World)
@@ -41,6 +52,7 @@ public class EntityJadeTNTPrimed extends Entity
         this.prevPosY = par4;
         this.prevPosZ = par6;
         this.tntPlacedBy = par8EntityLivingBase;
+        onUpdate(par1World);
     }
 
     protected void entityInit() {}
@@ -65,7 +77,7 @@ public class EntityJadeTNTPrimed extends Entity
     /**
      * Called to update the entity's position/logic.
      */
-    public void onUpdate()
+    public void onUpdate(World world)
     {
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;
@@ -85,8 +97,8 @@ public class EntityJadeTNTPrimed extends Entity
 
         if (this.fuse-- <= 0)
         {
-            this.setDead();
-            this.explode();
+            
+            
         }
         else
         {
@@ -97,10 +109,13 @@ public class EntityJadeTNTPrimed extends Entity
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 0.0D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 1D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 1D);
+            this.setDead();
+            this.explode(world);
+            
         }
     }
 
-    private void explode()
+    private void explode(World world)
     {
     	if (this.posX < 0){
     		exXcord = (int) this.posX - 1;
@@ -109,42 +124,40 @@ public class EntityJadeTNTPrimed extends Entity
     	}
     	exYcord = (int) this.posY;
     	exZcord = (int) this.posZ;
-    	
-    	this.worldObj.spawnParticle("smoke", exXcord, exYcord + 0.5D, exZcord, 0.1D, 0.1D, 0.1D);
-    	this.worldObj.setBlock(exXcord, exYcord, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 1, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 1, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 1, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 1, exZcord+ 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 1, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 1, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 1, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 1, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 1, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 2, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 2, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 2, exZcord+ 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 2, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 2, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 2, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 2, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 2, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 3, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 3, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 3, exZcord+ 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 3, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 3, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 3, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 3, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 3, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 4, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 4, exZcord, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 4, exZcord+ 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 4, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 4, exZcord + 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord + 1, exYcord + 4, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord, exYcord + 4, exZcord - 1, RPCore.jadeBlock);
-    	this.worldObj.setBlock(exXcord - 1, exYcord + 4, exZcord - 1, RPCore.jadeBlock);
+    	int radius = 4;
+        int radiusSquared = (radius*radius)+1;
+    	for(int targetX=-(radius);targetX<=(radius); targetX++)
+        {
+             for(int targetY=-(radius);targetY<=(radius); targetY++)
+             {
+                 for(int targetZ=-(radius);targetZ<=(radius); targetZ++)
+                 {
+                	 if((((targetX*targetX)+(targetY*targetY))<=radiusSquared)&&(((targetX*targetX)+(targetZ*targetZ))<=radiusSquared)&&(((targetY*targetY)+(targetZ*targetZ))<=radiusSquared)){
+                	 System.out.println("Testing:"+(exXcord+targetX)+","+(exYcord+targetY)+","+(exZcord+targetZ)+",");
+                         if(this.worldObj.getBlock(exXcord+targetX, exYcord+targetY, exZcord+targetZ)==Blocks.air){
+                        	 setBlockAndNotifyAdequately(world, exXcord+targetX, exYcord+targetY, exZcord+targetZ, RPCore.jadeBlock, 0);
+                     }
+                	 }
+                 }
+             }
+         }
+    	int radius2 = 2;
+        int radiusSquared2 = (radius2*radius2)+1;
+    	for(int targetX2=-(radius2);targetX2<=(radius2); targetX2++)
+        {
+             for(int targetY2=-(radius2);targetY2<=(radius2); targetY2++)
+             {
+                 for(int targetZ2=-(radius2);targetZ2<=(radius2); targetZ2++)
+                 {
+                	 if((((targetX2*targetX2)+(targetY2*targetY2))<radiusSquared2)&&(((targetX2*targetX2)+(targetZ2*targetZ2))<radiusSquared2)&&(((targetY2*targetY2)+(targetZ2*targetZ2))<radiusSquared2)){
+                	 System.out.println("Testing:"+(exXcord+targetX2)+","+(exYcord+targetY2)+","+(exZcord+targetZ2)+",");
+                         if(this.worldObj.getBlock(exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2)==RPCore.jadeBlock){
+                        	 setBlockAndNotifyAdequately(world, exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2, RPCore.obsidianWhite, 0);
+                     }
+                	 }
+                 }
+             }
+         }
         
     }
 
@@ -176,5 +189,17 @@ public class EntityJadeTNTPrimed extends Entity
     public EntityLivingBase getTntPlacedBy()
     {
         return this.tntPlacedBy;
+    }
+    
+    protected void setBlockAndNotifyAdequately(World p_150516_1_, int p_150516_2_, int p_150516_3_, int p_150516_4_, Block p_150516_5_, int p_150516_6_)
+    {
+        if (this.doBlockNotify)
+        {
+            p_150516_1_.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 4);
+        }
+        else
+        {
+            p_150516_1_.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 3);
+        }
     }
 }

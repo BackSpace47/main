@@ -109,6 +109,22 @@ public class EntityJadeTNTPrimed extends Entity
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 0.0D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 1D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 1D);
+			this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
+            this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 1D, 0.0D, 0.0D);
+            this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 0.0D);
+            this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 1D);
+            this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 0.0D);
+            this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 1D);
+            this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 1D);
+
+
+            //this.worldObj.spawnEntityInWorld(p_72838_1_)
+            //http://minecraft.gamepedia.com/Data_values/Entity_IDs
+            //^^Magnus
+
+
+
+
             this.setDead();
             this.explode(world);
 

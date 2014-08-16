@@ -19,16 +19,13 @@ public class EntityJadeTNTPrimed extends Entity
 	private int exXcord;
 	private int exYcord;
 	private int exZcord;
-<<<<<<< HEAD
-	
-=======
+
 
 	private int r;
 	private int x;
 	private int z;
 	private int y;
 
->>>>>>> 41dbe22b4acd4ca8e6c23cfdee291233acdb03d5
     /** How long the fuse is */
     public int fuse;
     private EntityLivingBase tntPlacedBy;
@@ -100,13 +97,10 @@ public class EntityJadeTNTPrimed extends Entity
 
         if (this.fuse-- <= 0)
         {
-<<<<<<< HEAD
+
             this.setDead();
             this.explode();
-=======
 
-
->>>>>>> 41dbe22b4acd4ca8e6c23cfdee291233acdb03d5
         }
         else
         {
@@ -117,9 +111,7 @@ public class EntityJadeTNTPrimed extends Entity
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 0.0D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 1D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 1D);
-<<<<<<< HEAD
-            
-=======
+
 			this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
             this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 1D, 0.0D, 0.0D);
             this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 0.0D);
@@ -156,7 +148,7 @@ public class EntityJadeTNTPrimed extends Entity
         int radiusSquared = (radius*radius)+1;
     	for(int targetX=-(radius);targetX<=(radius); targetX++)
         {
-<<<<<<< HEAD
+
     		for(int targetY=-(radius);targetY<=(radius); targetY++)
             {
     			for(int targetZ=-(radius);targetZ<=(radius); targetZ++)
@@ -198,7 +190,7 @@ public class EntityJadeTNTPrimed extends Entity
                 }
             }
         }
-=======
+
              for(int targetY=-(radius);targetY<=(radius); targetY++)
              {
                  for(int targetZ=-(radius);targetZ<=(radius); targetZ++)
@@ -230,7 +222,7 @@ public class EntityJadeTNTPrimed extends Entity
              }
          }
 
->>>>>>> 41dbe22b4acd4ca8e6c23cfdee291233acdb03d5
+
     }
 
     /**
@@ -262,13 +254,13 @@ public class EntityJadeTNTPrimed extends Entity
     {
         return this.tntPlacedBy;
     }
-<<<<<<< HEAD
-    
+
+
     protected void setBlockAndNotifyAdequately(int p_150516_2_, int p_150516_3_, int p_150516_4_, Block p_150516_5_, int p_150516_6_)
-=======
+
 
     protected void setBlockAndNotifyAdequately(World p_150516_1_, int p_150516_2_, int p_150516_3_, int p_150516_4_, Block p_150516_5_, int p_150516_6_)
->>>>>>> 41dbe22b4acd4ca8e6c23cfdee291233acdb03d5
+
     {
         if (this.doBlockNotify)
         {

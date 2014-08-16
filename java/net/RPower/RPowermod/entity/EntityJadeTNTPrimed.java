@@ -19,12 +19,12 @@ public class EntityJadeTNTPrimed extends Entity
 	private int exXcord;
 	private int exYcord;
 	private int exZcord;
-	
+
 	private int r;
 	private int x;
 	private int z;
 	private int y;
-	
+
     /** How long the fuse is */
     public int fuse;
     private EntityLivingBase tntPlacedBy;
@@ -97,8 +97,8 @@ public class EntityJadeTNTPrimed extends Entity
 
         if (this.fuse-- <= 0)
         {
-            
-            
+
+
         }
         else
         {
@@ -111,7 +111,7 @@ public class EntityJadeTNTPrimed extends Entity
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 1D);
             this.setDead();
             this.explode(world);
-            
+
         }
     }
 
@@ -135,7 +135,7 @@ public class EntityJadeTNTPrimed extends Entity
                 	 if((((targetX*targetX)+(targetY*targetY))<=radiusSquared)&&(((targetX*targetX)+(targetZ*targetZ))<=radiusSquared)&&(((targetY*targetY)+(targetZ*targetZ))<=radiusSquared)){
                 	 System.out.println("Testing:"+(exXcord+targetX)+","+(exYcord+targetY)+","+(exZcord+targetZ)+",");
                          if(this.worldObj.getBlock(exXcord+targetX, exYcord+targetY, exZcord+targetZ)==Blocks.air){
-                        	 setBlockAndNotifyAdequately(world, exXcord+targetX, exYcord+targetY, exZcord+targetZ, RPCore.jadeBlock, 0);
+                        	 setBlockAndNotifyAdequately(world, exXcord+targetX, exYcord+targetY, exZcord+targetZ, RPCore.obsidianWhite, 0);
                      }
                 	 }
                  }
@@ -151,14 +151,14 @@ public class EntityJadeTNTPrimed extends Entity
                  {
                 	 if((((targetX2*targetX2)+(targetY2*targetY2))<radiusSquared2)&&(((targetX2*targetX2)+(targetZ2*targetZ2))<radiusSquared2)&&(((targetY2*targetY2)+(targetZ2*targetZ2))<radiusSquared2)){
                 	 System.out.println("Testing:"+(exXcord+targetX2)+","+(exYcord+targetY2)+","+(exZcord+targetZ2)+",");
-                         if(this.worldObj.getBlock(exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2)==RPCore.jadeBlock){
-                        	 setBlockAndNotifyAdequately(world, exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2, RPCore.obsidianWhite, 0);
+                         if(this.worldObj.getBlock(exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2)==RPCore.obsidianWhite){
+                        	 setBlockAndNotifyAdequately(world, exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2, RPCore.oreSilicon, 0);
                      }
                 	 }
                  }
              }
          }
-        
+
     }
 
     /**
@@ -190,7 +190,7 @@ public class EntityJadeTNTPrimed extends Entity
     {
         return this.tntPlacedBy;
     }
-    
+
     protected void setBlockAndNotifyAdequately(World p_150516_1_, int p_150516_2_, int p_150516_3_, int p_150516_4_, Block p_150516_5_, int p_150516_6_)
     {
         if (this.doBlockNotify)

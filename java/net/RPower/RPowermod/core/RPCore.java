@@ -36,6 +36,7 @@ import net.RPower.RPowermod.block.blockREBLo;
 import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
+import net.RPower.RPowermod.block.blockRPBlockoreSilicon;
 import net.RPower.RPowermod.block.blockRPOre;
 import net.RPower.RPowermod.block.blockRPOreExp;
 import net.RPower.RPowermod.block.blockRPOreFerrous;
@@ -101,6 +102,7 @@ public class RPCore {
 	public static Block oreAnthtracite;
 	public static Block obsidianWhite;
 	public static Block oreZinc;
+	public static Block oreSilicon;
 	//Troll Items
 	public static Block trollGold;
 	public static Block trollEmerald;
@@ -189,6 +191,7 @@ public class RPCore {
     public static Item chunkLead;
     public static Item chunkSilver;
     public static Item chunkTin;
+    public static Item chunkSilicon;
     //Dust
     public static Item dustNetherstar;
     public static Item dustCopper;
@@ -353,6 +356,7 @@ public class RPCore {
     public static Item hammerWooden;
     public static Item hammerCopper;
     public static Item hammerSilver;
+    public static Item hammerIron;
     //MFtools
     public static Item axeJadeR;
     public static Item hoeJadeR;
@@ -405,6 +409,15 @@ public class RPCore {
 		oreAnthtracite = new BlockoreAnthtracite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Anthracite Ore").setBlockTextureName(modid + ":" + "anthracite_ore").setHardness(50F).setResistance(2000F);
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
+
+
+
+
+		oreSilicon= new blockRPBlockoreSilicon (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreSilicon").setBlockTextureName(modid + ":" + "oreSilicon").setHardness(5F).setResistance(1F);
+
+
+
+
 		woodPetrified = new blockwoodPetrified (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeWood);
 		//Blocks Of items
 		jadeBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Jade Block").setBlockTextureName(modid + ":" + "jade_block").setHardness(50F).setResistance(5F);
@@ -445,7 +458,7 @@ public class RPCore {
 		polymer = new blockRPBlock(Material.glass).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeGrass).setBlockName("Polymer").setBlockTextureName(modid + ":" + "polymer").setHardness(0.5F).setResistance(1F);
 		polymerWoven = new blockRPBlock(Material.glass).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeGrass).setBlockName("Woven Polyester").setBlockTextureName(modid + ":" + "woven_polyester").setHardness(0.5F).setResistance(0.5F);
 		//WIP	//blueStabilizer =new Plants(Material.plants).setBlockName("Blue Stabilizer").setHardness(0.0F).setCreativeTab(RPCoreBTab).setBlockTextureName(modid + ":" + "flowerBlue").setBlockTextureName("flowerB");
-		blockJadeBomb = new BlockJadeBomb(Material.tnt).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeCloth).setBlockName("The Bomb Of Epic Jade").setBlockTextureName(modid + ":" + "jade_block");
+		blockJadeBomb = new BlockJadeBomb(Material.tnt).setCreativeTab(RPCoreBTab).setStepSound(Block.soundTypeCloth).setBlockName("The Bomb Of Epic Jade").setBlockTextureName(modid + ":" + "bombJade");
 		//Blocks End----------
 		//Caustic Items
 		causticMeal = new itemmealCaustic().setUnlocalizedName("Caustic Mix").setTextureName(modid + ":" + "mealCaustic").setCreativeTab(RPCoreITab);
@@ -554,6 +567,7 @@ public class RPCore {
 		hammerSilver = new hammerSilver().setUnlocalizedName("Silver Hammer").setTextureName(modid + ":" + "hammerSilver").setCreativeTab(RPCoreITab);
 		stoneHammer = new hammerStone().setUnlocalizedName("Stone Hammer").setTextureName(modid + ":" + "Stone_Hammer");
 		tungstenCarbideHammer = new ItemHeadBspace().setUnlocalizedName("TungstenCarbideHammer").setTextureName(modid + ":" + "TugstenCarbide_Hammer").setNoRepair();
+		hammerIron = new itemhammerIron().setUnlocalizedName("hammerIron").setTextureName(modid + ":" + "hammerIron").setCreativeTab(RPCoreITab);
 		//Tools->Mining
 		jadeSword = new ItemJadeSword(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Sword").setTextureName(modid + ":" + "jade_Sword");
         jadeHoe = new ItemJadeHoe(RPCore.jadeToolMaterial).setMaxDamage(125).setNoRepair().setCreativeTab(RPCoreITab).setUnlocalizedName("Jade Hoe").setTextureName(modid + ":" + "jade_hoe");
@@ -656,6 +670,7 @@ public class RPCore {
         chunkLead = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Lead Chunk").setTextureName(modid + ":" + "Lead_Chunk");
         chunkTin = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Tin Chunk").setTextureName(modid + ":" + "Tin_Chunk");
         chunkFerrous = new chunkCopper().setCreativeTab(RPCoreITab).setUnlocalizedName("Ferrous Chunk").setTextureName(modid + ":" + "Ferrous_Chunk");
+
         //Magic
         dustMagickcompound = new ItemMagic().setUnlocalizedName("Magick Compound").setTextureName(modid + ":" + "magick_compound");
         dustMagick = new ItemMagic().setUnlocalizedName("Magick Dust").setTextureName(modid + ":" + "magick_dust");
@@ -769,6 +784,10 @@ public class RPCore {
 		Recipies.registerBlock(oreJade, "Jade Ore");
 		Recipies.registerBlock(jadeBlock, "Jade Block");
 		Recipies.registerBlock(oreTungsten, "Tungsten Ore");
+
+		Recipies.registerBlock(oreSilicon,"oreSilicon");
+
+
 		Recipies.registerBlock(TCAM, "TCAM");
 		Recipies.registerBlock(oreAnthtracite, "Anthracite Ore");
 		Recipies.registerBlock(copperBlock, "Copper Block");
@@ -937,6 +956,7 @@ public class RPCore {
 		Recipies.registerItem(hammerSilver,"Silver Hammer");
 		Recipies.registerItem(tungstenCarbideHammer, "Tungsten Carbide Hammer");
 		Recipies.registerItem(stoneHammer, "Stone Hammer");
+		Recipies.registerItem(hammerIron,"hammerIron");
 		//Tools->Mining
 		Recipies.registerItem(jadeSword, "Jade Sword");
 		Recipies.registerItem(jadePickaxe, "Jade Pickaxe");
@@ -1328,6 +1348,33 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		//#addironhammer
+		GameRegistry.addShapelessRecipe(new ItemStack (dustEmerald,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.emerald_ore), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(dustDiamond, 3, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.diamond_ore), new ItemStack(hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSw,1, OreDictionary.WILDCARD_VALUE), " x", " #", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSh,1, OreDictionary.WILDCARD_VALUE), "#x", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (jadeHeadHo,1, OreDictionary.WILDCARD_VALUE), new ItemStack (jadeBlock), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadAx,1, OreDictionary.WILDCARD_VALUE), " #", " x", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadPi,1, OreDictionary.WILDCARD_VALUE),  " x","# ", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2), new ItemStack (oreCopper), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustLead,2, OreDictionary.WILDCARD_VALUE), new ItemStack (oreLead), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustFerrous,2, OreDictionary.WILDCARD_VALUE), new ItemStack (oreFerrous), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilver,2, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilver), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTin,2, OreDictionary.WILDCARD_VALUE), new ItemStack (oreTin), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungsten,2, OreDictionary.WILDCARD_VALUE), new ItemStack (oreTungsten), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (oreCopper), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack(dustIron,2,OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.iron_ore), new ItemStack(hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustFlour,4, OreDictionary.WILDCARD_VALUE),new ItemStack(hammerIron, 1,  OreDictionary.WILDCARD_VALUE),new ItemStack(Items.wheat));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustCharcoal,4, OreDictionary.WILDCARD_VALUE),new ItemStack(hammerIron, 1,  OreDictionary.WILDCARD_VALUE),new ItemStack(Items.coal,1,1));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustLead,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkLead), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustFerrous,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkFerrous), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilver,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilver), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTin,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkTin), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungsten,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkTungsten), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+
 		//Hammer Crafting
 		GameRegistry.addShapelessRecipe(new ItemStack (stoneHammer), new ItemStack (stoneHamHead), new ItemStack (Items.stick));
 		GameRegistry.addShapedRecipe(new ItemStack (stoneHamHead), "   ", "# #","###", '#', new ItemStack (Blocks.cobblestone));

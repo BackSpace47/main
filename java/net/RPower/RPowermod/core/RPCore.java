@@ -206,6 +206,7 @@ public class RPCore {
     public static Item dustTungsten;
     public static Item dustBronze;
     public static Item dustSteel;
+    public static Item dustSilicon;
     //random
     public static Item amuletofprotestas;
     //Electronic Parts
@@ -604,6 +605,11 @@ public class RPCore {
 		dustTin = new ItemTinDust().setCreativeTab(RPCoreITab).setUnlocalizedName("Tin Dust").setTextureName(modid + ":" + "Tin_Dust");
 		dustBronze =new ItemBronzeDust().setCreativeTab(RPCoreITab).setUnlocalizedName("Bronze Dust").setTextureName(modid + ":" + "bronze_dust");
 		dustSteel =	new ItemSteelDust().setCreativeTab(RPCoreITab).setUnlocalizedName("Steel Dust").setTextureName(modid + ":" + "steel_dust");
+		dustSilicon = new itemdustSilicon().setUnlocalizedName("dustSilicon").setTextureName(modid + ":" + "dustSilicon").setCreativeTab(RPCoreITab);
+
+
+
+
 		//Ingots
 		ingotCopper = new ItemCopperIngot().setCreativeTab(RPCoreITab).setUnlocalizedName("Copper Ingot").setTextureName(modid + ":" + "copper_ingot");
 		ingotFerrous = new ItemFerrousIngot().setCreativeTab(RPCoreITab).setUnlocalizedName("Ferrous Ingot").setTextureName(modid + ":" + "ferrous_ingot");
@@ -1004,6 +1010,7 @@ public class RPCore {
         Recipies.registerItem(knife,"Knife");
         Recipies.registerItem(dustSugar,"Pouch Of Sugar");
         Recipies.registerItem(dustFlour, "Bag Of Flour");
+        Recipies.registerItem(dustSilicon,"dustSilicon");
         //Plants
         Recipies.registerItem(yellowLeaf, "Yellow Leaf");
         //test
@@ -1058,6 +1065,7 @@ public class RPCore {
 		Recipies.registerSmeltingItemWUM(dustIron,Items.iron_ingot,5f);
 		Recipies.registerSmeltingItemWUM(dustGold,Items.gold_ingot,5f);
 		Recipies.registerSmeltingItemWUM(dustNetherstar,ingotNetherstar,5f);
+
 		Recipies.registerSmeltingItemWUM(baconRaw,baconCooked,5f);
 		//Smelting Alloys # Will need to be changed when we get the alloy smelter going
         Recipies.registerSmeltingBlockToItemWUM(TCAM, TCAI, 5F);
@@ -1139,6 +1147,9 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+
 		//Tugsten Carbide
 		GameRegistry.addShapelessRecipe(new ItemStack (dustEmerald,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.emerald_ore), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(dustDiamond, 3, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.diamond_ore), new ItemStack(tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1166,6 +1177,9 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+
 		//Diamond
 		GameRegistry.addShapelessRecipe(new ItemStack (dustEmerald,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.emerald_ore), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(dustDiamond, 3, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.diamond_ore), new ItemStack(hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1193,6 +1207,9 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+
 		//Jade
 		GameRegistry.addShapelessRecipe(new ItemStack (dustEmerald,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.emerald_ore), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(dustDiamond, 3, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.diamond_ore), new ItemStack(hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1220,6 +1237,9 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+
 		//Netherstar
 		GameRegistry.addShapelessRecipe(new ItemStack (dustEmerald,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.emerald_ore), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(dustDiamond, 3, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.diamond_ore), new ItemStack(hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1247,6 +1267,12 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
 		//sandstone
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSw,1, OreDictionary.WILDCARD_VALUE), " x", " #", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSh,1, OreDictionary.WILDCARD_VALUE), "#x", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1272,6 +1298,13 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
 		//wooden
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSw,1, OreDictionary.WILDCARD_VALUE), " x", " #", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSh,1, OreDictionary.WILDCARD_VALUE), "#x", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1297,6 +1330,12 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
 		//Copper
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSw,1, OreDictionary.WILDCARD_VALUE), " x", " #", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSh,1, OreDictionary.WILDCARD_VALUE), "#x", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1322,6 +1361,19 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+
+
 		//silver
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSw,1, OreDictionary.WILDCARD_VALUE), " x", " #", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapedRecipe(new ItemStack (jadeHeadSh,1, OreDictionary.WILDCARD_VALUE), "#x", 'x', new ItemStack (jadeBlock), '#', new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1347,6 +1399,12 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		//#addironhammer
 		GameRegistry.addShapelessRecipe(new ItemStack (dustEmerald,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.emerald_ore), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack(dustDiamond, 3, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.diamond_ore), new ItemStack(hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1374,6 +1432,8 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustCopper,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkCopper), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (Blocks.sand,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.cobblestone), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustGold,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.gold_ore), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (oreSilicon), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustSilicon,4, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkSilicon), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 
 		//Hammer Crafting
 		GameRegistry.addShapelessRecipe(new ItemStack (stoneHammer), new ItemStack (stoneHamHead), new ItemStack (Items.stick));

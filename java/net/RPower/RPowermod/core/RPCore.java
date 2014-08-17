@@ -36,6 +36,9 @@ import net.RPower.RPowermod.block.blockREBLo;
 import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
+import net.RPower.RPowermod.block.blockRPBlockblockAluminum;
+import net.RPower.RPowermod.block.blockRPBlockblockSilicon;
+import net.RPower.RPowermod.block.blockRPBlockoreAluminum;
 import net.RPower.RPowermod.block.blockRPBlockoreSilicon;
 import net.RPower.RPowermod.block.blockRPOre;
 import net.RPower.RPowermod.block.blockRPOreExp;
@@ -103,6 +106,7 @@ public class RPCore {
 	public static Block obsidianWhite;
 	public static Block oreZinc;
 	public static Block oreSilicon;
+	public static Block oreAluminum;
 	//Troll Items
 	public static Block trollGold;
 	public static Block trollEmerald;
@@ -120,6 +124,9 @@ public class RPCore {
 	public static Block tinBlock;
 	public static Block tungstenBlock;
 	public static Block tungstencarbideBlock;
+	public static Block blockSilicon;
+	public static Block blockAluminum;
+
 	//other
 	public static Block TCAM;
 	public static Block oreCrusher;
@@ -192,6 +199,28 @@ public class RPCore {
     public static Item chunkSilver;
     public static Item chunkTin;
     public static Item chunkSilicon;
+
+    //mess
+
+    public static Item chunkAluminum;
+    public static Item dustAluminumoxide;
+    public static Item chunkChromium;
+    public static Item dustChromium;
+    public static Item chunkLithium;
+    public static Item dustLithium;
+    public static Item chunkNi;
+    public static Item dustNi;
+    public static Item chunkPlatinum;
+    public static Item dustPlatinum;
+    public static Item dustZink;
+    public static Item chunkZink;
+    public static Item ingotzink;
+
+
+
+
+
+
     //Dust
     public static Item dustNetherstar;
     public static Item dustCopper;
@@ -207,6 +236,7 @@ public class RPCore {
     public static Item dustBronze;
     public static Item dustSteel;
     public static Item dustSilicon;
+    public static Item dustAluminum;
     //random
     public static Item amuletofprotestas;
     //Electronic Parts
@@ -410,6 +440,7 @@ public class RPCore {
 		oreAnthtracite = new BlockoreAnthtracite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Anthracite Ore").setBlockTextureName(modid + ":" + "anthracite_ore").setHardness(50F).setResistance(2000F);
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
+		oreAluminum= new blockRPBlockoreAluminum(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreAluminum").setBlockTextureName(modid + ":" + "oreAluminum").setHardness(5F).setResistance(1F);
 
 
 
@@ -432,7 +463,10 @@ public class RPCore {
 		tinBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tin Block").setBlockTextureName(modid + ":" + "tin_block").setHardness(5F).setResistance(1F);
 		tungstenBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungsten Block").setBlockTextureName(modid + ":" + "tungsten_block").setHardness(5F).setResistance(1F);
 		tungstencarbideBlock = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Tungstencarbide Block").setBlockTextureName(modid + ":" + "tungstencarbide_block").setHardness(5F).setResistance(1F);
-    	//TrollBlocks
+		blockSilicon= new blockRPBlockblockSilicon(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockSilicon").setBlockTextureName(modid + ":" + "blockSilicon").setHardness(5F).setResistance(1F);
+		blockAluminum= new blockRPBlockblockAluminum(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockAluminum").setBlockTextureName(modid + ":" + "blockAluminum").setHardness(5F).setResistance(1F);
+
+		//TrollBlocks
 		trollDiamond = new blocktrollDiamond(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Diamond").setBlockTextureName(modid + ":" + "diamond_block").setHardness(50F).setResistance(5F);
 		trollIron = new blocktrollIron(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Iron").setBlockTextureName(modid + ":" + "iron_block").setHardness(50F).setResistance(5F);
 		trollEmerald = new blocktrollEmerald(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Troll Emerald").setBlockTextureName(modid + ":" + "emerald_block").setHardness(50F).setResistance(5F);
@@ -503,6 +537,28 @@ public class RPCore {
 	    transistorGold = new itemtransistorGold().setUnlocalizedName("Gold Transistor").setTextureName(modid + ":" + "transistorGold").setCreativeTab(RPCoreITab);
 	    transistorIron = new itemtransistorIron().setUnlocalizedName("Iron Transistor").setTextureName(modid + ":" + "transistorIron").setCreativeTab(RPCoreITab);
 	    transistorTungstencarbide = new itemtransistorTungstencarbide().setUnlocalizedName("Tungsten Carbide Transistor").setTextureName(modid + ":" + "transistorTungstencarbide").setCreativeTab(RPCoreITab);
+	   //mess
+	    chunkAluminum = new itemchunkAluminum().setUnlocalizedName("chunkAluminum").setTextureName(modid + ":" + "chunkAluminum").setCreativeTab(RPCoreITab);
+	    dustAluminumoxide = new itemdustAluminumoxide().setUnlocalizedName("dustAluminumoxide").setTextureName(modid + ":" + "dustAluminumoxide").setCreativeTab(RPCoreITab);
+	    chunkChromium = new itemchunkChromium().setUnlocalizedName("chunkChromium").setTextureName(modid + ":" + "chunkChromium").setCreativeTab(RPCoreITab);
+	    dustChromium = new itemdustChromium().setUnlocalizedName("dustChromium").setTextureName(modid + ":" + "dustChromium").setCreativeTab(RPCoreITab);
+	    chunkLithium = new itemchunkLithium().setUnlocalizedName("chunkLithium").setTextureName(modid + ":" + "chunkLithium").setCreativeTab(RPCoreITab);
+	    dustLithium = new itemdustLithium().setUnlocalizedName("dustLithium").setTextureName(modid + ":" + "dustLithium").setCreativeTab(RPCoreITab);
+	    chunkNi = new itemchunkNi().setUnlocalizedName("chunkNi").setTextureName(modid + ":" + "chunkNi").setCreativeTab(RPCoreITab);
+	    dustNi = new itemdustNi().setUnlocalizedName("dustNi").setTextureName(modid + ":" + "dustNi").setCreativeTab(RPCoreITab);
+	    chunkPlatinum = new itemchunkPlatinum().setUnlocalizedName("chunkPlatinum").setTextureName(modid + ":" + "chunkPlatinum").setCreativeTab(RPCoreITab);
+	    dustPlatinum = new itemdustPlatinum().setUnlocalizedName("dustPlatinum").setTextureName(modid + ":" + "dustPlatinum").setCreativeTab(RPCoreITab);
+	    dustZink = new itemdustZink().setUnlocalizedName("dustZink").setTextureName(modid + ":" + "dustZink").setCreativeTab(RPCoreITab);
+	    chunkZink = new itemchunkZink().setUnlocalizedName("chunkZink").setTextureName(modid + ":" + "chunkZink").setCreativeTab(RPCoreITab);
+	    ingotzink = new itemingotzink().setUnlocalizedName("ingotzink").setTextureName(modid + ":" + "ingotzink").setCreativeTab(RPCoreITab);
+
+
+
+
+
+
+
+
 	    //chips
 	    chipAdvanced = new itemchipAdvanced().setUnlocalizedName("Advanced Chip").setTextureName(modid + ":" + "chipAdvanced").setCreativeTab(RPCoreITab);
 	    chipBasic = new itemchipBasic().setUnlocalizedName("Basic Chip").setTextureName(modid + ":" + "chipBasic").setCreativeTab(RPCoreITab);
@@ -606,6 +662,7 @@ public class RPCore {
 		dustBronze =new ItemBronzeDust().setCreativeTab(RPCoreITab).setUnlocalizedName("Bronze Dust").setTextureName(modid + ":" + "bronze_dust");
 		dustSteel =	new ItemSteelDust().setCreativeTab(RPCoreITab).setUnlocalizedName("Steel Dust").setTextureName(modid + ":" + "steel_dust");
 		dustSilicon = new itemdustSilicon().setUnlocalizedName("dustSilicon").setTextureName(modid + ":" + "dustSilicon").setCreativeTab(RPCoreITab);
+		dustAluminum = new itemdustAluminum().setUnlocalizedName("dustAluminum").setTextureName(modid + ":" + "dustAluminum").setCreativeTab(RPCoreITab);
 
 
 
@@ -796,6 +853,7 @@ public class RPCore {
 
 		Recipies.registerBlock(TCAM, "TCAM");
 		Recipies.registerBlock(oreAnthtracite, "Anthracite Ore");
+		Recipies.registerBlock(oreAluminum,"oreAluminum");
 		Recipies.registerBlock(copperBlock, "Copper Block");
         Recipies.registerBlock(ferrousBlock, "Ferrous Block");
         Recipies.registerBlock(leadBlock, "Lead Block");
@@ -806,6 +864,8 @@ public class RPCore {
         Recipies.registerBlock(tinBlock, "Tin Block");
         Recipies.registerBlock(tungstenBlock, "Tungsten Block");
         Recipies.registerBlock(tungstencarbideBlock, "Tungstencarbide Block");
+        Recipies.registerBlock(blockSilicon,"blockSilicon");
+        Recipies.registerBlock(blockAluminum,"blockAluminum");
         //Trees
         Recipies.registerBlock(elderLog, "Red Elderberry Log");
         Recipies.registerBlock(elderLeaf, "Red Elderberry Leaf");
@@ -823,6 +883,25 @@ public class RPCore {
         Recipies.registerItem(capacitorGold,"Gold Capacitor");
         Recipies.registerItem(capacitorTungstencarbide,"Tungsten Catbide Capacitor");
         //Resistors
+        //mess
+
+
+        Recipies.registerItem(chunkAluminum,"chunkAluminum");
+        Recipies.registerItem(dustAluminumoxide,"dustAluminumoxide");
+        Recipies.registerItem(chunkChromium,"chunkChromium");
+        Recipies.registerItem(dustChromium,"dustChromium");
+        Recipies.registerItem(chunkLithium,"chunkLithium");
+        Recipies.registerItem(dustLithium,"dustLithium");
+        Recipies.registerItem(chunkNi,"chunkNi");
+        Recipies.registerItem(dustNi,"dustNi");
+        Recipies.registerItem(chunkPlatinum,"chunkPlatinum");
+        Recipies.registerItem(dustPlatinum,"dustPlatinum");
+        Recipies.registerItem(dustZink,"dustZink");
+        Recipies.registerItem(chunkZink,"chunkZink");
+        Recipies.registerItem(ingotzink,"ingotzink");
+
+
+
         //Parts
         Recipies.registerItem(clayTreated,"Treated Clay");
         Recipies.registerItem(clayTreatedbaked,"Baked Treated Clay");
@@ -889,6 +968,8 @@ public class RPCore {
 		Recipies.registerItem(dustTungsten, "Tungsten Dust");
 		Recipies.registerItem(dustBronze,"Bronze Dust");
 		Recipies.registerItem(dustSteel,"Steel Dust");
+		Recipies.registerItem(dustAluminum,"dustAluminum");
+
 		//Magick
 		Recipies.registerItem(dropBig, "Big Drop");
         Recipies.registerItem(dropBounce,"Bounce Drop");
@@ -1496,6 +1577,13 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack(ingotTin, 9), new ItemStack(tinBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ingotTungsten, 9), new ItemStack(tungstenBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(TCAI, 9), new ItemStack(tungstencarbideBlock));
+
+
+
+
+
+
+
 
 		GameRegistry.registerWorldGenerator(new RPWorldGen(), 1);
 

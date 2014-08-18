@@ -37,9 +37,19 @@ import net.RPower.RPowermod.block.blockREBS;
 import net.RPower.RPowermod.block.blockRPBlock;
 import net.RPower.RPowermod.block.blockRPBlockBSpace;
 import net.RPower.RPowermod.block.blockRPBlockblockAluminum;
+import net.RPower.RPowermod.block.blockRPBlockblockChromium;
+import net.RPower.RPowermod.block.blockRPBlockblockLithium;
+import net.RPower.RPowermod.block.blockRPBlockblockNi;
+import net.RPower.RPowermod.block.blockRPBlockblockPlatinum;
 import net.RPower.RPowermod.block.blockRPBlockblockSilicon;
+import net.RPower.RPowermod.block.blockRPBlockblockZink;
 import net.RPower.RPowermod.block.blockRPBlockoreAluminum;
+import net.RPower.RPowermod.block.blockRPBlockoreChromium;
+import net.RPower.RPowermod.block.blockRPBlockoreLithium;
+import net.RPower.RPowermod.block.blockRPBlockoreNi;
+import net.RPower.RPowermod.block.blockRPBlockorePlatinum;
 import net.RPower.RPowermod.block.blockRPBlockoreSilicon;
+import net.RPower.RPowermod.block.blockRPBlockoreZink;
 import net.RPower.RPowermod.block.blockRPOre;
 import net.RPower.RPowermod.block.blockRPOreExp;
 import net.RPower.RPowermod.block.blockRPOreFerrous;
@@ -215,7 +225,16 @@ public class RPCore {
     public static Item dustZink;
     public static Item chunkZink;
     public static Item ingotzink;
-
+    public static Block oreChromium;
+    public static Block blockChromium;
+    public static Block oreLithium;
+    public static Block blockLithium;
+    public static Block oreNi;
+    public static Block blockNi;
+    public static Block orePlatinum;
+    public static Block blockPlatinum;
+    public static Block oreZink;
+    public static Block blockZink;
 
 
 
@@ -551,6 +570,16 @@ public class RPCore {
 	    dustZink = new itemdustZink().setUnlocalizedName("dustZink").setTextureName(modid + ":" + "dustZink").setCreativeTab(RPCoreITab);
 	    chunkZink = new itemchunkZink().setUnlocalizedName("chunkZink").setTextureName(modid + ":" + "chunkZink").setCreativeTab(RPCoreITab);
 	    ingotzink = new itemingotzink().setUnlocalizedName("ingotzink").setTextureName(modid + ":" + "ingotzink").setCreativeTab(RPCoreITab);
+	    oreChromium = new blockRPBlockoreChromium(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreChromium").setBlockTextureName(modid + ":" + "oreChromium").setHardness(5F).setResistance(1F);
+	    blockChromium = new blockRPBlockblockChromium(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockChromium").setBlockTextureName(modid + ":" + "blockChromium").setHardness(5F).setResistance(1F);
+	    oreLithium = new blockRPBlockoreLithium(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreLithium").setBlockTextureName(modid + ":" + "oreLithium").setHardness(5F).setResistance(1F);
+	    blockLithium = new blockRPBlockblockLithium(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockLithium").setBlockTextureName(modid + ":" + "blockLithium").setHardness(5F).setResistance(1F);
+	    oreNi = new blockRPBlockoreNi(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreNi").setBlockTextureName(modid + ":" + "oreNi").setHardness(5F).setResistance(1F);
+	    blockNi = new blockRPBlockblockNi(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockNi").setBlockTextureName(modid + ":" + "blockNi").setHardness(5F).setResistance(1F);
+	    orePlatinum = new blockRPBlockorePlatinum(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("orePlatinum").setBlockTextureName(modid + ":" + "orePlatinum").setHardness(5F).setResistance(1F);
+	    blockPlatinum = new blockRPBlockblockPlatinum(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockPlatinum").setBlockTextureName(modid + ":" + "blockPlatinum").setHardness(5F).setResistance(1F);
+	    oreZink = new blockRPBlockoreZink(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreZink").setBlockTextureName(modid + ":" + "oreZink").setHardness(5F).setResistance(1F);
+	    blockZink = new blockRPBlockblockZink(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockZink").setBlockTextureName(modid + ":" + "blockZink").setHardness(5F).setResistance(1F);
 
 
 
@@ -900,6 +929,16 @@ public class RPCore {
         Recipies.registerItem(chunkZink,"chunkZink");
         Recipies.registerItem(ingotzink,"ingotzink");
 
+        Recipies.registerBlock(oreChromium,"oreChromium");
+        Recipies.registerBlock(blockChromium,"blockChromium");
+        Recipies.registerBlock(oreLithium,"oreLithium");
+        Recipies.registerBlock(blockLithium,"blockLithium");
+        Recipies.registerBlock(oreNi,"oreNi");
+		Recipies.registerBlock(blockNi,"blockNi");
+		Recipies.registerBlock(orePlatinum,"orePlatinum");
+		Recipies.registerBlock(blockPlatinum,"blockPlatinum");
+		Recipies.registerBlock(oreZink,"oreZink");
+		Recipies.registerBlock(blockZink,"blockZink");
 
 
         //Parts

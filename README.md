@@ -45,6 +45,8 @@ Placable Potions
 
 
 MF AKA Magic flux (compatible with nexus from AM2, and Potentia from Thaumcraft[Works Like Herba In A Lamp Of Growth Almost]) RF Backwards Comaptable 1RF = 4 MF
+
+
 Tesla Power transfer
 
 

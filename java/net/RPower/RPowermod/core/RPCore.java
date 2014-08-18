@@ -1617,8 +1617,7 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack(ingotTungsten, 9), new ItemStack(tungstenBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(TCAI, 9), new ItemStack(tungstencarbideBlock));
 
-//Treatment Oil
-		GameRegistry.addShapedRecipe(new ItemStack(oilTreatment,16), "aaa", "c", "bbb", 'a', new ItemStack(acidSulfuric), 'b', new ItemStack(bloodFirey), 'c', new ItemStack(Items.glass_bottle));
+
 
 
 //troll Crafting

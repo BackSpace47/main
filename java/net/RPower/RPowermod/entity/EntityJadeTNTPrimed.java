@@ -20,6 +20,11 @@ public class EntityJadeTNTPrimed extends Entity
 	private int exYcord;
 	private int exZcord;
 
+	private int r;
+	private int x;
+	private int z;
+	private int y;
+
     /** How long the fuse is */
     public int fuse;
     private EntityLivingBase tntPlacedBy;
@@ -47,6 +52,7 @@ public class EntityJadeTNTPrimed extends Entity
         this.prevPosY = par4;
         this.prevPosZ = par6;
         this.tntPlacedBy = par8EntityLivingBase;
+        onUpdate(par1World);
     }
 
     protected void entityInit() {}
@@ -71,7 +77,7 @@ public class EntityJadeTNTPrimed extends Entity
     /**
      * Called to update the entity's position/logic.
      */
-    public void onUpdate()
+    public void onUpdate(World world)
     {
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;
@@ -92,8 +98,6 @@ public class EntityJadeTNTPrimed extends Entity
         if (this.fuse-- <= 0)
         {
 
-            this.setDead();
-            this.explode();
 
         }
         else
@@ -105,7 +109,6 @@ public class EntityJadeTNTPrimed extends Entity
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 0.0D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 1D);
             this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 1D, 1D, 1D);
-
 			this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
             this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 1D, 0.0D, 0.0D);
             this.worldObj.spawnParticle("magicCrit", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 1D, 0.0D);
@@ -119,10 +122,16 @@ public class EntityJadeTNTPrimed extends Entity
             //http://minecraft.gamepedia.com/Data_values/Entity_IDs
             //^^Magnus
 
+
+
+
+            this.setDead();
+            this.explode(world);
+
         }
     }
 
-    private void explode()
+    private void explode(World world)
     {
     	if (this.posX < 0){
     		exXcord = (int) this.posX - 1;
@@ -135,49 +144,6 @@ public class EntityJadeTNTPrimed extends Entity
         int radiusSquared = (radius*radius)+1;
     	for(int targetX=-(radius);targetX<=(radius); targetX++)
         {
-
-    		for(int targetY=-(radius);targetY<=(radius); targetY++)
-            {
-    			for(int targetZ=-(radius);targetZ<=(radius); targetZ++)
-                {
-    				if((((targetX*targetX)+(targetY*targetY))<radiusSquared)&&(((targetX*targetX)+(targetZ*targetZ))<radiusSquared)&&(((targetY*targetY)+(targetZ*targetZ))<radiusSquared)){
-    					System.out.println("Testing:"+(exXcord+targetX)+","+(exYcord+targetY)+","+(exZcord+targetZ)+",");
-                    		setBlockAndNotifyAdequately(exXcord+targetX, exYcord+targetY, exZcord+targetZ, RPCore.jadeBlock, 0);
-                    		setBlockAndNotifyAdequately(exXcord+targetX, exYcord+targetY+20, exZcord+targetZ, Blocks.stone, 0);
-    				}
-                }
-            }
-        }
-    	int radius2 = radius / 2;
-        int radiusSquared2 = (radius2*radius2)+1;
-    	for(int targetX2=-(radius2);targetX2<=(radius2); targetX2++)
-        {
-    		for(int targetY2=-(radius2);targetY2<=(radius2); targetY2++)
-            {
-    			for(int targetZ2=-(radius2);targetZ2<=(radius2); targetZ2++)
-                {
-    				if((((targetX2*targetX2)+(targetY2*targetY2))<=radiusSquared2)&&(((targetX2*targetX2)+(targetZ2*targetZ2))<=radiusSquared2)&&(((targetY2*targetY2)+(targetZ2*targetZ2))<=radiusSquared2)){
-    					System.out.println("Testing:"+(exXcord+targetX2)+","+(exYcord+targetY2)+","+(exZcord+targetZ2)+",");
-                        	setBlockAndNotifyAdequately(exXcord+targetX2, exYcord+targetY2, exZcord+targetZ2, RPCore.obsidianWhite, 0);
-    				}
-                }
-            }
-        }
-    	setBlockAndNotifyAdequately(exXcord, exYcord+10, exZcord, RPCore.jadeBlock, 0);
-    	for(int targetX=-(radius);targetX<=(radius); targetX++)
-        {
-    		for(int targetY=-(radius);targetY<=(radius); targetY++)
-            {
-    			for(int targetZ=-(radius);targetZ<=(radius); targetZ++)
-                {
-    				if((((targetX*targetX)+(targetY*targetY))<radiusSquared)&&(((targetX*targetX)+(targetZ*targetZ))<radiusSquared)&&(((targetY*targetY)+(targetZ*targetZ))<radiusSquared)){
-    					System.out.println("Testing:"+(exXcord+targetX)+","+(exYcord+targetY)+","+(exZcord+targetZ)+",");
-                    	System.out.println(this.worldObj.getBlock(exXcord+targetX, exYcord+targetY, exZcord+targetZ));
-    				}
-                }
-            }
-        }
-
              for(int targetY=-(radius);targetY<=(radius); targetY++)
              {
                  for(int targetZ=-(radius);targetZ<=(radius); targetZ++)
@@ -208,7 +174,6 @@ public class EntityJadeTNTPrimed extends Entity
                  }
              }
          }
-
 
     }
 
@@ -242,31 +207,15 @@ public class EntityJadeTNTPrimed extends Entity
         return this.tntPlacedBy;
     }
 
-
-    protected void setBlockAndNotifyAdequately(int p_150516_2_, int p_150516_3_, int p_150516_4_, Block p_150516_5_, int p_150516_6_)
-
-
     protected void setBlockAndNotifyAdequately(World p_150516_1_, int p_150516_2_, int p_150516_3_, int p_150516_4_, Block p_150516_5_, int p_150516_6_)
-
     {
         if (this.doBlockNotify)
         {
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 0);
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 1);
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 2);
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 3);
-        	worldObj.scheduleBlockUpdate(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, this.tickRate(worldObj));
+            p_150516_1_.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 4);
         }
         else
         {
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 0);
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 1);
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 2);
-        	worldObj.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 3);
+            p_150516_1_.setBlock(p_150516_2_, p_150516_3_, p_150516_4_, p_150516_5_, p_150516_6_, 3);
         }
     }
-
-	private int tickRate(World worldObj) {
-		return 2;
-	}
 }

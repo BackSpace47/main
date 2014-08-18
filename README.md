@@ -18,19 +18,28 @@ More to come and soon a video link!!!!
 Planed Features:
 
 Quarry
+
 Tree Farm
+
 Garden Farm
+
 Alloy Smelter
 
+
 Cobble Generator
+
 Sand Generator
+
 Lava Generator
+
 Water Generator
 
 Core Power Generator
+
 Power Cores for Core Generator
 
 GreenPower (a fluid power source)
+
 BlackPower (a fluid power source)
 
 2 New Dynamos
@@ -40,14 +49,16 @@ New Thaum Wands & New Caps!!
 
 Placable Potions
 
-
-
-
-
-MF AKA Magic flux (compatible with nexus from AM2, and Potentia from Thaumcraft[Works Like Herba In A Lamp Of Growth Almost]) RF Backwards Comaptable 1RF = 4 MF
-
-
 Tesla Power transfer
+
+
+
+MF AKA Magic flux (compatible with nexus from AM2, and Potentia from Thaumcraft[Works Like Herba In A Lamp Of Growth Almost]) 
+
+RF Backwards Comaptable 1RF = 4 MF
+
+AND MUCH MUCH MORE!!
+
 
 
 

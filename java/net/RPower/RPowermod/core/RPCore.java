@@ -859,9 +859,9 @@ public class RPCore {
 		Recipies.registerItem(trollNugetGold, "Gold Nugget?");
 		Recipies.registerItem(trollNugetdiamond, "Diamond Nugget?");
 		Recipies.registerItem(trollNugetemerald, "Emerald Nugget?");
-		Recipies.registerItem(magnusCookie, "Test Cookie Creative Only");
+		//Recipies.registerItem(magnusCookie, "Test Cookie Creative Only");
 		Recipies.registerBlock(obsidianWhite,"White Obsidian");
-		Recipies.registerBlock(oreCrusher, "Ore Crusher");
+		//Recipies.registerBlock(oreCrusher, "Ore Crusher");
 		Recipies.registerBlock(sandTreated, "Treated Sand");
 		//WIP//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
 		Recipies.registerBlock(woodPetrified,"Petrified Wood");
@@ -1698,6 +1698,8 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustZink,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkZink), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 
 
+
+		GameRegistry.addShapelessRecipe(new ItemStack (oilTreatment,16), new ItemStack (bloodFirey), new ItemStack (Items.glass_bottle), new ItemStack(dustPN), new ItemStack(dropMagick));
 
 
 		GameRegistry.registerWorldGenerator(new RPWorldGen(), 1);

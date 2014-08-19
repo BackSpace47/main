@@ -1,3 +1,9 @@
+Note To Devs: These items need the enchanted rainbow shimmer to them
+Silicon,Platinum,Chromium,Lithium, and all the "potion jars" If some one could do this and push it would make my day
+            <3 Backspace47
+
+
+
 Welcome to the Mine Facility Git-Hub Repository!!
 
 You have stumbled upon "next-gen" like mod that will combine tech and magic!

@@ -2034,6 +2034,5 @@ public class RPCore {
 
 		GameRegistry.registerFuelHandler(new RPFuelHandler());
 	}
-
 }
-            
+

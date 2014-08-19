@@ -878,8 +878,19 @@ public class RPCore {
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent e){
-        proxy.registerKeyBindings();
+	public void init(FMLInitializationEvent e)
+
+
+
+
+
+
+
+	{
+
+
+
+		proxy.registerKeyBindings();
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
 		ItemStack slabM0 = new ItemStack (Blocks.stone_slab);
 		slabM0.setItemDamage(5);
@@ -913,8 +924,8 @@ public class RPCore {
 		Recipies.registerBlock(oreAluminum,"oreAluminum");
 
 		//Blocks
-Recipies.registerBlock(blockChromium,"blockChromium");
-Recipies.registerBlock(jadeBlock, "Jade Block");
+		Recipies.registerBlock(blockChromium,"blockChromium");
+		Recipies.registerBlock(jadeBlock, "Jade Block");
         Recipies.registerBlock(blockLithium,"blockLithium");
 
 		Recipies.registerBlock(blockNi,"blockNi");
@@ -946,9 +957,9 @@ Recipies.registerBlock(jadeBlock, "Jade Block");
 		Recipies.registerBlock(polymer, "Polymer");
 		Recipies.registerBlock(polymerWoven, "Polyester");
 
-  //ITEMS BELOW THIS LINE -----------------------------------------------
+		//ITEMS BELOW THIS LINE -----------------------------------------------
 
-      //Ingots
+		//Ingots
         Recipies.registerItem(ingotSteel,"Steel Ingot");
         Recipies.registerItem(ingotBronze,"Bronze Ingot");
         Recipies.registerItem(ingotTin,"Tin Ingot");
@@ -1076,7 +1087,7 @@ Recipies.registerBlock(jadeBlock, "Jade Block");
         Recipies.registerItem(resistorGold,"Gold Resistor");
        // Recipies.registerItem(resistorIron,"Iron Resistor"); Phased Out <3 BackSpace47
         Recipies.registerItem(resistorTungstencarbide,"Tungsten Carbide Resistor");
- //transistors
+        //transistors
         Recipies.registerItem(transistorBasic,"Basic Transistor");
         Recipies.registerItem(transistorCopper,"Copper Transistor");
         Recipies.registerItem(transistorDiamond,"Diamond Transistor");
@@ -1085,7 +1096,7 @@ Recipies.registerBlock(jadeBlock, "Jade Block");
         Recipies.registerItem(transistorTungstencarbide,"Tungsten Carbide Transistor");
        //diode
         Recipies.registerItem(diode,"Diode");
-//Food
+        //Food
         Recipies.registerItem(megaCookie, "Mega Cookie");
         Recipies.registerItem(ghostCookie, "Ghost Cookie");
         Recipies.registerItem(poisonCookie, "Poison Cookie");
@@ -1216,7 +1227,7 @@ Recipies.registerBlock(jadeBlock, "Jade Block");
 
 
 
-//Misc
+        //Misc
         Recipies.registerItem(quartzStick, "Quartc Stick");
         Recipies.registerItem(quartzBowl, "Quartc Bowl");
         Recipies.registerItem(mortar_and_pestle, "Mortar and Pestle");
@@ -1773,7 +1784,7 @@ Recipies.registerBlock(jadeBlock, "Jade Block");
 
 
 
-//troll Crafting
+		//troll Crafting
 
 		GameRegistry.addShapedRecipe(new ItemStack(gemDiamond,1), "aaa", "aaa", "aba", 'a', new ItemStack(trollNugetdiamond), 'b', new ItemStack(oilTreatment));
 		GameRegistry.addShapedRecipe(new ItemStack(Items.gold_ingot,1), "aaa", "aaa", "aba", 'a', new ItemStack(trollNugetGold), 'b', new ItemStack(oilTreatment));
@@ -1939,44 +1950,44 @@ Recipies.registerBlock(jadeBlock, "Jade Block");
 		GameRegistry.addShapelessRecipe(new ItemStack (ingotZink,9), new ItemStack (blockZink));
 
 
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (coiledNichrome,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotChromium), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 
 
 
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
-GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (lenseReflective,2, OreDictionary.WILDCARD_VALUE), new ItemStack (Items.glass_bottle), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
 
 
 
-GameRegistry.addShapelessRecipe(new ItemStack (resistorBasic,1), new ItemStack (resistorCase), new ItemStack (coiledNichrome));
+		GameRegistry.addShapelessRecipe(new ItemStack (resistorBasic,1), new ItemStack (resistorCase), new ItemStack (coiledNichrome));
 
 
 
 
-GameRegistry.addShapelessRecipe(new ItemStack (Epoxy,4), new ItemStack (polymer), new ItemStack (acidSulfuric));
+		GameRegistry.addShapelessRecipe(new ItemStack (Epoxy,4), new ItemStack (polymer), new ItemStack (acidSulfuric));
 
-GameRegistry.addShapelessRecipe(new ItemStack (diode,2), new ItemStack (anvilPostassembly), new ItemStack (Epoxy), new ItemStack (lenseReflective));
-GameRegistry.addShapelessRecipe(new ItemStack (kitTransistor,1), new ItemStack (Items.redstone), new ItemStack (Blocks.redstone_torch));
+		GameRegistry.addShapelessRecipe(new ItemStack (diode,2), new ItemStack (anvilPostassembly), new ItemStack (Epoxy), new ItemStack (lenseReflective));
+		GameRegistry.addShapelessRecipe(new ItemStack (kitTransistor,1), new ItemStack (Items.redstone), new ItemStack (Blocks.redstone_torch));
 
 
-GameRegistry.addShapelessRecipe(new ItemStack (transistorBasic,1), new ItemStack (kitTransistor), new ItemStack (kitTransistor), new ItemStack (kitTransistor), new ItemStack (kitTransistor));
+		GameRegistry.addShapelessRecipe(new ItemStack (transistorBasic,1), new ItemStack (kitTransistor), new ItemStack (kitTransistor), new ItemStack (kitTransistor), new ItemStack (kitTransistor));
 
 
 
@@ -2024,4 +2035,5 @@ GameRegistry.addShapelessRecipe(new ItemStack (transistorBasic,1), new ItemStack
 		GameRegistry.registerFuelHandler(new RPFuelHandler());
 	}
 
+}
             

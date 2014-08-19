@@ -1,1 +1,2 @@
-GameRegistry.addShapedRecipe(new ItemStack(chipElite,1), "bcb", "aea", "bcb", 'a', new ItemStack(diode), 'b', new ItemStack(transistorDiamond), 'c', new ItemStack(capacitorTungstencarbide), 'd', new ItemStack(transistorTungstencarbide), 'e', new ItemStack(plateDiamond));
+GameRegistry.addShapedRecipe(new ItemStack(mouldPlate,1), "aaa", "aba", "aaa", 'a', new ItemStack(sandTreated), 'b', new ItemStack(scrollSquare));
+GameRegistry.addShapedRecipe(new ItemStack(plateUnfiredcopper,1), "a", "aba", "a", 'a', new ItemStack(dustCoppr), 'b', new ItemStack(mouldPlate));

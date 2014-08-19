@@ -6,7 +6,7 @@ import net.RPower.RPowermod.machines.power.I_MFSink;
 import net.RPower.RPowermod.machines.power.MFPacket;
 import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityFluxCable extends TileEntity implements I_MFSink {
+public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	//Connections are an array of [North, East, West, South, Up, Down]
 	public Boolean[] connections = {false, false, false, false, false, false};
 	

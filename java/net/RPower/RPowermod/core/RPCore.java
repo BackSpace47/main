@@ -235,9 +235,27 @@ public class RPCore {
     public static Block blockPlatinum;
     public static Block oreZink;
     public static Block blockZink;
+    public static Item dustTungstencarbide;
+    public static Item ingotSilicon;
+    public static Item ingotAluminium ;
+    public static Item ingotChromium;
+    public static Item ingotLithium;
+    public static Item ingotNikel;
+    public static Item ingotPlatinum;
 
 
-
+    public static Item pjDarkblue;
+    public static Item pjDarkgrey;
+    public static Item pjDarkred;
+    public static Item pjEmpty;
+    public static Item pjGreen;
+    public static Item pjGrey;
+    public static Item pjLightblue;
+    public static Item pjLimegreen;
+    public static Item pjOrange;
+    public static Item pjPink;
+    public static Item pjRed;
+    public static Item pjWater;
 
 
     //Dust
@@ -580,7 +598,27 @@ public class RPCore {
 	    blockPlatinum = new blockRPBlockblockPlatinum(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockPlatinum").setBlockTextureName(modid + ":" + "blockPlatinum").setHardness(5F).setResistance(1F);
 	    oreZink = new blockRPBlockoreZink(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreZink").setBlockTextureName(modid + ":" + "oreZink").setHardness(5F).setResistance(1F);
 	    blockZink = new blockRPBlockblockZink(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("blockZink").setBlockTextureName(modid + ":" + "blockZink").setHardness(5F).setResistance(1F);
+	    dustTungstencarbide = new itemdustTungstencarbide().setUnlocalizedName("dustTungstencarbide").setTextureName(modid + ":" + "dustTungstencarbide").setCreativeTab(RPCoreITab);
+	    ingotSilicon = new itemingotSilicon().setUnlocalizedName("ingotSilicon").setTextureName(modid + ":" + "ingotSilicon").setCreativeTab(RPCoreITab);
+	    ingotAluminium  = new itemingotAluminium ().setUnlocalizedName("ingotAluminium").setTextureName(modid + ":" + "ingotAluminium").setCreativeTab(RPCoreITab);
+	    ingotChromium = new itemingotChromium().setUnlocalizedName("ingotChromium").setTextureName(modid + ":" + "ingotChromium").setCreativeTab(RPCoreITab);
+	    ingotLithium = new itemingotLithium().setUnlocalizedName("ingotLithium").setTextureName(modid + ":" + "ingotLithium").setCreativeTab(RPCoreITab);
+	    ingotNikel = new itemingotNikel().setUnlocalizedName("ingotNikel").setTextureName(modid + ":" + "ingotNikel").setCreativeTab(RPCoreITab);
+	    ingotPlatinum = new itemingotPlatinum().setUnlocalizedName("ingotPlatinum").setTextureName(modid + ":" + "ingotPlatinum").setCreativeTab(RPCoreITab);
 
+	    pjDarkblue = new itempjDarkblue().setUnlocalizedName("pjDarkblue").setTextureName(modid + ":" + "pjDarkblue").setCreativeTab(RPCoreITab);
+	    pjDarkgrey = new itempjDarkgrey().setUnlocalizedName("pjDarkgrey").setTextureName(modid + ":" + "pjDarkgrey").setCreativeTab(RPCoreITab);
+	    pjDarkred = new itempjDarkred().setUnlocalizedName("pjDarkred").setTextureName(modid + ":" + "pjDarkred").setCreativeTab(RPCoreITab);
+	    pjEmpty = new itempjEmpty().setUnlocalizedName("pjEmpty").setTextureName(modid + ":" + "pjEmpty").setCreativeTab(RPCoreITab);
+	    pjGreen = new itempjGreen().setUnlocalizedName("pjGreen").setTextureName(modid + ":" + "pjGreen").setCreativeTab(RPCoreITab);
+	    pjGrey = new itempjGrey().setUnlocalizedName("pjGrey").setTextureName(modid + ":" + "pjGrey").setCreativeTab(RPCoreITab);
+	    pjLightblue = new itempjLightblue().setUnlocalizedName("pjLightblue").setTextureName(modid + ":" + "pjLightblue").setCreativeTab(RPCoreITab);
+	    pjLimegreen = new itempjLimegreen().setUnlocalizedName("pjLimegreen").setTextureName(modid + ":" + "pjLimegreen").setCreativeTab(RPCoreITab);
+	    pjOrange = new itempjOrange().setUnlocalizedName("pjOrange").setTextureName(modid + ":" + "pjOrange").setCreativeTab(RPCoreITab);
+	    pjPink = new itempjPink().setUnlocalizedName("pjPink").setTextureName(modid + ":" + "pjPink").setCreativeTab(RPCoreITab);
+	    pjRed = new itempjRed().setUnlocalizedName("pjRed").setTextureName(modid + ":" + "pjRed").setCreativeTab(RPCoreITab);
+	    pjWater = new itempjWater().setUnlocalizedName("pjWater").setTextureName(modid + ":" + "pjWater").setCreativeTab(RPCoreITab);
+	    ingotBrass = new itemingotBrass().setUnlocalizedName("ingotBrass").setTextureName(modid + ":" + "ingotBrass").setCreativeTab(RPCoreITab);
 
 
 
@@ -844,29 +882,21 @@ public class RPCore {
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
 		ItemStack slabM0 = new ItemStack (Blocks.stone_slab);
 		slabM0.setItemDamage(5);
-		//machines
-		//To Be Worked On
-		//Recipies.registerBlock(alloySmelterIdle, "AlloySmelterIdle");
-		//Recipies.registerBlock(alloySmelterActive, "AlloySmelterActive");
-		//Blocks
-		//troll items & Blocks
-		Recipies.registerBlock(trollEmerald, "Emerald Block?");
-		Recipies.registerBlock(trollDiamond, "Diamond Block?");
-		Recipies.registerBlock(trollIron, "Iron Block?");
-		Recipies.registerBlock(trollGold, "Gold Block?");
 
-		Recipies.registerItem(trollNugetiron, "Iron Nugget?");
-		Recipies.registerItem(trollNugetGold, "Gold Nugget?");
-		Recipies.registerItem(trollNugetdiamond, "Diamond Nugget?");
-		Recipies.registerItem(trollNugetemerald, "Emerald Nugget?");
+
+
+
+
+
+
+
 		//Recipies.registerItem(magnusCookie, "Test Cookie Creative Only");
 		Recipies.registerBlock(obsidianWhite,"White Obsidian");
 		//Recipies.registerBlock(oreCrusher, "Ore Crusher");
 		Recipies.registerBlock(sandTreated, "Treated Sand");
 		//WIP//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
-		Recipies.registerBlock(woodPetrified,"Petrified Wood");
-		Recipies.registerBlock(polymer, "Polymer");
-		Recipies.registerBlock(polymerWoven, "Polyester");
+
+		//ores
 		Recipies.registerBlock(oreExp, "Exp Ore");
 		Recipies.registerBlock(oreTin, "Tin Ore");
 		Recipies.registerBlock(oreSilver,"Silver Ore");
@@ -874,18 +904,29 @@ public class RPCore {
 		Recipies.registerBlock(oreFerrous, "Ferrous Ore");
 		Recipies.registerBlock(oreCopper, "Copper Ore");
 		Recipies.registerBlock(oreJade, "Jade Ore");
-		Recipies.registerBlock(jadeBlock, "Jade Block");
+		;
+		Recipies.registerBlock(oreZink,"oreZink");
+
+		Recipies.registerBlock(oreLithium,"oreLithium");
+		Recipies.registerBlock(oreChromium,"oreChromium");
 		Recipies.registerBlock(oreTungsten, "Tungsten Ore");
-
 		Recipies.registerBlock(oreSilicon,"oreSilicon");
-
-
-		Recipies.registerBlock(TCAM, "TCAM");
+		Recipies.registerBlock(oreNi,"oreNi");
+		Recipies.registerBlock(orePlatinum,"orePlatinum");
 		Recipies.registerBlock(oreAnthtracite, "Anthracite Ore");
 		Recipies.registerBlock(oreAluminum,"oreAluminum");
-		Recipies.registerBlock(copperBlock, "Copper Block");
-        Recipies.registerBlock(ferrousBlock, "Ferrous Block");
-        Recipies.registerBlock(leadBlock, "Lead Block");
+
+		//Blocks
+Recipies.registerBlock(blockChromium,"blockChromium");
+Recipies.registerBlock(jadeBlock, "Jade Block");
+        Recipies.registerBlock(blockLithium,"blockLithium");
+
+		Recipies.registerBlock(blockNi,"blockNi");
+
+		Recipies.registerBlock(blockPlatinum,"blockPlatinum");
+
+		Recipies.registerBlock(blockZink,"blockZink");
+		Recipies.registerBlock(leadBlock, "Lead Block");
         Recipies.registerBlock(netherstarBlock, "Netherstar Block");
         Recipies.registerBlock(organizeddiamondBlock, "Organizeddiamond Block");
         Recipies.registerBlock(organizedemeraldBlock, "Organizedemerald Block");
@@ -895,89 +936,23 @@ public class RPCore {
         Recipies.registerBlock(tungstencarbideBlock, "Tungstencarbide Block");
         Recipies.registerBlock(blockSilicon,"blockSilicon");
         Recipies.registerBlock(blockAluminum,"blockAluminum");
+		Recipies.registerBlock(copperBlock, "Copper Block");
+        Recipies.registerBlock(ferrousBlock, "Ferrous Block");
+        Recipies.registerBlock(TCAM, "TCAM");
+		Recipies.registerBlock(blockJadeBomb, "Jade Bomb");
+
         //Trees
         Recipies.registerBlock(elderLog, "Red Elderberry Log");
         Recipies.registerBlock(elderLeaf, "Red Elderberry Leaf");
         Recipies.registerBlock(elderSap, "Red Elderberry Sapling");
         Recipies.registerBlock(elderPlanks, "Red Elderberry Planks");
-        Recipies.registerBlock(blockJadeBomb, "Jade Bomb");
-        //items
-        //Capacitor
-        Recipies.registerItem(foil,"Foil");
-        Recipies.registerItem(foilAluminumoxide,"Aluminum Oxide Foil");
-        Recipies.registerItem(paperElectrolized,"Electrolized Paper");
-        Recipies.registerItem(capacitorBasic,"Basic Capacitor");
-        Recipies.registerItem(capacitorCopper,"Copper Capacitor");
-        Recipies.registerItem(capacitorDiamond,"Diamond Capacitor");
-        Recipies.registerItem(capacitorGold,"Gold Capacitor");
-        Recipies.registerItem(capacitorTungstencarbide,"Tungsten Catbide Capacitor");
-        //Resistors
-        //mess
+        Recipies.registerBlock(woodPetrified,"Petrified Wood");
+		Recipies.registerBlock(polymer, "Polymer");
+		Recipies.registerBlock(polymerWoven, "Polyester");
 
+  //ITEMS BELOW THIS LINE -----------------------------------------------
 
-        Recipies.registerItem(chunkAluminum,"chunkAluminum");
-        Recipies.registerItem(dustAluminumoxide,"dustAluminumoxide");
-        Recipies.registerItem(chunkChromium,"chunkChromium");
-        Recipies.registerItem(dustChromium,"dustChromium");
-        Recipies.registerItem(chunkLithium,"chunkLithium");
-        Recipies.registerItem(dustLithium,"dustLithium");
-        Recipies.registerItem(chunkNi,"chunkNi");
-        Recipies.registerItem(dustNi,"dustNi");
-        Recipies.registerItem(chunkPlatinum,"chunkPlatinum");
-        Recipies.registerItem(dustPlatinum,"dustPlatinum");
-        Recipies.registerItem(dustZink,"dustZink");
-        Recipies.registerItem(chunkZink,"chunkZink");
-        Recipies.registerItem(ingotzink,"ingotzink");
-
-        Recipies.registerBlock(oreChromium,"oreChromium");
-        Recipies.registerBlock(blockChromium,"blockChromium");
-        Recipies.registerBlock(oreLithium,"oreLithium");
-        Recipies.registerBlock(blockLithium,"blockLithium");
-        Recipies.registerBlock(oreNi,"oreNi");
-		Recipies.registerBlock(blockNi,"blockNi");
-		Recipies.registerBlock(orePlatinum,"orePlatinum");
-		Recipies.registerBlock(blockPlatinum,"blockPlatinum");
-		Recipies.registerBlock(oreZink,"oreZink");
-		Recipies.registerBlock(blockZink,"blockZink");
-
-
-        //Parts
-        Recipies.registerItem(clayTreated,"Treated Clay");
-        Recipies.registerItem(clayTreatedbaked,"Baked Treated Clay");
-        Recipies.registerItem(coiledNichrome,"Coiled Nichrome");
-        Recipies.registerItem(resistorCase,"Resistor Case");
-        Recipies.registerItem(resistorBasic,"Basic Resistor");
-        Recipies.registerItem(resistorCopper,"Copper Resistor");
-        Recipies.registerItem(resistorDiamond,"Diamond Resistor");
-        Recipies.registerItem(resistorGold,"Gold Resistor");
-        Recipies.registerItem(resistorIron,"Iron Resistor");
-        Recipies.registerItem(resistorTungstencarbide,"Tungsten Carbide Resistor");
-        //chips
-        //ProtoSprays
-        Recipies.registerItem(protopaintDiamond,"Next Gen Diamond ProtoSpray");
-        Recipies.registerItem(protopaintCopper,"Next Gen Copper ProtoSpray");
-        Recipies.registerItem(protopaintGold,"Next Gen Gold ProtoSpray");
-        Recipies.registerItem(protopaintTungstencarbide,"Next Gen Tungsten Carbide ProtoSpray");
-        //lag
-        Recipies.registerItem(lagUnit,"Unit Of Lag");
-        Recipies.registerItem(anvilPostassembly,"Postassembly Anvil");
-        Recipies.registerItem(Epoxy,"Epoxy");
-        Recipies.registerItem(lenseReflective,"Reflective Lense");
-        Recipies.registerItem(diode,"Diode");
-        //transistors
-        Recipies.registerItem(kitTransistor,"Transistor Kit");
-        Recipies.registerItem(transistorBasic,"Basic Transistor");
-        Recipies.registerItem(transistorCopper,"Copper Transistor");
-        Recipies.registerItem(transistorDiamond,"Diamond Transistor");
-        Recipies.registerItem(transistorGold,"Gold Transistor");
-        Recipies.registerItem(transistorIron,"Iron Transistor");
-        Recipies.registerItem(transistorTungstencarbide,"Tungsten Carbide Transistor");
-        //chips
-        Recipies.registerItem(chipAdvanced, "Advanced Chip");
-        Recipies.registerItem(chipBasic, "Basic Chip");
-        Recipies.registerItem(chipElite, "Elite Chip");
-        Recipies.registerItem(chipLV, "Low-Voltage Chip");
-        //Ingots
+      //Ingots
         Recipies.registerItem(ingotSteel,"Steel Ingot");
         Recipies.registerItem(ingotBronze,"Bronze Ingot");
         Recipies.registerItem(ingotTin,"Tin Ingot");
@@ -988,26 +963,182 @@ public class RPCore {
 		Recipies.registerItem(ingotNetherstar, "Nether Star Ingot");
 		Recipies.registerItem(ingotTungsten, "Tungsten Ingot");
 	    Recipies.registerItem(TCAI, "TCAI");
+	    Recipies.registerItem(ingotSilicon,"ingotSilicon");
+		Recipies.registerItem(ingotAluminium ,"ingotAluminium ");
+		Recipies.registerItem(ingotChromium,"ingotChromium");
+		Recipies.registerItem(ingotLithium,"ingotLithium");
+		Recipies.registerItem(ingotNikel,"ingotNikel");
+		Recipies.registerItem(ingotPlatinum,"ingotPlatinum");
+		Recipies.registerItem(ingotBrass,"ingotBrass");
+		Recipies.registerItem(ingotzink,"ingotzink");
 		//Gems
 	    Recipies.registerItem(gemDiamond, "Diamond Ingot");
 		Recipies.registerItem(gemEmerald, "Emerald Ingot");
 		Recipies.registerItem(gemJade, "Raw Jade");
 		Recipies.registerItem(gemJadepure, "Jade");
+		Recipies.registerItem(anthracite, "Anthracite");
+
+		//Chunks
+		Recipies.registerItem(chunkCopper, "Copper Chunk");
+        Recipies.registerItem(chunkTin, "Tin Chunk");
+        Recipies.registerItem(chunkFerrous, "Ferrous Chunk");
+        Recipies.registerItem(chunkSilver, "Silver Chunk");
+        Recipies.registerItem(chunkTungsten, "Tungsten Chunk");
+        Recipies.registerItem(chunkLead, "Lead Chunk");
+		Recipies.registerItem(chunkAluminum,"chunkAluminum");
+		 Recipies.registerItem(chunkChromium,"chunkChromium");
+		 Recipies.registerItem(chunkLithium,"chunkLithium");
+		 Recipies.registerItem(chunkNi,"chunkNi");
+		 Recipies.registerItem(chunkPlatinum,"chunkPlatinum");
+		  Recipies.registerItem(chunkZink,"chunkZink");
+
+
 		//Dusts
-		Recipies.registerItem(dustNetherstar, "Netherstar Dust");
-		Recipies.registerItem(dustCopper, "Copper Dust");
-		Recipies.registerItem(dustDiamond, "Diamond Dust");
-		Recipies.registerItem(dustEmerald, "Emerald Dust");
-		Recipies.registerItem(dustFerrous, "Ferrous Dust");
-		Recipies.registerItem(dustGold, "Gold Dust");
-		Recipies.registerItem(dustIron, "Iron Dust");
-		Recipies.registerItem(dustLead, "Lead Dust");
-		Recipies.registerItem(dustSilver, "Silver Dust");
-		Recipies.registerItem(dustTin, "Tin Dust");
-		Recipies.registerItem(dustTungsten, "Tungsten Dust");
-		Recipies.registerItem(dustBronze,"Bronze Dust");
-		Recipies.registerItem(dustSteel,"Steel Dust");
-		Recipies.registerItem(dustAluminum,"dustAluminum");
+			Recipies.registerItem(dustNetherstar, "Netherstar Dust");
+			Recipies.registerItem(dustCopper, "Copper Dust");
+			Recipies.registerItem(dustDiamond, "Diamond Dust");
+			Recipies.registerItem(dustEmerald, "Emerald Dust");
+			Recipies.registerItem(dustFerrous, "Ferrous Dust");
+			Recipies.registerItem(dustGold, "Gold Dust");
+			Recipies.registerItem(dustIron, "Iron Dust");
+			Recipies.registerItem(dustLead, "Lead Dust");
+			Recipies.registerItem(dustSilver, "Silver Dust");
+			Recipies.registerItem(dustTin, "Tin Dust");
+			Recipies.registerItem(dustTungsten, "Tungsten Dust");
+			Recipies.registerItem(dustBronze,"Bronze Dust");
+			Recipies.registerItem(dustSteel,"Steel Dust");
+			Recipies.registerItem(dustAluminum,"dustAluminum");
+			 Recipies.registerItem(dustAluminumoxide,"dustAluminumoxide");
+
+		        Recipies.registerItem(dustChromium,"dustChromium");
+
+		        Recipies.registerItem(dustLithium,"dustLithium");
+
+		        Recipies.registerItem(dustNi,"dustNi");
+
+		        Recipies.registerItem(dustPlatinum,"dustPlatinum");
+		        Recipies.registerItem(dustZink,"dustZink");
+
+		        Recipies.registerItem(dustTungstencarbide,"dustTungstencarbide");
+		        Recipies.registerItem(dustSilicon,"dustSilicon");
+
+
+
+
+
+
+		      //ProtoSprays
+		        Recipies.registerItem(protopaintDiamond,"Next Gen Diamond ProtoSpray");
+		        Recipies.registerItem(protopaintCopper,"Next Gen Copper ProtoSpray");
+		        Recipies.registerItem(protopaintGold,"Next Gen Gold ProtoSpray");
+		        Recipies.registerItem(protopaintTungstencarbide,"Next Gen Tungsten Carbide ProtoSpray");
+		      //Moulds
+
+		        Recipies.registerItem(mouldCog, "Cog Mould");
+		        Recipies.registerItem(mouldPlate, "Plate Mould");
+		        //gears
+		        Recipies.registerItem(cogUnfiredcopper, "Unfired Copper Cog");
+		        Recipies.registerItem(cogUnfireddiamond, "Unfired Diamond Cog");
+		        Recipies.registerItem(cogUnfiredgold, "Unfired Gold Cog");
+		        Recipies.registerItem(cogUnfirediron, "Unfired Iron Cog");
+		        Recipies.registerItem(cogUnfiredtungstencarbide, "Unfired Tungsten Carbide Cog");
+		        //fired
+		        Recipies.registerItem(cogCopper, "Copper Cog");
+		        Recipies.registerItem(cogDiamond, "Diamond Cog");
+		        Recipies.registerItem(cogGold, "Gold Cog");
+		        Recipies.registerItem(cogIron, "Iron Cog");
+		        Recipies.registerItem(cogTungstencarbide, "Tungsten Carbide Cog");
+		        //Plates
+		        //unfired
+		        Recipies.registerItem(plateUnfiredcopper, "Unfired Copper Plate");
+		        Recipies.registerItem(plateUnfireddiamond, "Unfired Diamond Plate");
+		        Recipies.registerItem(plateUnfiredgold, "Unfired Gold Plate");
+		        Recipies.registerItem(plateUnfirediron, "Unfired Iron Plate");
+		        Recipies.registerItem(plateUnfiredtungstencarbide, "Unfired Tungsten Carbide Plate");
+		        //fired
+		        Recipies.registerItem(plateCopper, "Copper Plate");
+		        Recipies.registerItem(plateDiamond, "Diamond Plate");
+		        Recipies.registerItem(plateGold, "Gold Plate");
+		        Recipies.registerItem(plateIron, "Iron Plate");
+		        Recipies.registerItem(plateTungstencarbide, "Tungsten Carbide Plate");
+		      //chips
+		        Recipies.registerItem(chipAdvanced, "Advanced Chip");
+		        Recipies.registerItem(chipBasic, "Basic Chip");
+		        Recipies.registerItem(chipElite, "Elite Chip");
+		        Recipies.registerItem(chipLV, "Low-Voltage Chip");
+        //Capacitor
+        Recipies.registerItem(capacitorBasic,"Basic Capacitor");
+        Recipies.registerItem(capacitorCopper,"Copper Capacitor");
+        Recipies.registerItem(capacitorDiamond,"Diamond Capacitor");
+        Recipies.registerItem(capacitorGold,"Gold Capacitor");
+        Recipies.registerItem(capacitorTungstencarbide,"Tungsten Catbide Capacitor");
+        //Resistors
+        Recipies.registerItem(resistorCase,"Resistor Case");
+        Recipies.registerItem(resistorBasic,"Basic Resistor");
+        Recipies.registerItem(resistorCopper,"Copper Resistor");
+        Recipies.registerItem(resistorDiamond,"Diamond Resistor");
+        Recipies.registerItem(resistorGold,"Gold Resistor");
+       // Recipies.registerItem(resistorIron,"Iron Resistor"); Phased Out <3 BackSpace47
+        Recipies.registerItem(resistorTungstencarbide,"Tungsten Carbide Resistor");
+ //transistors
+        Recipies.registerItem(transistorBasic,"Basic Transistor");
+        Recipies.registerItem(transistorCopper,"Copper Transistor");
+        Recipies.registerItem(transistorDiamond,"Diamond Transistor");
+        Recipies.registerItem(transistorGold,"Gold Transistor");
+       // Recipies.registerItem(transistorIron,"Iron Transistor"); Phased Out <3 BackSpace47
+        Recipies.registerItem(transistorTungstencarbide,"Tungsten Carbide Transistor");
+       //diode
+        Recipies.registerItem(diode,"Diode");
+//Food
+        Recipies.registerItem(megaCookie, "Mega Cookie");
+        Recipies.registerItem(ghostCookie, "Ghost Cookie");
+        Recipies.registerItem(poisonCookie, "Poison Cookie");
+        Recipies.registerItem(miniCookie, "Mini Cookie");
+        Recipies.registerItem(oneupCookie, "1Up Cookie");
+        Recipies.registerItem(springCookie, "Spring Cookie");
+        Recipies.registerItem(propellerCookie, "Propeller Cookie[WIP]");
+        Recipies.registerItem(rockCookie, "Rock Cookie");
+        Recipies.registerItem(superCookie, "Super Cookie");
+        Recipies.registerItem(cookieSugar, "Sugar Cookie");
+        Recipies.registerItem(baconRaw, "Raw Bacon");
+        Recipies.registerItem(baconCooked,"Cooked Bacon");
+
+        Recipies.registerItem(dustSugar,"Pouch Of Sugar");
+        Recipies.registerItem(dustFlour, "Bag Of Flour");
+
+
+
+
+
+
+        Recipies.registerItem(dustMagick, "Magick Dust");
+        Recipies.registerItem(dustMagickcompound, "Magick Compound");
+        Recipies.registerItem(runeFire, "Fire Rune");
+        Recipies.registerItem(runeWater, "Water Rune");
+        Recipies.registerItem(runeAir, "Air Rune");
+        Recipies.registerItem(runeSpirit, "Spirit Rune");
+        Recipies.registerItem(runeEarth, "Earth Rune");
+        Recipies.registerItem(runePlate, "Runic Plate");
+
+
+		//Jars
+		Recipies.registerItem(pjDarkblue,"pjDarkblue");
+		Recipies.registerItem(pjDarkgrey,"pjDarkgrey");
+		Recipies.registerItem(pjDarkred,"pjDarkred");
+		Recipies.registerItem(pjEmpty,"pjEmpty");
+		Recipies.registerItem(pjGreen,"pjGreen");
+		Recipies.registerItem(pjGrey,"pjGrey");
+		Recipies.registerItem(pjLightblue,"pjLightblue");
+		Recipies.registerItem(pjLimegreen,"pjLimegreen");
+		Recipies.registerItem(pjOrange,"pjOrange");
+		Recipies.registerItem(pjPink,"pjPink");
+		Recipies.registerItem(pjRed,"pjRed");
+		Recipies.registerItem(pjWater,"pjWater");
+
+
+
+
+
 
 		//Magick
 		Recipies.registerItem(dropBig, "Big Drop");
@@ -1020,58 +1151,8 @@ public class RPCore {
         Recipies.registerItem(dropRock,"Rock Drop");
         Recipies.registerItem(dropSmall,"Small Drop");
         Recipies.registerItem(dropSuper, "Super Drop");
-        Recipies.registerItem(dustMagick, "Magick Dust");
-        Recipies.registerItem(dustMagickcompound, "Magick Compound");
-        Recipies.registerItem(runeFire, "Fire Rune");
-        Recipies.registerItem(runeWater, "Water Rune");
-        Recipies.registerItem(runeAir, "Air Rune");
-        Recipies.registerItem(runeSpirit, "Spirit Rune");
-        Recipies.registerItem(runeEarth, "Earth Rune");
-        Recipies.registerItem(runePlate, "Runic Plate");
-		//Misc
-        Recipies.registerItem(sandPaper,"Sand Paper");
-		Recipies.registerItem(anthracite, "Anthracite");
-        Recipies.registerItem(quartzStick, "Quartc Stick");
-        Recipies.registerItem(quartzBowl, "Quartc Bowl");
-        Recipies.registerItem(mortar_and_pestle, "Mortar and Pestle");
-        Recipies.registerItem(Pencil, "Pencil");
-        Recipies.registerItem(blankScroll, "Blank Scroll");
-        Recipies.registerItem(scrollCircle, "Circle Scroll");
-        Recipies.registerItem(oilTreatment, "Treatment Oil");
-        Recipies.registerItem(mouldCog, "Cog Mould");
-        Recipies.registerItem(mouldPlate, "Plate Mould");
-        //gears
-        Recipies.registerItem(cogUnfiredcopper, "Unfired Copper Cog");
-        Recipies.registerItem(cogUnfireddiamond, "Unfired Diamond Cog");
-        Recipies.registerItem(cogUnfiredgold, "Unfired Gold Cog");
-        Recipies.registerItem(cogUnfirediron, "Unfired Iron Cog");
-        Recipies.registerItem(cogUnfiredtungstencarbide, "Unfired Tungsten Carbide Cog");
-        //fired
-        Recipies.registerItem(cogCopper, "Copper Cog");
-        Recipies.registerItem(cogDiamond, "Diamond Cog");
-        Recipies.registerItem(cogGold, "Gold Cog");
-        Recipies.registerItem(cogIron, "Iron Cog");
-        Recipies.registerItem(cogTungstencarbide, "Tungsten Carbide Cog");
-        //Plates
-        //unfired
-        Recipies.registerItem(plateUnfiredcopper, "Unfired Copper Plate");
-        Recipies.registerItem(plateUnfireddiamond, "Unfired Diamond Plate");
-        Recipies.registerItem(plateUnfiredgold, "Unfired Gold Plate");
-        Recipies.registerItem(plateUnfirediron, "Unfired Iron Plate");
-        Recipies.registerItem(plateUnfiredtungstencarbide, "Unfired Tungsten Carbide Plate");
-        //fired
-        Recipies.registerItem(plateCopper, "Copper Plate");
-        Recipies.registerItem(plateDiamond, "Diamond Plate");
-        Recipies.registerItem(plateGold, "Gold Plate");
-        Recipies.registerItem(plateIron, "Iron Plate");
-        Recipies.registerItem(plateTungstencarbide, "Tungsten Carbide Plate");
-        //Chunks
-        Recipies.registerItem(chunkCopper, "Copper Chunk");
-        Recipies.registerItem(chunkTin, "Tin Chunk");
-        Recipies.registerItem(chunkFerrous, "Ferrous Chunk");
-        Recipies.registerItem(chunkSilver, "Silver Chunk");
-        Recipies.registerItem(chunkTungsten, "Tungsten Chunk");
-        Recipies.registerItem(chunkLead, "Lead Chunk");
+
+
         //Tools
         Recipies.registerItem(hammerDiamond,"Diamond Hammer");
 		Recipies.registerItem(hammerJade,"Jade Hammer");
@@ -1106,7 +1187,60 @@ public class RPCore {
         Recipies.registerItem(jadeHeadHo, "JadeHoeHead");
         Recipies.registerItem(jadeHeadPi, "JadePickHead");
         //Handle Modifiers
-        //Caustic Items
+
+
+
+
+
+
+        //Plants
+        Recipies.registerItem(yellowLeaf, "Yellow Leaf");
+
+
+
+      //Capacitor Components
+        Recipies.registerItem(foil,"Foil");
+        Recipies.registerItem(foilAluminumoxide,"Aluminum Oxide Foil");
+        Recipies.registerItem(paperElectrolized,"Electrolized Paper");
+
+
+
+        //Resister Components
+        Recipies.registerItem(clayTreated,"Treated Clay");
+        Recipies.registerItem(clayTreatedbaked,"Baked Treated Clay");
+        Recipies.registerItem(coiledNichrome,"Coiled Nichrome");
+
+        //Diode Components
+        Recipies.registerItem(anvilPostassembly,"Postassembly Anvil");
+        Recipies.registerItem(Epoxy,"Epoxy");
+        Recipies.registerItem(lenseReflective,"Reflective Lense");
+
+      //transistors Components
+        Recipies.registerItem(kitTransistor,"Transistor Kit");
+
+
+
+//Misc
+        Recipies.registerItem(quartzStick, "Quartc Stick");
+        Recipies.registerItem(quartzBowl, "Quartc Bowl");
+        Recipies.registerItem(mortar_and_pestle, "Mortar and Pestle");
+        Recipies.registerItem(Pencil, "Pencil");
+        Recipies.registerItem(blankScroll, "Blank Scroll");
+        Recipies.registerItem(scrollCircle, "Circle Scroll");
+        Recipies.registerItem(oilTreatment, "Treatment Oil");
+        Recipies.registerItem(sandPaper,"Sand Paper");
+
+
+
+
+        //test
+        Recipies.registerItem(testCookie, "Item Of Testing");
+
+
+
+
+
+      //Caustic Items
         Recipies.registerItem(causticMeal, "Caustic Mix");
         Recipies.registerItem(causticCorpuscles, "Caustic Corpuscles ");
         Recipies.registerItem(bloodFirey, "Firey Blood");
@@ -1114,27 +1248,24 @@ public class RPCore {
         Recipies.registerItem(dustPN,"Potassium Nitrate");
         Recipies.registerItem(dustCharcoal, "Charcoal Dust");
         Recipies.registerItem(toolSkinning, "Skinning Tool");
-        //Food
-        Recipies.registerItem(megaCookie, "Mega Cookie");
-        Recipies.registerItem(ghostCookie, "Ghost Cookie");
-        Recipies.registerItem(poisonCookie, "Poison Cookie");
-        Recipies.registerItem(miniCookie, "Mini Cookie");
-        Recipies.registerItem(oneupCookie, "1Up Cookie");
-        Recipies.registerItem(springCookie, "Spring Cookie");
-        Recipies.registerItem(propellerCookie, "Propeller Cookie[WIP]");
-        Recipies.registerItem(rockCookie, "Rock Cookie");
-        Recipies.registerItem(superCookie, "Super Cookie");
-        Recipies.registerItem(cookieSugar, "Sugar Cookie");
-        Recipies.registerItem(baconRaw, "Raw Bacon");
-        Recipies.registerItem(baconCooked,"Cooked Bacon");
+
         Recipies.registerItem(knife,"Knife");
-        Recipies.registerItem(dustSugar,"Pouch Of Sugar");
-        Recipies.registerItem(dustFlour, "Bag Of Flour");
-        Recipies.registerItem(dustSilicon,"dustSilicon");
-        //Plants
-        Recipies.registerItem(yellowLeaf, "Yellow Leaf");
-        //test
-        Recipies.registerItem(testCookie, "Item Of Testing");
+
+
+
+        Recipies.registerBlock(trollEmerald, "Emerald Block?");
+		Recipies.registerBlock(trollDiamond, "Diamond Block?");
+		Recipies.registerBlock(trollIron, "Iron Block?");
+		Recipies.registerBlock(trollGold, "Gold Block?");
+
+		Recipies.registerItem(trollNugetiron, "Iron Nugget?");
+		Recipies.registerItem(trollNugetGold, "Gold Nugget?");
+		Recipies.registerItem(trollNugetdiamond, "Diamond Nugget?");
+		Recipies.registerItem(trollNugetemerald, "Emerald Nugget?");
+
+
+
+
         //Smelting
         Recipies.registerSmeltingItemWUM(Items.redstone,testCookie,5F);
         //Smelting
@@ -1225,12 +1356,7 @@ public class RPCore {
 		GameRegistry.addShapedRecipe(new ItemStack(scrollCircle), "xxx","xzx","xxx", 'x', new ItemStack(Pencil), 'z', new ItemStack(blankScroll));
 		GameRegistry.addShapedRecipe(new ItemStack (sandTreated, 4), " z ", "zxz", " z ", 'z', new ItemStack(oilTreatment), 'x', new ItemStack(Blocks.sand));
 		GameRegistry.addShapedRecipe(new ItemStack(mouldCog), " x ", "xzx", " x ", 'x', new ItemStack(sandTreated), 'z', new ItemStack(scrollCircle));
-		//protosprays
-		GameRegistry.addShapedRecipe(new ItemStack(protopaintDiamond), "yxy", "xzx", "yxy", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
-		GameRegistry.addShapedRecipe(new ItemStack(protopaintCopper), "yxy", "xzx", "yxy", 'x', new ItemStack(dustCopper), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
-		GameRegistry.addShapedRecipe(new ItemStack(protopaintGold), "yxy", "xzx", "yxy", 'x', new ItemStack(dustBronze), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
-		GameRegistry.addShapedRecipe(new ItemStack(protopaintTungstencarbide), "yxy", "xzx", "yxy", 'x', new ItemStack(testCookie), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
-		GameRegistry.addShapelessRecipe(new ItemStack (capacitorDiamond), new ItemStack (protopaintDiamond, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
+
 		//gears
 		GameRegistry.addShapedRecipe(new ItemStack(cogUnfiredcopper), " x ", "xzx", " x ", 'x', new ItemStack(dustCopper), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapedRecipe(new ItemStack(cogUnfireddiamond), " x ", "xzx", " x ", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(mouldCog, 1,  OreDictionary.WILDCARD_VALUE));
@@ -1696,6 +1822,138 @@ public class RPCore {
 		GameRegistry.addShapelessRecipe(new ItemStack (dustZink,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkZink), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustZink,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkZink), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
 		GameRegistry.addShapelessRecipe(new ItemStack (dustZink,2, OreDictionary.WILDCARD_VALUE), new ItemStack (chunkZink), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (dustTungstencarbide,2, OreDictionary.WILDCARD_VALUE), new ItemStack (TCAM), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (foil,2, OreDictionary.WILDCARD_VALUE), new ItemStack (ingotAluminium), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+
+
+		GameRegistry.addShapedRecipe(new ItemStack(chipBasic,1), "cbc", "dad", "cbc", 'a', new ItemStack(plateIron), 'b', new ItemStack(transistorCopper), 'c', new ItemStack(resistorCopper), 'd', new ItemStack(capacitorGold));
+		GameRegistry.addShapedRecipe(new ItemStack(chipLV,1), "bcb", "dad", "bcb", 'a', new ItemStack(plateGold), 'b', new ItemStack(capacitorCopper), 'c', new ItemStack(resistorGold), 'd', new ItemStack(transistorGold));
+		GameRegistry.addShapedRecipe(new ItemStack(chipAdvanced,1), "aba", "cec", "ada", 'a', new ItemStack(capacitorDiamond), 'b', new ItemStack(resistorDiamond), 'c', new ItemStack(transistorDiamond), 'd', new ItemStack(diode), 'e', new ItemStack(plateDiamond));
+		GameRegistry.addShapedRecipe(new ItemStack(chipElite,1), "bcb", "aea", "bcb", 'a', new ItemStack(diode), 'b', new ItemStack(transistorDiamond), 'c', new ItemStack(capacitorTungstencarbide), 'd', new ItemStack(transistorTungstencarbide), 'e', new ItemStack(plateTungstencarbide));
+
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (stoneHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (tungstenCarbideHammer, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerDiamond, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerJade, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerNetherstar, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerSandstone, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerWooden, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerCopper, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerSilver, 1,  OreDictionary.WILDCARD_VALUE));
+		GameRegistry.addShapelessRecipe(new ItemStack (anvilPostassembly,32, OreDictionary.WILDCARD_VALUE), new ItemStack (Blocks.anvil), new ItemStack (hammerIron, 1,  OreDictionary.WILDCARD_VALUE));
+
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (foilAluminumoxide,4), new ItemStack (dustAluminumoxide), new ItemStack (foil), new ItemStack(Items.water_bucket));
+
+		GameRegistry.addShapelessRecipe(new ItemStack (dustAluminumoxide,1), new ItemStack (dustAluminum), new ItemStack(Items.water_bucket));
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (paperElectrolized,4), new ItemStack (Items.paper), new ItemStack (bloodFirey));
+
+
+		GameRegistry.addShapelessRecipe(new ItemStack (capacitorBasic,1), new ItemStack (foil), new ItemStack (foilAluminumoxide), new ItemStack(paperElectrolized));
+
+
+
+
+
+
+		/*
+
+        //Resister Components
+        Recipies.registerItem(clayTreated,"Treated Clay");
+        Recipies.registerItem(clayTreatedbaked,"Baked Treated Clay");
+        Recipies.registerItem(coiledNichrome,"Coiled Nichrome");
+
+        //Diode Components
+        Recipies.registerItem(anvilPostassembly,"Postassembly Anvil");
+        Recipies.registerItem(Epoxy,"Epoxy");
+        Recipies.registerItem(lenseReflective,"Reflective Lense");
+
+      //transistors Components
+        Recipies.registerItem(kitTransistor,"Transistor Kit");
+
+
+
+        //Resistors
+        Recipies.registerItem(resistorCase,"Resistor Case");
+        Recipies.registerItem(resistorBasic,"Basic Resistor");
+
+
+ //transistors
+  *
+  *
+        Recipies.registerItem(transistorBasic,"Basic Transistor");
+
+       //diode
+        Recipies.registerItem(diode,"Diode");
+
+
+		*/
+
+
+
+		//protosprays
+				GameRegistry.addShapedRecipe(new ItemStack(protopaintDiamond), "yxy", "xzx", "yxy", 'x', new ItemStack(dustDiamond), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+				GameRegistry.addShapedRecipe(new ItemStack(protopaintCopper), "yxy", "xzx", "yxy", 'x', new ItemStack(dustCopper), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+				GameRegistry.addShapedRecipe(new ItemStack(protopaintGold), "yxy", "xzx", "yxy", 'x', new ItemStack(dustBronze), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+				GameRegistry.addShapedRecipe(new ItemStack(protopaintTungstencarbide), "yxy", "xzx", "yxy", 'x', new ItemStack(dustTungstencarbide), 'z', new ItemStack(Blocks.glass), 'y', new ItemStack(ingotSteel));
+				GameRegistry.addShapelessRecipe(new ItemStack (capacitorDiamond), new ItemStack (protopaintDiamond, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
+
+
+
+				GameRegistry.addShapelessRecipe(new ItemStack (capacitorDiamond), new ItemStack (protopaintDiamond, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (capacitorCopper), new ItemStack (protopaintCopper, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (capacitorGold), new ItemStack (protopaintGold, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (capacitorTungstencarbide), new ItemStack (protopaintTungstencarbide, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (capacitorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (resistorDiamond), new ItemStack (protopaintDiamond, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (resistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (resistorCopper), new ItemStack (protopaintCopper, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (resistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (resistorGold), new ItemStack (protopaintGold, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (resistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (resistorTungstencarbide), new ItemStack (protopaintTungstencarbide, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (resistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (transistorGold), new ItemStack (protopaintGold, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (transistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (transistorDiamond), new ItemStack (protopaintCopper, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (transistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (transistorCopper), new ItemStack (protopaintGold, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (transistorBasic));
+
+				GameRegistry.addShapelessRecipe(new ItemStack (transistorTungstencarbide), new ItemStack (protopaintTungstencarbide, 1,  OreDictionary.WILDCARD_VALUE), new ItemStack (transistorBasic));
+
 
 
 

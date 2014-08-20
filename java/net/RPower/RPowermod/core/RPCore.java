@@ -19,7 +19,6 @@ import net.RPower.RPowermod.block.blockRPBlockblockNi;
 import net.RPower.RPowermod.block.blockRPBlockblockPlatinum;
 import net.RPower.RPowermod.block.blockRPBlockblockSilicon;
 import net.RPower.RPowermod.block.blockRPBlockblockZink;
-import net.RPower.RPowermod.block.blockRPBlockenderCake;
 import net.RPower.RPowermod.block.blockRPBlockoreAluminum;
 import net.RPower.RPowermod.block.blockRPBlockoreChromium;
 import net.RPower.RPowermod.block.blockRPBlockoreLithium;
@@ -162,6 +161,13 @@ public class RPCore {
     public static Item superCookie;
     public static Item baconRaw;
     public static Item baconCooked;
+
+
+
+    //CAKE!!!!! >:-(
+
+    public static Item enderCakefresh;
+
 
     public static Item dustSugar;
 
@@ -528,7 +534,7 @@ public class RPCore {
 
 		//Food Cakes Stuffs ^_^
 
-		enderCake= new blockRPBlockenderCake().setCreativeTab(RPCoreBTab).setBlockName("enderCake").setBlockTextureName(modid + ":" + "enderCake");
+
 
 
 
@@ -643,7 +649,9 @@ public class RPCore {
 
 
 
+// motha-friggin CAKE!!!! >:-(
 
+	    //enderCakefresh = new enderCakefresh().setUnlocalizedName("enderCakefresh").setTextureName(modid + ":" + "enderCakefresh").setCreativeTab(RPCoreITab); Dont touch the cake is a lie o.o unless u wanna fix it lol
 
 
 
@@ -971,7 +979,9 @@ public class RPCore {
 
 
 		//cakes ^_^
-		Recipies.registerBlock(enderCake, "enderCake");
+
+
+
 
         //Trees
         Recipies.registerBlock(elderLog, "Red Elderberry Log");

@@ -8,11 +8,11 @@ import net.minecraft.util.IIcon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class blockRPBlockenderCake extends BlockFast {
+public class enderCakeblock extends BlockFast {
 
 	public static final String name = Names.Blocks.ENDER_CAKE_TOP_BLOCK;
 
-	public blockRPBlockenderCake(){
+	public enderCakeblock(){
 		TextureLocation.setBlockTexture(this,name,Reference.MOD_ID);
 	}
 

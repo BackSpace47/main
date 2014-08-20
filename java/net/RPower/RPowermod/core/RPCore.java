@@ -158,6 +158,12 @@ public class RPCore {
     public static Item baconCooked;
 
     public static Item dustSugar;
+
+
+    //thaum
+    public static Item wand_cap_jade;
+
+
 	//Items
 	/*
 	To add a item first do these lines (public static Item <name of item>;) then inside preInit do (<name of item> = new Item<name of item>().setCreativeTab(CreativeTabs.tabMaterials).setUnlocalizedName("<name of item whit capital leters and space if two or more words>").setTextureName(modid + ":" + "<texture name of item>"); then under init do (Recipies.registerItem(<name of item>, "<name of item whit capital leters and space if two or more words>");))
@@ -311,12 +317,12 @@ public class RPCore {
     public static Item trollNugetemerald;
     public static Item trollNugetGold;
     //Runes
-    public static Item runeAir;
-    public static Item runeEarth;
-    public static Item runeFire;
+    public static Item Air_Rune;
+    public static Item Earth_Rune;
+    public static Item Fire_Rune;
     public static Item runePlate;
-    public static Item runeSpirit;
-    public static Item runeWater;
+    public static Item Spirit_Rune;
+    public static Item Water_Rune;
     public static Item dustMagick;
     public static Item dustMagickcompound;
     //Stuff
@@ -472,7 +478,7 @@ public class RPCore {
 		obsidianWhite = new ObsidianWhite(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("White Obsidian").setBlockTextureName(modid + ":" + "obsidianWhite").setHardness(50F).setResistance(10F);
 		oreZinc = new blockRPOreZinc (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Zinc Ore").setBlockTextureName(modid + ":" + "zinc").setHardness(1F).setResistance(1F);
 		oreAluminum= new blockRPBlockoreAluminum(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreAluminum").setBlockTextureName(modid + ":" + "oreAluminum").setHardness(5F).setResistance(1F);
-
+		wand_cap_jade = new itemwand_cap_jade().setUnlocalizedName("wand_cap_jade").setTextureName(modid + ":" + "wand_cap_jade").setCreativeTab(RPCoreITab);
 
 
 
@@ -816,12 +822,12 @@ public class RPCore {
         dropSmall = new ItemMagic().setUnlocalizedName("Small Drop").setTextureName(modid + ":" + "small_drop");
         dropSuper = new ItemMagic().setUnlocalizedName("Super Drop").setTextureName(modid + ":" + "super_drop");
         //Runes
-        runeFire= new ItemRune().setUnlocalizedName("Fire Rune").setTextureName(modid + ":" + "Fire Rune");
-        runeEarth= new ItemRune().setUnlocalizedName("Earth Rune").setTextureName(modid + ":" + "Earth Rune");
-        runeAir= new ItemRune().setUnlocalizedName("Air Rune").setTextureName(modid + ":" + "Air Rune");
+        Fire_Rune= new ItemFire_Rune().setUnlocalizedName("Fire Rune").setTextureName(modid + ":" + "Fire_Rune");
+        Earth_Rune= new ItemEarth_Rune().setUnlocalizedName("Earth Rune").setTextureName(modid + ":" + "Earth_Rune");
+        Air_Rune= new ItemAir_Rune().setUnlocalizedName("Air Rune").setTextureName(modid + ":" + "Air_Rune");
         runePlate= new ItemRune().setUnlocalizedName("Runeic Plate").setTextureName(modid + ":" + "runicPlate");
-        runeSpirit= new ItemRune().setUnlocalizedName("Spirit Rune").setTextureName(modid + ":" + "Spirit Rune");
-        runeWater= new ItemRune().setUnlocalizedName("Water Rune").setTextureName(modid + ":" + "Water Rune");
+        Spirit_Rune= new ItemSpirit_Rune().setUnlocalizedName("Spirit Rune").setTextureName(modid + ":" + "Spirit_Rune");
+        Water_Rune= new ItemWater_Rune().setUnlocalizedName("Water Rune").setTextureName(modid + ":" + "Water_Rune");
         //Food
 		megaCookie = new ItemFoodmegaCookie(16, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Mega Cookie").setTextureName(modid + ":" + "Megacookie");
 		ghostCookie = new ItemFoodghostCookie(8, 1, true).setCreativeTab(RPCoreITab).setUnlocalizedName("Ghost Cookie").setTextureName(modid + ":" + "Ghostcookie");
@@ -1120,12 +1126,12 @@ public class RPCore {
 
         Recipies.registerItem(dustMagick, "Magick Dust");
         Recipies.registerItem(dustMagickcompound, "Magick Compound");
-        Recipies.registerItem(runeFire, "Fire Rune");
-        Recipies.registerItem(runeWater, "Water Rune");
-        Recipies.registerItem(runeAir, "Air Rune");
-        Recipies.registerItem(runeSpirit, "Spirit Rune");
-        Recipies.registerItem(runeEarth, "Earth Rune");
-        Recipies.registerItem(runePlate, "Runic Plate");
+        Recipies.registerItem(Fire_Rune, "Fire_Rune");
+        Recipies.registerItem(Water_Rune, "Water_Rune");
+        Recipies.registerItem(Air_Rune, "Air_Rune");
+        Recipies.registerItem(Spirit_Rune, "Spirit_Rune");
+        Recipies.registerItem(Earth_Rune, "Earth_Rune");
+        Recipies.registerItem(runePlate, "Runic_Plate");
 
 
 		//Jars
@@ -1259,7 +1265,7 @@ public class RPCore {
         Recipies.registerItem(knife,"Knife");
 
 
-
+        //Recipies.registerItem(wand_cap_jade,"wand_cap_jade"); To Be Entered
         Recipies.registerBlock(trollEmerald, "Emerald Block?");
 		Recipies.registerBlock(trollDiamond, "Diamond Block?");
 		Recipies.registerBlock(trollIron, "Iron Block?");

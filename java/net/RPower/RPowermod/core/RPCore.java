@@ -19,6 +19,7 @@ import net.RPower.RPowermod.block.blockRPBlockblockNi;
 import net.RPower.RPowermod.block.blockRPBlockblockPlatinum;
 import net.RPower.RPowermod.block.blockRPBlockblockSilicon;
 import net.RPower.RPowermod.block.blockRPBlockblockZink;
+import net.RPower.RPowermod.block.blockRPBlockenderCake;
 import net.RPower.RPowermod.block.blockRPBlockoreAluminum;
 import net.RPower.RPowermod.block.blockRPBlockoreChromium;
 import net.RPower.RPowermod.block.blockRPBlockoreLithium;
@@ -132,6 +133,11 @@ public class RPCore {
     public static Block polymer;
     public static Block polymerWoven;
     public static Block woodPetrified;
+
+
+
+    //Food
+    public static Block enderCake;
     //The Bombs Of Awsomnes
     public static Block blockJadeBomb;
     //Caustic Items
@@ -518,6 +524,14 @@ public class RPCore {
 		trollNugetGold = new itemtrollNugetGold().setUnlocalizedName("Gold Troll Nugget").setTextureName(modid + ":" + "nuggetGold").setCreativeTab(RPCoreITab);
 
 		sandTreated = new BlocksandTreated(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Treated Sand").setBlockTextureName(modid + ":" + "sandTreated").setHardness(50F).setResistance(5F);
+
+
+		//Food Cakes Stuffs ^_^
+
+		enderCake= new blockRPBlockenderCake().setCreativeTab(RPCoreBTab).setBlockName("enderCake").setBlockTextureName(modid + ":" + "enderCake");
+
+
+
 		//Alloys
 		TCAM = new BlockTCAM(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("TCAM").setBlockTextureName(modid + ":" + "TCAM").setHardness(50F).setResistance(5F);
 		//Machines
@@ -954,6 +968,11 @@ public class RPCore {
         Recipies.registerBlock(TCAM, "TCAM");
 		Recipies.registerBlock(blockJadeBomb, "Jade Bomb");
 
+
+
+		//cakes ^_^
+		Recipies.registerBlock(enderCake, "enderCake");
+
         //Trees
         Recipies.registerBlock(elderLog, "Red Elderberry Log");
         Recipies.registerBlock(elderLeaf, "Red Elderberry Leaf");
@@ -1147,7 +1166,6 @@ public class RPCore {
 		Recipies.registerItem(pjPink,"pjPink");
 		Recipies.registerItem(pjRed,"pjRed");
 		Recipies.registerItem(pjWater,"pjWater");
-
 
 
 

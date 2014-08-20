@@ -14,7 +14,7 @@ public class BlockFluxCableBasic extends Block{
 	
 	@Override
 	public TileEntity createTileEntity(World world, int metadata) {
-		return (TileEntity) new TileEntityFluxCable(32);
+		return (TileEntity) new TileEntityFluxCable((byte)32);
 	}
 
 }

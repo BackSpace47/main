@@ -1,10 +1,10 @@
-package net.RPower.RPowermod.machines.power;
+package RPower.api.power;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public enum E_MFPacketType {
-	PING,REQUEST,RESPOND;
+	RESPOND,REQUEST;
 	
 	public List<E_MFPacketType> getPermitted(E_MFPacketType type)
 	{
@@ -13,10 +13,8 @@ public enum E_MFPacketType {
 		{
 		case RESPOND:
 			result.add(RESPOND);
-		case REQUEST:
-			result.add(REQUEST);
 		default:
-			result.add(PING);
+			result.add(REQUEST);
 		}
 		return result;
 	}

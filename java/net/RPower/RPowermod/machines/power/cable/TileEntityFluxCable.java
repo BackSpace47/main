@@ -11,9 +11,10 @@ import net.minecraft.tileentity.TileEntity;
 public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	//Connections are an array of [North, East, West, South, Up, Down]
 	public Boolean[] connections = {false, false, false, false, false, false};
-	
+	public boolean insulatedCable;
 	public double packetSizeLimit;
 	public int internalBuffer;
+	public double percentageLoss;
 	
 	public TileEntityFluxCable()
 	{
@@ -22,12 +23,36 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	
 	public TileEntityFluxCable(double packetSize)
 	{
+		this(packetSize,false);
+	}
+	
+	public TileEntityFluxCable(double packetSize, boolean insulated)
+	{
 		internalBuffer=0;
 		packetSizeLimit= packetSize;
+		insulatedCable=insulated;
+		if(!insulated)
+		{
+			percentageLoss=(packetSizeLimit/MFPacket.POWERLIMIT);
+		}
 	}
 	
 	public boolean takePacket(MFPacket packet)
 	{
+		double excess=0;
+		if(!insulatedCable)
+		{
+			
+			excess+=(percentageLoss*packet.getBuffer());
+			packet.setBuffer(packet.getBuffer()-excess);
+		}
+		if(packet.getBuffer()>packetSizeLimit)
+		{
+			excess += packet.getBuffer()-packetSizeLimit;
+			packet.setBuffer(packetSizeLimit);
+		}
+		powerBleed(excess);
+		
 		boolean result=false;
 		byte  direction;
 		for(int i=0; i<59;i++)
@@ -114,6 +139,8 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	@Override
 	public void powerBleed(double excess) {
 		//add power bleed to chunk atmosphere -> own effects + taint if Thaumcraft installed
+		if(excess>0)
+		System.err.println(""+excess+" MF bled off into atmosphere!\n");
 		
 	}
 	

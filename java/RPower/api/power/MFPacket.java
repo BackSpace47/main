@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class MFPacket
 {
+	public static final double POWERLIMIT = 2048; 
 	private E_MFPacketType packetType;
 	private Stack<Byte> packetOrigin;
 	private double buffer;

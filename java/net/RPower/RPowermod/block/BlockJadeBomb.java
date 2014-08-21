@@ -70,7 +70,7 @@ public class BlockJadeBomb extends Block {
 
     /**
      * Called right before the block is destroyed by a player.  Args: world, x, y, z, metaData
-     * @return 
+     * @return
      */
     public void onBlockDestroyedByPlayer(World p_149664_1_, int p_149664_2_, int p_149664_3_, int p_149664_4_, int p_149664_5_)
     {
@@ -130,9 +130,9 @@ public class BlockJadeBomb extends Block {
     {
         return false;
     }
-    
+
     public Block returnBlock(){
 		return RPCore.blockJadeBomb;
-    	
+
     }
 }

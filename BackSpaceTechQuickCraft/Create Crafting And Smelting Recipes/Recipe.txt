@@ -1,0 +1,2 @@
+GameRegistry.addShapedRecipe(new ItemStack(mouldPlate,1), "aaa", "aba", "aaa", 'a', new ItemStack(sandTreated), 'b', new ItemStack(scrollSquare));
+

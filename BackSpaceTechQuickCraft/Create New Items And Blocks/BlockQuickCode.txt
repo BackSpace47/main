@@ -1,0 +1,3 @@
+public static Block enderCake;
+enderCake= new blockRPBlockenderCake(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("enderCake").setBlockTextureName(modid + ":" + "enderCake").setHardness(5F).setResistance(1F);
+Recipies.registerBlock(enderCake,"enderCake");

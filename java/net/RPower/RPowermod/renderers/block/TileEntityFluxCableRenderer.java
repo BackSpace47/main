@@ -3,10 +3,10 @@ package net.RPower.RPowermod.renderers.block;
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
-
 import net.RPower.RPowermod.model.block.ModelFluxCableBasic;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -40,8 +40,7 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 
 
 	@Override
-	public void renderTileEntityAt(TileEntity entity, double x, double y,
-			double z, float scale) {
+	public void renderTileEntityAt(TileEntity entity, double x, double y, double z, float scale) {
 		//binding the textures
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 		GL11.glPushMatrix();

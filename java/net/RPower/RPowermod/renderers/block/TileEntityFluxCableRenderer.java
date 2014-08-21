@@ -51,7 +51,7 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
          GL11.glPushMatrix();
          //rotate to avoid model rendering upside down
          GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
-         this.model.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+         this.model.render(entity, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
          //pop both sections off the render stack
          GL11.glPopMatrix();
          GL11.glPopMatrix();

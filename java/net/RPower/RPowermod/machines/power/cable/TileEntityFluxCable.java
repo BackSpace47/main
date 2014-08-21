@@ -10,7 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	//Connections are an array of [North, East, West, South, Up, Down]
-	public boolean[] connections = {false, false, false, false, false, false};
+	public boolean[] connections = {false, false, true, true, false, false};
 	
 	//whether or not the cable is lossy
 	public boolean insulatedCable;

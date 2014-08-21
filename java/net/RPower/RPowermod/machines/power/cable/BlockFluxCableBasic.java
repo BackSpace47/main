@@ -18,6 +18,20 @@ public class BlockFluxCableBasic extends BlockContainer{
 	}
 	
 	@Override
+	public void onNeighborBlockChange(World world, int x,int y, int z, Block block) {
+		
+	}
+	
+	@Override
+	public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int metaD)
+	{
+		if((world.getBlock(x, y, z).hasTileEntity(0)&&(world.getTileEntity(x, y, z)instanceof TileEntityFluxCable)))
+			((TileEntityFluxCable)world.getTileEntity(x, y, z)).connections[side]=true;
+			
+		return super.onBlockPlaced(world, x, y, z,side, hitX, hitY, hitZ, metaD);
+	}
+	
+	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {
 		TileEntity cable = new TileEntityFluxCable(32);
 		return cable;

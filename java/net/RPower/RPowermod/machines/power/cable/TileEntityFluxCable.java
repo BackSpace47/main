@@ -10,11 +10,22 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	//Connections are an array of [North, East, West, South, Up, Down]
-	public Boolean[] connections = {false, false, false, false, false, false};
+	public boolean[] connections = {false, false, false, false, false, false};
+	
+	//whether or not the cable is lossy
 	public boolean insulatedCable;
+	
+	//maximum limit the cable can carry
 	public double packetSizeLimit;
+	
+	//unused, may be used or removed depending on how things go.
 	public int internalBuffer;
+	
+	//automatically calculated.
 	public double percentageLoss;
+	
+	//transfer mode, unbridged connections can only cross an intersection in straight lines (may be reserved for advanced cabling)
+	public boolean bridgeConnections;
 	
 	public TileEntityFluxCable()
 	{
@@ -28,9 +39,14 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	
 	public TileEntityFluxCable(double packetSize, boolean insulated)
 	{
+		this(packetSize,insulated,true);
+	}
+	public TileEntityFluxCable(double packetSize, boolean insulated,boolean bridged)
+	{
 		internalBuffer=0;
 		packetSizeLimit= packetSize;
 		insulatedCable=insulated;
+		bridgeConnections=bridged;
 		if(!insulated)
 		{
 			percentageLoss=(packetSizeLimit/MFPacket.POWERLIMIT);
@@ -142,6 +158,31 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		if(excess>0)
 		System.err.println(""+excess+" MF bled off into atmosphere!\n");
 		
+	}
+
+	@Override
+	public double getPacketLimit() {
+		return packetSizeLimit;
+	}
+
+	@Override
+	public boolean isInsulated() {
+		return insulatedCable;
+	}
+
+	@Override
+	public boolean isBridged() {
+		return bridgeConnections;
+	}
+
+	@Override
+	public boolean canDeBridge() {
+		return insulatedCable;
+	}
+
+	@Override
+	public boolean[] getConnections() {
+		return connections;
 	}
 	
 }

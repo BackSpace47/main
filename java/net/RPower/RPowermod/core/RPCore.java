@@ -51,6 +51,8 @@ import net.RPower.RPowermod.block.blocktrollGold;
 import net.RPower.RPowermod.block.blocktrollIron;
 import net.RPower.RPowermod.block.blockwoodPetrified;
 import net.RPower.RPowermod.item.*;
+import net.RPower.RPowermod.machines.power.cable.BlockFluxCableBasic;
+import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
 import net.RPower.RPowermod.world.RPWorldGen;
@@ -71,6 +73,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLLoadEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -128,6 +131,8 @@ public class RPCore {
 	public static Block alloySmelterIdle;
 	public static Block alloySmelterActive;
 	public static final int guiIDalloySmelter = 0;
+	//cables --- Please can we clean this up guys?
+	public static Block fluxCableBasic;
     //Trees & Plants
     public static Block elderSap;
     public static Block elderLeaf;
@@ -449,6 +454,9 @@ public class RPCore {
 		//To Be Worked On
 		//alloySmelterIdle = new BlockAlloySmelter().setCreativeTab(RPCoreBTab).setBlockName("alloySmelter");
 		//alloySmelterActive = new BlockAlloySmelter().setBlockName("alloySmelter").setLightLevel(0.625F);
+		
+		fluxCableBasic = new BlockFluxCableBasic(Material.iron).setCreativeTab(RPCoreBTab).setBlockName("Basic MagiFlux Rail").setBlockTextureName(modid + ":" + "fluxCable").setHardness(50F).setResistance(5F);
+		
 		//Woods & Planks & Trees
 		elderLog = new blockREBLo().setBlockName("Red Elderberry Log").setHardness(1.5F).setResistance(1F).setStepSound(Block.soundTypeWood).setCreativeTab(RPCoreBTab).setBlockTextureName("log");
 		elderLeaf = new blockREBL(Material.leaves).setBlockName("Red Elderberry Leaves").setHardness(0.5F).setStepSound(Block.soundTypeGrass).setCreativeTab(RPCoreBTab);
@@ -745,12 +753,17 @@ public class RPCore {
 	}
 
 	@EventHandler
-	public void init(FMLInitializationEvent e){
+	public void init(FMLInitializationEvent e){		
         proxy.registerKeyBindings();
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
 		ItemStack slabM0 = new ItemStack (Blocks.stone_slab);
 		slabM0.setItemDamage(5);
 		//machines
+		
+		//registering Tile Entities and Renderers
+				proxy.registerRenderers();
+				GameRegistry.registerTileEntity(TileEntityFluxCable.class, "tileEntityFluxCable");
+		
 		//To Be Worked On
 		//Recipies.registerBlock(alloySmelterIdle, "AlloySmelterIdle");
 		//Recipies.registerBlock(alloySmelterActive, "AlloySmelterActive");
@@ -785,6 +798,9 @@ public class RPCore {
 
 		Recipies.registerBlock(oreSilicon,"oreSilicon");
 
+		//Cabling
+		Recipies.registerBlock(fluxCableBasic, "fluxCableBasic");
+		
 
 		Recipies.registerBlock(TCAM, "TCAM");
 		Recipies.registerBlock(oreAnthtracite, "Anthracite Ore");
@@ -1410,7 +1426,6 @@ public class RPCore {
 		GameRegistry.registerWorldGenerator(new RPWorldGen(), 1);
 
 		GameRegistry.registerFuelHandler(new RPFuelHandler());
-
 
 	}
 

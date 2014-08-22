@@ -40,22 +40,18 @@ private IIcon field_149761_L;
   }
 
   private void func_149711_c(float f) {
-	// TODO Auto-generated method stub
 
 }
 
 private void func_149713_g(int i) {
-	// TODO Auto-generated method stub
 
 }
 
 private void func_149683_g() {
-	// TODO Auto-generated method stub
 
 }
 
 private void func_149676_a(float f, float g, float h, float i, float j, float k) {
-	// TODO Auto-generated method stub
 
 }
 
@@ -145,9 +141,4 @@ public boolean func_149662_c()
   //  this.bottomIcon = iconRegister.func_94245_a("RPCore:EnderCakeTopBlockBottom");
    // this.sideIcon = iconRegister.func_94245_a("RPCore:EnderCakeTopBlockSide");
   }
-
-public Item setUnlocalizedName(String string) {
-	// TODO Auto-generated method stub
-	return null;
-}
 }

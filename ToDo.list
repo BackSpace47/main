@@ -1,22 +1,7 @@
-Ingot Graphics need added- Backspace Job
-
-Tungsten Carbide Dust
-Silicon Ingot
-Aluminium Ingot
-Chromium Ingot
-Lithium Ingot
-Nickel Ingot
-Platinum Ingot
-
-Note:Needs Added and has texture
-
-ingotBrass
-
 Contemplate "Potion Jars" :We have these jar graphics that look nice we can use thm for the "placeable potions" or for something 
 more worthwhile like the magicks so I will add them but will not add recipes.
 
-Tonights Goal: Get ingot graphics done, Finish most current recipes [Board Recipes are Top Priority after Ingots] Add jars into
-code, register everything with the lang file.
+Register everything with the lang file.
 
 
 Current Known Derps: Ore Dictionary crashes the game if you add a "block" ore dictionary-> I am doing something wrong

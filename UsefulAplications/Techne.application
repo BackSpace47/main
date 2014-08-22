@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <assemblyIdentity name="Techne.application" version="1.3.0.15" publicKeyToken="2026d7a8e49816a0" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:publisher="ZeuX and r4wk" asmv2:product="Techne" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <deployment install="true" mapFileExtensions="true">
+    <subscription>
+      <update>
+        <beforeApplicationStartup />
+      </update>
+    </subscription>
+    <deploymentProvider codebase="http://dl.dropbox.com/u/15368593/Minecraft/Techne/Techne.application" />
+  </deployment>
+  <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
+    <framework targetVersion="4.0" profile="Client" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
+  </compatibleFrameworks>
+  <dependency>
+    <dependentAssembly dependencyType="install" codebase="Application Files\Techne_1_3_0_15\Techne.exe.manifest" size="26320">
+      <assemblyIdentity name="Techne.exe" version="1.3.0.15" publicKeyToken="2026d7a8e49816a0" language="neutral" processorArchitecture="x86" type="win32" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>hSErnNZ3PXpdeJfr0Y6wg9YzDc0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=Earth\Alex" issuerKeyHash="39b49391d7f7d852ef44bf4767deb7639fa0da13" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>j/ZRYKiGU959n0JZWpDOeL3k9yc=</DigestValue></Reference></SignedInfo><SignatureValue>KQsVmNulx6ARPbUzBwp6nBTjJ2aEnh0Wre5usboJ+frP4ASP5mpni5mk51Hcw5Hs2LtX+U7fAaJkzMDNPp+DhBYhq0Pi69URJSVZVLwZ1zHlsS7bFhXDZSiIoSt8hGK9+0AR040DI8w89UgSe8CJrQvttX76R5hlbl1aiFiGt70=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wuiAFTFdcSjLKAaUX7FNYDg1u1xJVG6M2SWOPBfqYZye43dAS2Xu+TpA+45o5fnZP3HLtxcHJ1AvRgNcrDhmMpuZosAIEG+00yVUJdMA+hZj0OQiOX8vyf53/GxWadJcNV3JZjnXu6JFgasriQtPMhN9iumv+HUryOneKxMGsM0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="27f7e4bd78ce905a59429f7dde5386a86051f68f" Description="" Url=""><as:assemblyIdentity name="Techne.application" version="1.3.0.15" publicKeyToken="2026d7a8e49816a0" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Earth\Alex</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>EurGb9SngQ41/WOqYlKCkBx4qqc=</DigestValue></Reference></SignedInfo><SignatureValue>tMYGzcjQl9bsYaFCvoQ1b0+dt2Cft7a9PoIgXfqmIYPrBFxAF5cr3z0SvuDW0cuynLTNZJJj1KOFLnxk6PpJodfpPtaMsoboAtMhuW/J33xUh5S4NoC5kqawXSDZXhqtfIu8dL6MG5eEcG94beLIzw937+2v+yZ+hNldvthdLlY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wuiAFTFdcSjLKAaUX7FNYDg1u1xJVG6M2SWOPBfqYZye43dAS2Xu+TpA+45o5fnZP3HLtxcHJ1AvRgNcrDhmMpuZosAIEG+00yVUJdMA+hZj0OQiOX8vyf53/GxWadJcNV3JZjnXu6JFgasriQtPMhN9iumv+HUryOneKxMGsM0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBwTCCASqgAwIBAgIQPh+Jt6FBorNNbH9eyB/DCjANBgkqhkiG9w0BAQUFADAfMR0wGwYDVQQDHhQARQBhAHIAdABoAFwAQQBsAGUAeDAeFw0xMTA0MTIxODU1NTlaFw0xMjA0MTIwMDU1NTlaMB8xHTAbBgNVBAMeFABFAGEAcgB0AGgAXABBAGwAZQB4MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDC6IAVMV1xKMsoBpRfsU1gODW7XElUbozZJY48F+phnJ7jd0BLZe75OkD7jmjl+dk/ccu3FwcnUC9GA1ysOGYym5miwAgQb7TTJVQl0wD6FmPQ5CI5fy/J/nf8bFZp0lw1XclmOde7okWBqyuJC08yE32K6a/4dSvI6d4rEwawzQIDAQABMA0GCSqGSIb3DQEBBQUAA4GBAARtOr7XbOU7qLIS73mzafu6gJ2UiZtSCQF+VXeh9IKAtlHpNO3CVPOCOfDP72tIo6ozqHhfN/OjwrU8DJ0Qe7U1gsGkXX2IVaDPt/JgF6ZrmSEmFTh46bB2x5c3MO3EP8hbncCiSxbgbkqzpEPXc7aHzbPF4FEDTK6PgnaNc7G9</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,3 +1,0 @@
-
-
-Recipies.registerItem(enderCakefresh,"enderCakefresh");

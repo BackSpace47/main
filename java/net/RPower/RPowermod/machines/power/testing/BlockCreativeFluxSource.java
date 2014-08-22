@@ -18,7 +18,6 @@ public class BlockCreativeFluxSource extends Block {
 	
 	@Override
 	public TileEntity createTileEntity(World world, int metadata) {
-		// TODO Auto-generated method stub
 		return new TileEntityCreativeFluxSource();
 	}
 

@@ -1,5 +1,6 @@
 package RPower.api.power;
 
+
 import java.util.Stack;
 
 public class MFPacket
@@ -13,6 +14,8 @@ public class MFPacket
 	{
 		setType(type);
 		setBuffer(0);
+		packetOrigin = new Stack();
+		packetOrigin.add((byte)-1);
 		
 	}
 

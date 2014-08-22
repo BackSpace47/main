@@ -331,7 +331,7 @@ public class ModelFluxCableBasic extends ModelBase
 			connections= ((TileEntityFluxCable)entity).connections;
 		super.render((Entity)null, f, f1, f2, f3, f4, f5);
 		setRotationAngles(f, f1, f2, f3, f4, f5, (Entity)null);
-		if (connections[4]){
+		if (connections[3]){
 			fFaceR.render(f5);
 			fFaceU.render(f5);
 			fFaceD.render(f5);
@@ -339,7 +339,7 @@ public class ModelFluxCableBasic extends ModelBase
 			fcoreL.render(f5);
 			fcoreR.render(f5);
 		}
-		if (connections[2]){
+		if (connections[5]){
 			lFaceB.render(f5);
 			lFaceU.render(f5);
 			lFaceD.render(f5);
@@ -347,7 +347,7 @@ public class ModelFluxCableBasic extends ModelBase
 			lcoreL.render(f5);
 			lcoreR.render(f5);
 		}
-		if (connections[3]){
+		if (connections[4]){
 			rFaceB.render(f5);
 			rFaceU.render(f5);
 			rFaceD.render(f5);
@@ -363,7 +363,7 @@ public class ModelFluxCableBasic extends ModelBase
 		coreB.render(f5);
 		coreU.render(f5);
 
-		if (connections[0]){
+		if (connections[1]){
 			dFaceB.render(f5);
 			dFaceL.render(f5);
 			dFaceR.render(f5);
@@ -371,7 +371,7 @@ public class ModelFluxCableBasic extends ModelBase
 			dcoreL.render(f5);
 			dcoreR.render(f5);
 		}
-		if (connections[1]){
+		if (connections[0]){
 			uFaceB.render(f5);
 			uFaceL.render(f5);
 			uFaceR.render(f5);
@@ -379,7 +379,7 @@ public class ModelFluxCableBasic extends ModelBase
 			ucoreL.render(f5);
 			ucoreR.render(f5);
 		}
-		if (connections[5]){
+		if (connections[2]){
 			bFaceR.render(f5);
 			bFaceU.render(f5);
 			bFaceD.render(f5);

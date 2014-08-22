@@ -162,6 +162,13 @@ public class RPCore {
     public static Item baconRaw;
     public static Item baconCooked;
 
+//Wrench
+
+    public static Item cyberWrench;
+
+
+
+
 
 
     //CAKE!!!!! >:-(
@@ -535,7 +542,9 @@ public class RPCore {
 		//Food Cakes Stuffs ^_^
 
 
+//Wrench
 
+		cyberWrench = new itemcyberWrench().setUnlocalizedName("cyberWrench").setTextureName(modid + ":" + "cyberWrench").setCreativeTab(RPCoreITab);
 
 
 		//Alloys
@@ -1150,7 +1159,9 @@ public class RPCore {
         Recipies.registerItem(chunkSilicon,"chunkSilicon");
 
 
+//wrench
 
+        Recipies.registerItem(cyberWrench,"cyberWrench");
 
 
         Recipies.registerItem(dustMagick, "Magick Dust");

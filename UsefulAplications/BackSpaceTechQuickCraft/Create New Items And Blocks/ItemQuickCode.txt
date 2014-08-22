@@ -1,0 +1,3 @@
+public static Item cyberWrench;
+cyberWrench = new itemcyberWrench().setUnlocalizedName("cyberWrench").setTextureName(modid + ":" + "cyberWrench").setCreativeTab(RPCoreITab);
+Recipies.registerItem(cyberWrench,"cyberWrench");

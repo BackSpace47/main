@@ -54,6 +54,7 @@ import net.minecraft.item.ItemAppleGold;
 import net.minecraft.item.ItemCoal;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -81,6 +82,12 @@ public class RPCore {
 	 *
 	 */
 	//ADD ZINK ORE & BRASSDUST
+
+	//liquids
+
+            public static Fluid destabilizedOre;
+
+
 	//Ores
 	public static Block oreJade;
 	public static Block oreCopper;
@@ -482,7 +489,12 @@ public class RPCore {
 		 * 4 = Jade
 		 * 5 = Reinforced Jade
 		 */
-		jadeToolMaterial = EnumHelper.addToolMaterial("JADE", 4, 35, 16F, 7F, 50);
+		//Fluid
+
+        destabilizedOre =new fluidRPdestabilizedOre();
+
+
+        jadeToolMaterial = EnumHelper.addToolMaterial("JADE", 4, 35, 16F, 7F, 50);
 		//Blocks----------
 		//Ores
 		oreExp = new blockRPOreExp(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("Exp Ore").setBlockTextureName(modid + ":" + "exp_ore").setHardness(5F).setResistance(1F).setLightLevel(0.3F);

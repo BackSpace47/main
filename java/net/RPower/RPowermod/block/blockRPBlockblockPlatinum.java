@@ -7,7 +7,6 @@ public class blockRPBlockblockPlatinum extends Block{
 
 	public blockRPBlockblockPlatinum(Material p_i45394_1_) {
 		super(p_i45394_1_);
-		// TODO Auto-generated constructor stub
 	}
 
 }

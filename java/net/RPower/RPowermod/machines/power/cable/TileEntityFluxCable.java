@@ -225,7 +225,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 
 		}
-
+		worldObj.notifyBlockChange(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord));
 		return result;
 	}
 

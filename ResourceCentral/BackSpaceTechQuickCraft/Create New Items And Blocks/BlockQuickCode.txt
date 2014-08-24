@@ -1,3 +1,54 @@
-public static Block enderCake;
-enderCake= new blockRPBlockenderCake(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("enderCake").setBlockTextureName(modid + ":" + "enderCake").setHardness(5F).setResistance(1F);
-Recipies.registerBlock(enderCake,"enderCake");
+#####################################################################################
+#####################################################################################
+#####################################################################################
+public static Block pjDarkblue;
+public static Block pjDarkgrey;
+public static Block pjDarkred;
+public static Block pjEmpty;
+public static Block pjGreen;
+public static Block pjGrey;
+public static Block pjLightblue;
+public static Block pjLimegreen;
+public static Block pjOrange;
+public static Block pjPink;
+public static Block pjRed;
+public static Block pjWater;
+public static Block ;
+public static Block ;
+#####################################################################################
+#####################################################################################
+#####################################################################################
+pjDarkblue = new blockRPBlockpjDarkblue(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjDarkblue").setTextureName(modid + ":" + "pjDarkblue").setHardness(5F).setResistance(1F);
+pjDarkgrey = new blockRPBlockpjDarkgrey(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjDarkgrey").setTextureName(modid + ":" + "pjDarkgrey").setHardness(5F).setResistance(1F);
+pjDarkred = new blockRPBlockpjDarkred(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjDarkred").setTextureName(modid + ":" + "pjDarkred").setHardness(5F).setResistance(1F);
+pjEmpty = new blockRPBlockpjEmpty(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjEmpty").setTextureName(modid + ":" + "pjEmpty").setHardness(5F).setResistance(1F);
+pjGreen = new blockRPBlockpjGreen(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjGreen").setTextureName(modid + ":" + "pjGreen").setHardness(5F).setResistance(1F);
+pjGrey = new blockRPBlockpjGrey(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjGrey").setTextureName(modid + ":" + "pjGrey").setHardness(5F).setResistance(1F);
+pjLightblue = new blockRPBlockpjLightblue(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjLightblue").setTextureName(modid + ":" + "pjLightblue").setHardness(5F).setResistance(1F);
+pjLimegreen = new blockRPBlockpjLimegreen(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjLimegreen").setTextureName(modid + ":" + "pjLimegreen").setHardness(5F).setResistance(1F);
+pjOrange = new blockRPBlockpjOrange(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjOrange").setTextureName(modid + ":" + "pjOrange").setHardness(5F).setResistance(1F);
+pjPink = new blockRPBlockpjPink(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjPink").setTextureName(modid + ":" + "pjPink").setHardness(5F).setResistance(1F);
+pjRed = new blockRPBlockpjRed(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjRed").setTextureName(modid + ":" + "pjRed").setHardness(5F).setResistance(1F);
+pjWater = new blockRPBlockpjWater(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjWater").setTextureName(modid + ":" + "pjWater").setHardness(5F).setResistance(1F);
+ = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("").setTextureName(modid + ":" + "").setHardness(5F).setResistance(1F);
+ = new blockRPBlock(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("").setTextureName(modid + ":" + "").setHardness(5F).setResistance(1F);
+#####################################################################################
+#####################################################################################
+#####################################################################################
+Recipies.registerBlock(pjDarkblue,"pjDarkblue");
+Recipies.registerBlock(pjDarkgrey,"pjDarkgrey");
+Recipies.registerBlock(pjDarkred,"pjDarkred");
+Recipies.registerBlock(pjEmpty,"pjEmpty");
+Recipies.registerBlock(pjGreen,"pjGreen");
+Recipies.registerBlock(pjGrey,"pjGrey");
+Recipies.registerBlock(pjLightblue,"pjLightblue");
+Recipies.registerBlock(pjLimegreen,"pjLimegreen");
+Recipies.registerBlock(pjOrange,"pjOrange");
+Recipies.registerBlock(pjPink,"pjPink");
+Recipies.registerBlock(pjRed,"pjRed");
+Recipies.registerBlock(pjWater,"pjWater");
+Recipies.registerBlock(,"");
+Recipies.registerBlock(,"");
+#####################################################################################
+#####################################################################################
+#####################################################################################

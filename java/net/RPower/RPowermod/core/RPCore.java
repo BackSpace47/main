@@ -19,6 +19,7 @@ import net.RPower.RPowermod.block.blockRPBlockblockNi;
 import net.RPower.RPowermod.block.blockRPBlockblockPlatinum;
 import net.RPower.RPowermod.block.blockRPBlockblockSilicon;
 import net.RPower.RPowermod.block.blockRPBlockblockZink;
+import net.RPower.RPowermod.block.ModelJar;
 import net.RPower.RPowermod.block.blockRPBlockoreAluminum;
 import net.RPower.RPowermod.block.blockRPBlockoreChromium;
 import net.RPower.RPowermod.block.blockRPBlockoreLithium;
@@ -26,6 +27,18 @@ import net.RPower.RPowermod.block.blockRPBlockoreNi;
 import net.RPower.RPowermod.block.blockRPBlockorePlatinum;
 import net.RPower.RPowermod.block.blockRPBlockoreSilicon;
 import net.RPower.RPowermod.block.blockRPBlockoreZink;
+import net.RPower.RPowermod.block.blockRPBlockpjDarkblue;
+import net.RPower.RPowermod.block.blockRPBlockpjDarkgrey;
+import net.RPower.RPowermod.block.blockRPBlockpjDarkred;
+import net.RPower.RPowermod.block.blockRPBlockpjEmpty;
+import net.RPower.RPowermod.block.blockRPBlockpjGreen;
+import net.RPower.RPowermod.block.blockRPBlockpjGrey;
+import net.RPower.RPowermod.block.blockRPBlockpjLightblue;
+import net.RPower.RPowermod.block.blockRPBlockpjLimegreen;
+import net.RPower.RPowermod.block.blockRPBlockpjOrange;
+import net.RPower.RPowermod.block.blockRPBlockpjPink;
+import net.RPower.RPowermod.block.blockRPBlockpjRed;
+import net.RPower.RPowermod.block.blockRPBlockpjWater;
 import net.RPower.RPowermod.block.blockRPOre;
 import net.RPower.RPowermod.block.blockRPOreExp;
 import net.RPower.RPowermod.block.blockRPOreFerrous;
@@ -123,6 +136,12 @@ public class RPCore {
 	public static Block blockSilicon;
 	public static Block blockAluminum;
 
+	//Jars NEW DONT DELETE THIS CODE THIS IS THE REFINED VERSION THE ITEMS NEED REMOVED THOUGH
+
+	//public static Block moderJar;
+
+
+
 	//other
 	public static Block TCAM;
 	public static Block oreCrusher;
@@ -147,6 +166,24 @@ public class RPCore {
     public static Block enderCake;
     //The Bombs Of Awsomnes
     public static Block blockJadeBomb;
+
+    //Jars
+
+    public static Block pjDarkblue;
+    public static Block pjDarkgrey;
+    public static Block pjDarkred;
+    public static Block pjEmpty;
+    public static Block pjGreen;
+    public static Block pjGrey;
+    public static Block pjLightblue;
+    public static Block pjLimegreen;
+    public static Block pjOrange;
+    public static Block pjPink;
+    public static Block pjRed;
+    public static Block pjWater;
+
+
+
     //Caustic Items
     public static Item causticMeal;
     public static Item causticCorpuscles;
@@ -209,7 +246,9 @@ public class RPCore {
     public static Item ingotTin;
     public static Item ingotSteel;
     public static Item ingotBronze;
-    public static Item ingotBrass;
+
+
+    //public static Item ingotBrass;
     public static Item ingotZink;
     public static Item magnusCookie;
     //Chunks
@@ -254,7 +293,11 @@ public class RPCore {
     public static Item ingotNikel;
     public static Item ingotPlatinum;
 
-
+/*
+ *
+ *
+ *
+ * Que for deletion - Note these are now "Placable Jars" The model rendering is giving me a hassle though :/
     public static Item pjDarkblue;
     public static Item pjDarkgrey;
     public static Item pjDarkred;
@@ -267,6 +310,8 @@ public class RPCore {
     public static Item pjPink;
     public static Item pjRed;
     public static Item pjWater;
+
+*/
 
 
     //Dust
@@ -515,11 +560,28 @@ public class RPCore {
 
 
 		oreSilicon= new blockRPBlockoreSilicon (Material.rock).setCreativeTab(RPCoreBTab).setBlockName("oreSilicon").setBlockTextureName(modid + ":" + "oreSilicon").setHardness(5F).setResistance(1F);
+//jars
+		pjDarkblue = new blockRPBlockpjDarkblue(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjDarkblue").setBlockTextureName(modid + ":" + "pjDarkblue").setHardness(5F).setResistance(1F);
+		pjDarkgrey = new blockRPBlockpjDarkgrey(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjDarkgrey").setBlockTextureName(modid + ":" + "pjDarkgrey").setHardness(5F).setResistance(1F);
+		pjDarkred = new blockRPBlockpjDarkred(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjDarkred").setBlockTextureName(modid + ":" + "pjDarkred").setHardness(5F).setResistance(1F);
+		pjEmpty = new blockRPBlockpjEmpty(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjEmpty").setBlockTextureName(modid + ":" + "pjEmpty").setHardness(5F).setResistance(1F);
+		pjGreen = new blockRPBlockpjGreen(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjGreen").setBlockTextureName(modid + ":" + "pjGreen").setHardness(5F).setResistance(1F);
+		pjGrey = new blockRPBlockpjGrey(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjGrey").setBlockTextureName(modid + ":" + "pjGrey").setHardness(5F).setResistance(1F);
+		pjLightblue = new blockRPBlockpjLightblue(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjLightblue").setBlockTextureName(modid + ":" + "pjLightblue").setHardness(5F).setResistance(1F);
+		pjLimegreen = new blockRPBlockpjLimegreen(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjLimegreen").setBlockTextureName(modid + ":" + "pjLimegreen").setHardness(5F).setResistance(1F);
+		pjOrange = new blockRPBlockpjOrange(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjOrange").setBlockTextureName(modid + ":" + "pjOrange").setHardness(5F).setResistance(1F);
+		pjPink = new blockRPBlockpjPink(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjPink").setBlockTextureName(modid + ":" + "pjPink").setHardness(5F).setResistance(1F);
+		pjRed = new blockRPBlockpjRed(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjRed").setBlockTextureName(modid + ":" + "pjRed").setHardness(5F).setResistance(1F);
+		pjWater = new blockRPBlockpjWater(Material.rock).setCreativeTab(RPCoreBTab).setBlockName("pjWater").setBlockTextureName(modid + ":" + "pjWater").setHardness(5F).setResistance(1F);
 
 
+
+
+		//moderJar = new ModelJar (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeGlass);
 
 
 		woodPetrified = new blockwoodPetrified (Material.wood).setCreativeTab(RPCoreBTab).setBlockName("Petrified Wood").setBlockTextureName(modid + ":" + "woodPetrified").setHardness(0.5F).setResistance(0.5F).setStepSound(Block.soundTypeWood);
+
 
 
 
@@ -653,7 +715,7 @@ public class RPCore {
 	    chunkSilicon = new itemchunkSilicon().setUnlocalizedName("chunkSilicon").setTextureName(modid + ":" + "chunkSilicon").setCreativeTab(RPCoreITab);
 
 
-
+/*Que For deletion - These are now rendered Jars that can be placed - note the rendering is giving me a bit of a hassle :/ - Backspace
 
 	    pjDarkblue = new itempjDarkblue().setUnlocalizedName("pjDarkblue").setTextureName(modid + ":" + "pjDarkblue").setCreativeTab(RPCoreITab);
 	    pjDarkgrey = new itempjDarkgrey().setUnlocalizedName("pjDarkgrey").setTextureName(modid + ":" + "pjDarkgrey").setCreativeTab(RPCoreITab);
@@ -668,7 +730,7 @@ public class RPCore {
 	    pjRed = new itempjRed().setUnlocalizedName("pjRed").setTextureName(modid + ":" + "pjRed").setCreativeTab(RPCoreITab);
 	    pjWater = new itempjWater().setUnlocalizedName("pjWater").setTextureName(modid + ":" + "pjWater").setCreativeTab(RPCoreITab);
 	    ingotBrass = new itemingotBrass().setUnlocalizedName("ingotBrass").setTextureName(modid + ":" + "ingotBrass").setCreativeTab(RPCoreITab);
-
+*/
 
 
 // motha-friggin CAKE!!!! >:-(
@@ -956,6 +1018,31 @@ public class RPCore {
 		Recipies.registerBlock(sandTreated, "Treated Sand");
 		//WIP//Recipies.registerBlock(blueStabilizer, "Blue Stabilizer");
 
+
+
+
+		//jars
+
+		//Recipies.registerBlock(moderJar,"moderJar");
+
+		//Note Needs REAL JAR RENDERING
+
+		//If using the minecraft model creator the jar needs to be a 4x4x4 with a lid of 1 thick.
+		//This job is for anyone to finish. NOTE: this needs to be fixed before first release.
+
+		Recipies.registerBlock(pjDarkblue,"pjDarkblue");
+		Recipies.registerBlock(pjDarkgrey,"pjDarkgrey");
+		Recipies.registerBlock(pjDarkred,"pjDarkred");
+		Recipies.registerBlock(pjEmpty,"pjEmpty");
+		Recipies.registerBlock(pjGreen,"pjGreen");
+		Recipies.registerBlock(pjGrey,"pjGrey");
+		Recipies.registerBlock(pjLightblue,"pjLightblue");
+		Recipies.registerBlock(pjLimegreen,"pjLimegreen");
+		Recipies.registerBlock(pjOrange,"pjOrange");
+		Recipies.registerBlock(pjPink,"pjPink");
+		Recipies.registerBlock(pjRed,"pjRed");
+		Recipies.registerBlock(pjWater,"pjWater");
+
 		//ores
 		Recipies.registerBlock(oreExp, "Exp Ore");
 		Recipies.registerBlock(oreTin, "Tin Ore");
@@ -1036,7 +1123,7 @@ public class RPCore {
 		Recipies.registerItem(ingotLithium,"ingotLithium");
 		Recipies.registerItem(ingotNikel,"ingotNikel");
 		Recipies.registerItem(ingotPlatinum,"ingotPlatinum");
-		Recipies.registerItem(ingotBrass,"ingotBrass");
+		//Recipies.registerItem(ingotBrass,"ingotBrass");
 		Recipies.registerItem(ingotzink,"ingotzink");
 		//Gems
 	    Recipies.registerItem(gemDiamond, "Diamond Ingot");
@@ -1191,7 +1278,11 @@ public class RPCore {
 
 
 		//Jars
-		Recipies.registerItem(pjDarkblue,"pjDarkblue");
+
+        /*
+         *
+         * Phased Out These are old and need to be completely removed from code class files and all
+        Recipies.registerItem(pjDarkblue,"pjDarkblue");
 		Recipies.registerItem(pjDarkgrey,"pjDarkgrey");
 		Recipies.registerItem(pjDarkred,"pjDarkred");
 		Recipies.registerItem(pjEmpty,"pjEmpty");
@@ -1203,9 +1294,7 @@ public class RPCore {
 		Recipies.registerItem(pjPink,"pjPink");
 		Recipies.registerItem(pjRed,"pjRed");
 		Recipies.registerItem(pjWater,"pjWater");
-
-
-
+*/
 
 
 		//Magick

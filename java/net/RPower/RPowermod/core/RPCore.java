@@ -39,6 +39,7 @@ import net.RPower.RPowermod.block.blocktrollEmerald;
 import net.RPower.RPowermod.block.blocktrollGold;
 import net.RPower.RPowermod.block.blocktrollIron;
 import net.RPower.RPowermod.block.blockwoodPetrified;
+import net.RPower.RPowermod.fluid.fluidRPdestabilizedOre;
 import net.RPower.RPowermod.item.*;
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
@@ -85,7 +86,7 @@ public class RPCore {
 
 	//liquids
 
-            public static Fluid destabilizedOre;
+            public static fluidRPdestabilizedOre destabilizedOre;
 
 
 	//Ores
@@ -943,6 +944,9 @@ public class RPCore {
         NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
 		ItemStack slabM0 = new ItemStack (Blocks.stone_slab);
 		slabM0.setItemDamage(5);
+
+
+//fluid
 
 
 

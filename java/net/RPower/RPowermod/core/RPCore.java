@@ -94,56 +94,7 @@ public class RPCore {
 	 */
 	//ADD ZINK ORE & BRASSDUST
 	//Ores
-	public static Block oreJade;
-	public static Block oreCopper;
-	public static Block oreFerrous;
-	public static Block oreLead;
-	public static Block oreSilver;
-	public static Block oreTin;
-	public static Block oreTungsten;
-	public static Block oreExp;
-	public static Block oreAnthtracite;
-	public static Block obsidianWhite;
-	public static Block oreZinc;
-	public static Block oreSilicon;
-	//Troll Items
-	public static Block trollGold;
-	public static Block trollEmerald;
-	public static Block trollDiamond;
-	public static Block trollIron;
-	//Blocks of items
-	public static Block copperBlock;
-	public static Block ferrousBlock;
-	public static Block leadBlock;
-	public static Block jadeBlock;
-	public static Block netherstarBlock;
-	public static Block organizeddiamondBlock;
-	public static Block organizedemeraldBlock;
-	public static Block silverBlock;
-	public static Block tinBlock;
-	public static Block tungstenBlock;
-	public static Block tungstencarbideBlock;
-	//other
-	public static Block TCAM;
-	public static Block oreCrusher;
-    public static Block sandTreated;
-	//machines
-	public static Block alloySmelterIdle;
-	public static Block alloySmelterActive;
-	public static final int guiIDalloySmelter = 0;
-	//cables --- Please can we clean this up guys?
-	public static Block fluxCableBasic;
-    //Trees & Plants
-    public static Block elderSap;
-    public static Block elderLeaf;
-    public static Block elderLog;
-    public static Block elderPlanks;
-    public static Block blueStabilizer;
-    public static Block polymer;
-    public static Block polymerWoven;
-    public static Block woodPetrified;
-    //The Bombs Of Awsomnes
-    public static Block blockJadeBomb;
+
     //Caustic Items
     public static Item causticMeal;
     public static Item causticCorpuscles;

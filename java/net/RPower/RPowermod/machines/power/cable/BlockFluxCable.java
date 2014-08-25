@@ -13,9 +13,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockFluxCableBasic extends BlockContainer{
+public class BlockFluxCable extends BlockContainer{
 
-	public BlockFluxCableBasic(Material p_i45394_1_) {
+	public BlockFluxCable(Material p_i45394_1_) {
 		super(p_i45394_1_);
 
 	}
@@ -27,6 +27,33 @@ public class BlockFluxCableBasic extends BlockContainer{
 		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
 
 		return false;
+	}
+	
+	@Override
+	public void onNeighborChange(IBlockAccess world, int x, int y, int z,int tileX, int tileY, int tileZ) {
+		if(world.getBlock(tileX, tileY, tileZ).hasTileEntity(0) &&MFHelper.checkConnectable(world.getTileEntity(tileX, tileY, tileZ)))
+		{
+			int diffX=x-tileX;
+			int diffY=y-tileY;
+			int diffZ=z-tileZ;
+			
+			int side = 0;
+			
+			if (diffX!=0)
+				side=4;
+			if (diffZ!=0)
+				side=2;
+			if (diffY!=0)
+				side=0;
+			
+			int sideDir=(diffX<0||diffY<0|diffZ<0)?0:1;
+			
+			side+=sideDir;
+			
+			((TileEntityFluxCable)world.getTileEntity(x, y, z)).connections[side]=true;
+			((TileEntityFluxCable)world.getTileEntity(tileX, tileY, tileZ)).connections[side-=sideDir]=true;
+		}
+		super.onNeighborChange(world, x, y, z, tileX, tileY, tileZ);
 	}
 
 	@Override

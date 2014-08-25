@@ -2,10 +2,12 @@ package net.RPower.RPowermod.machines.power.cable;
 
 import java.util.LinkedList;
 import java.util.Queue;
+
 import RPower.api.power.E_MFPacketType;
 import RPower.api.power.I_MFSink;
 import RPower.api.power.MFPacket;
 import RPower.api.power.cable.I_MFCable;
+import net.RPower.RPowermod.core.RPCore;
 import net.RPower.RPowermod.machines.power.MFHelper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -221,11 +223,12 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 			if(connections[conDir])
 			{
 				System.out.println("Connection found!");
+				worldObj.scheduleBlockUpdate(xCoord, yCoord, zCoord, getBlockType(), worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
 			}
 
 
 		}
-		worldObj.notifyBlockChange(xCoord, yCoord, zCoord, worldObj.getBlock(xCoord, yCoord, zCoord));
+		
 		return result;
 	}
 

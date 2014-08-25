@@ -51,7 +51,7 @@ import net.RPower.RPowermod.block.blocktrollGold;
 import net.RPower.RPowermod.block.blocktrollIron;
 import net.RPower.RPowermod.block.blockwoodPetrified;
 import net.RPower.RPowermod.item.*;
-import net.RPower.RPowermod.machines.power.cable.BlockFluxCableBasic;
+import net.RPower.RPowermod.machines.power.cable.BlockFluxCable;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
@@ -338,6 +338,45 @@ public class RPCore {
 	        return TCAI;
 	    }
 	};
+	public static Block oreExp;
+	public static Block oreTin;
+	public static Block oreSilver;
+	public static Block oreJade;
+	public static Block oreCopper;
+	public static Block oreFerrous;
+	public static Block oreLead;
+	public static Block oreTungsten;
+	public static Block oreAnthtracite;
+	public static Block obsidianWhite;
+	public static Block oreZinc;
+	public static Block oreSilicon;
+	public static Block woodPetrified;
+	public static Block jadeBlock;
+	public static Block copperBlock;
+	public static Block ferrousBlock;
+	public static Block leadBlock;
+	public static Block netherstarBlock;
+	public static Block organizeddiamondBlock;
+	public static Block organizedemeraldBlock;
+	public static Block silverBlock;
+	public static Block tinBlock;
+	public static Block tungstenBlock;
+	public static Block tungstencarbideBlock;
+	public static Block trollDiamond;
+	public static Block trollIron;
+	public static Block trollEmerald;
+	public static Block trollGold;
+	public static Block sandTreated;
+	public static Block TCAM;
+	public static Block oreCrusher;
+	public static Block fluxCableBasic;
+	public static Block elderLeaf;
+	public static Block elderSap;
+	public static Block elderLog;
+	public static Block elderPlanks;
+	public static Block polymer;
+	public static Block polymerWoven;
+	public static Block blockJadeBomb;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e){
 		//ToolMaterial
@@ -406,7 +445,7 @@ public class RPCore {
 		//alloySmelterIdle = new BlockAlloySmelter().setCreativeTab(RPCoreBTab).setBlockName("alloySmelter");
 		//alloySmelterActive = new BlockAlloySmelter().setBlockName("alloySmelter").setLightLevel(0.625F);
 		
-		fluxCableBasic = new BlockFluxCableBasic(Material.iron).setCreativeTab(RPCoreBTab).setBlockName("Basic MagiFlux Rail").setBlockTextureName(modid + ":" + "fluxCable").setHardness(50F).setResistance(5F);
+		fluxCableBasic = new BlockFluxCable(Material.iron).setCreativeTab(RPCoreBTab).setBlockName("Basic MagiFlux Rail").setBlockTextureName(modid + ":" + "fluxCable").setHardness(50F).setResistance(5F);
 		
 		//Woods & Planks & Trees
 		elderLog = new blockREBLo().setBlockName("Red Elderberry Log").setHardness(1.5F).setResistance(1F).setStepSound(Block.soundTypeWood).setCreativeTab(RPCoreBTab).setBlockTextureName("log");

@@ -4,11 +4,6 @@
 // Keep in mind that you still need to fill in some blanks
 // - ZeuX
 
-
-
-
-
-
 package net.RPower.RPowermod.model.block;
 
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;

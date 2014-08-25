@@ -29,50 +29,6 @@ public class BlockFluxCable extends BlockContainer{
 		return false;
 	}
 	
-	@Override
-	public void onNeighborChange(IBlockAccess world, int x, int y, int z,int tileX, int tileY, int tileZ) {
-		if(world.getBlock(tileX, tileY, tileZ).hasTileEntity(0) &&MFHelper.checkConnectable(world.getTileEntity(tileX, tileY, tileZ)))
-		{
-			int diffX=x-tileX;
-			int diffY=y-tileY;
-			int diffZ=z-tileZ;
-			
-			int side = 0;
-			
-			if (diffX!=0)
-				side=4;
-			if (diffZ!=0)
-				side=2;
-			if (diffY!=0)
-				side=0;
-			
-			int sideDir=(diffX<0||diffY<0|diffZ<0)?0:1;
-			
-			side+=sideDir;
-			
-			((TileEntityFluxCable)world.getTileEntity(x, y, z)).connections[side]=true;
-			((TileEntityFluxCable)world.getTileEntity(tileX, tileY, tileZ)).connections[side-=sideDir]=true;
-		}
-		super.onNeighborChange(world, x, y, z, tileX, tileY, tileZ);
-	}
-
-	@Override
-	public void onNeighborBlockChange(World world, int x,int y, int z, Block block) {
-		if((world.getBlock(x, y, z).hasTileEntity(0) && MFHelper.checkConnectable(world.getTileEntity(x, y, z))))
-		{
-			((TileEntityFluxCable)world.getTileEntity(x, y, z)).checkConnections();
-		}
-	}
-
-	@Override
-	public int onBlockPlaced(World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int metaD)
-	{
-		if((world.getBlock(x, y, z).hasTileEntity(0) && MFHelper.checkConnectable(world.getTileEntity(x, y, z))))
-			((TileEntityFluxCable)world.getTileEntity(x, y, z)).connections[(5-side)]=true;
-		System.out.println("set block at ["+x+","+y+","+z+"] to: "+side);
-
-		return super.onBlockPlaced(world, x, y, z,side, hitX, hitY, hitZ, metaD);
-	}
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {

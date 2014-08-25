@@ -1,6 +1,7 @@
 package net.RPower.RPowermod.machines.power.cable;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import RPower.api.power.E_MFPacketType;
@@ -14,10 +15,11 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	//Connections are an array of [Up, Down, North, East, West, South]
-	public boolean[] connections = {false, false, false, false, false, false};
+	public List<PipeDirection> connections;
 
 	//whether or not the cable is lossy
 	public boolean insulatedCable;
@@ -53,6 +55,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		packetSizeLimit= packetSize;
 		insulatedCable=insulated;
 		bridgeConnections=bridged;
+		connections=new LinkedList<PipeDirection>();
 		internalBuffer=new LinkedList<MFPacket>();
 		checkLoss(insulated);
 	}
@@ -88,13 +91,13 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 	@Override
 	public void writeToNBT(NBTTagCompound nbtTag) {
-		int[] connectionsInt = new int[6];
-		int i = 0;
-		for (boolean side : connections) {
-			connectionsInt[i]=connections[i]?1:0;
+		byte[] connectionsArr = new byte[connections.size()];
+		int i =0;
+		for (PipeDirection connection: connections) {
+			connectionsArr[i] = connection.toByte();
 			i++;
 		}
-		nbtTag.setIntArray("connections", connectionsInt);
+		nbtTag.setByteArray("connections", connectionsArr);
 		nbtTag.setBoolean("insulated", insulatedCable);
 		nbtTag.setBoolean("bridged", bridgeConnections);
 
@@ -105,11 +108,10 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 	@Override
 	public void readFromNBT(NBTTagCompound nbtTag) {
-		int[] connectionsInt = nbtTag.getIntArray("connections");
-		int i = 0;
-		for (boolean side : connections) {
-			connections[i]=(connectionsInt[i]==1);
-			i++;
+		byte[] connectionsArr = nbtTag.getByteArray("connections");
+		for (byte b : connectionsArr) {
+			PipeDirection temp = MFHelper.CheckDirection(b);
+			connections.add(temp);
 		}
 
 		insulatedCable=nbtTag.getBoolean("insulated");
@@ -121,7 +123,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		checkLoss(insulatedCable);
 
 		super.readFromNBT(nbtTag);
-	};
+	}
 
 	@Override
 	public Packet getDescriptionPacket() {
@@ -161,7 +163,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 				break;
 			default:
 				direction = packet.getOrigin().peek();
-				packet.getOrigin().add(randDir(direction));
+				packet.getOrigin().add(randDir(direction).toByte());
 				result=pushPacket(packet);
 				break;
 			}
@@ -169,65 +171,17 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		super.updateEntity();
 	}
 
-	private byte randDir(byte initDirection) {
-		byte result = -1;
-		while((connectionNum()>=2)&&(result==-1||!connections[result])&&result!=initDirection)
-		{
-			result=(byte)(Math.random()*5);
-		}
-		return result;
-	}
-
-	public byte connectionNum() {
-		byte result=0;
-		for (Boolean connection : connections) {
-			if(connection)
-				result++;
-		}
-		return result;
+	private PipeDirection randDir(byte initDirection) {
+		int randNum=(int)(Math.random()*connections.size());
+		return connections.get(randNum);
 	}
 
 
 	public boolean checkConnections()
 	{
 		boolean result=false;
-
-		int xDir=0, yDir=0, zDir=0;
-		for(int dir=0; dir<=5; dir++)
-		{
-			int modifier=(dir%2==1)?1:-1;
-			System.err.println("test vars: dir="+dir+", TestCase="+(dir/2)+", modifier="+modifier+",");
-			switch(dir/2)
-			{
-			case 2:
-				xDir=modifier;
-				break;
-			case 1:
-				zDir=modifier;
-				break;
-			case 0:
-				yDir=modifier;
-				break;
-			}
-			System.out.println("testing ["+xDir+","+yDir+","+zDir+"]");
-			result = this.worldObj.getBlock(xCoord+xDir, yCoord+yDir, zCoord+zDir).hasTileEntity(0);
-			if(result)
-				result = MFHelper.checkConnectable(this.worldObj.getTileEntity(xCoord+xDir, yCoord+yDir, zCoord+zDir));	
-
-			System.out.println("result of MF test was: "+result);
-
-			int conDir = dir-modifier;
-			System.err.println("conDir="+conDir);
-			connections[conDir]=result;
-
-			if(connections[conDir])
-			{
-				System.out.println("Connection found!");
-				worldObj.scheduleBlockUpdate(xCoord, yCoord, zCoord, getBlockType(), worldObj.getBlockMetadata(xCoord, yCoord, zCoord));
-			}
-
-
-		}
+		
+		
 		
 		return result;
 	}
@@ -241,26 +195,13 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 			packet.getOrigin().pop();
 
 		boolean result= false;
-		int xDir=0, yDir=0, zDir=0;
-		int modifier=(direction%2==1)?-1:1;
-		//up:1, down:0, x+:5, x-:4, z+:3,z-2;
-		switch(direction/2)
-		{
-		case 2:
-			xDir=modifier;
-			break;
-		case 1:
-			zDir=modifier;
-			break;
-		case 0:
-			yDir=modifier;
-			break;
-		}
-		result = this.worldObj.getBlock(xCoord+xDir, yCoord+yDir, zCoord+zDir).hasTileEntity(0);
+		int[]origin = {xCoord,yCoord,zCoord};
+		int[] target = MFHelper.CheckDirection(direction).getTarget(origin);
+		result = this.worldObj.getBlock(target[0], target[1], target[2]).hasTileEntity(0);
 		if(result)
-			result=this.worldObj.getTileEntity(xCoord+xDir, yCoord+yDir, zCoord+zDir)instanceof I_MFSink;
+			result=this.worldObj.getTileEntity(target[0], target[1], target[2])instanceof I_MFSink;
 		if(result)
-			result=((I_MFSink)this.worldObj.getTileEntity(xCoord+xDir, yCoord+yDir, zCoord+zDir)).takePacket(packet);
+			result=((I_MFSink)this.worldObj.getTileEntity(target[0], target[1], target[2])).takePacket(packet);
 		if(!result)
 			powerBleed(packet.getBuffer());
 		return result;
@@ -306,7 +247,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	}
 
 	@Override
-	public boolean[] getConnections() {
+	public List<PipeDirection> getConnections() {
 		return connections;
 	}
 

@@ -1,7 +1,7 @@
 package net.RPower.RPowermod.item;
 
-import RPower.api.power.MFHelper;
 import RPower.api.power.cable.I_MFCable;
+import net.RPower.RPowermod.machines.power.MFHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

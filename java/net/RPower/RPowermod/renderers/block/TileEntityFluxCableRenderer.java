@@ -61,22 +61,22 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
         	 {
         		 if((target[0]==0)&&(target[2]==0))
         		 {
-        			 angles[2]=-90F;
+        			 angles[2]=90F;
         		 } else {
-        			 angles[2]=-35F;
+        			 angles[2]=35F;
         		 }
         	 }
         	 if((target[0]!=0)&&(target[2]!=0))
         	 {
-        		 angles[0]=-45;
-        		 angles[1]=-45;
+        		 //+x&&+z -> 360
+        		 
+        		 
         	 } else {
-        		 angles[0]=-90;
-        		 angles[1]=-90;
+        		 
         	 }
-        	 angles[0]*=target[0];
-        	 angles[1]*=target[1];
-    		 angles[2]*=target[2];
+        	 angles[0]=0;
+        	 angles[1]=360-(45*((target[0]+target[2])/2F));
+    		 angles[2]*=target[1];
         	 
         	 
 			drawConnector(angles);

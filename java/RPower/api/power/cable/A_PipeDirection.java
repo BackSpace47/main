@@ -20,6 +20,8 @@ public abstract class A_PipeDirection implements I_PipeDirection {
 		//remove the processed value from the byte
 		b-=(100*yOffset);
 		System.out.println(" "+b);
+		if(b<0)
+			b*=-1;
 		//x = (b/10)-1 (again, nearest whole and convert 0-> -1, 1 -> 0, 2 -> 1)
 		int xOffset = (b/10)-1;
 		System.out.println(b+" xO:"+xOffset);

@@ -81,6 +81,11 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
         			
         		}
         	 }
+        	 if(target[0]!=0&&target[2]!=0)
+        	 {
+        		 xDir*=-1;
+        		 xMod-=45F;
+        	 }
         	 
         	 angles[0]=0;
         	 angles[1]=xDir*xMod;

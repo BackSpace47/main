@@ -214,13 +214,14 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 	@Override
 	public void formConnection(boolean twoWay, int x, int y, int z) {
-		if(x!=0&&y!=0&&z!=0)
+		if(!(x==0&&y==0&&z==0))
 		{
 			connections.add(new PipeDirection(x, y, z));
 			if (twoWay)
 			{
 				((I_MFCable)(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))).formConnection(false, -x, -y, -z);
-				worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z).updateEntity();
+				
+				worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
 			}
 			System.out.println("connection formed");
 		}
@@ -301,6 +302,21 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	@Override
 	public List<I_PipeDirection> getConnections() {
 		return connections;
+	}
+
+	public String toJSON() {
+		String result = "\n{";
+		result+=("\n\t\"tileX\":\""+xCoord+"\",");
+		result+=("\n\t\"tileY\":\""+yCoord+"\",");
+		result+=("\n\t\"tileZ\":\""+zCoord+"\",");
+		result+=("\n\t\"connections\":[\n");
+		for (I_PipeDirection pipe : connections) {
+			result+=(pipe.toJSON()+",\n");
+		}
+		result+="]";
+		result+="\n}\n";
+		
+		return result;
 	}
 
 }

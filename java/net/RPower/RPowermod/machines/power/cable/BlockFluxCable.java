@@ -27,7 +27,7 @@ public class BlockFluxCable extends BlockContainer{
 //		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
 		
 		System.err.println("This pipe has "+((TileEntityFluxCable)world.getTileEntity(x, y, z)).getConnections().size()+" connections.");
-
+		System.out.println(((TileEntityFluxCable)world.getTileEntity(x, y, z)).toJSON());
 		return false;
 	}
 	

@@ -1,10 +1,10 @@
 package net.RPower.RPowermod.machines.power.cable;
 
 import RPower.api.power.E_MFPacketType;
+import RPower.api.power.MFHelper;
 import RPower.api.power.MFPacket;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.RPower.RPowermod.machines.power.MFHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -23,12 +23,19 @@ public class BlockFluxCable extends BlockContainer{
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int metaD,  float hitX, float hitY, float hitZ)
 	{
-		MFPacket temp = new MFPacket(E_MFPacketType.REQUEST);
-		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
+//		MFPacket temp = new MFPacket(E_MFPacketType.REQUEST);
+//		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
+		
+		System.err.println("This pipe has "+((TileEntityFluxCable)world.getTileEntity(x, y, z)).getConnections().size()+" connections.");
 
 		return false;
 	}
 	
+	@Override
+	public void onBlockAdded(World world, int x, int y, int z) {
+		((TileEntityFluxCable)world.getTileEntity(x, y, z)).checkConnections();
+		super.onBlockAdded(world, x, y, z);
+	}
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int metadata) {

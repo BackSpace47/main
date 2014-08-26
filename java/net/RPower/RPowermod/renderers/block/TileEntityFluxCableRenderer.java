@@ -57,26 +57,28 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
          for (I_PipeDirection connection : ((TileEntityFluxCable)entity).connections) {
         	 int[] target = connection.getTarget();
         	 float[] angles = {0,0,0};
-        	 if(target[1]!=0)
+        	 float yMod = (target[0]==0&&target[2]==0)?90F:35;
+        	 
+        	 
+        	 float xMod=0;
+        	 float xDir=0;
+        	 if(target[1]==0)
+        		 xMod=-90F;
+        	 if(target[0]==0&&target[2]!=0)
         	 {
-        		 if((target[0]==0)&&(target[2]==0))
-        		 {
-        			 angles[2]=90F;
-        		 } else {
-        			 angles[2]=35F;
-        		 }
+        		xDir=target[2];
+        		xMod=-90F;
         	 }
-        	 if((target[0]!=0)&&(target[2]!=0))
+        	 if(target[2]==0&&target[0]!=0)
         	 {
-        		 //+x&&+z -> 360
-        		 
-        		 
-        	 } else {
-        		 
+        		xDir=target[0];
+        		xMod=-90F;
         	 }
+        	 
         	 angles[0]=0;
-        	 angles[1]=360-(45*((target[0]+target[2])/2F));
-    		 angles[2]*=target[1];
+        	 angles[1]=target[2]*xMod;
+    		 angles[2]=target[1]*yMod;
+    		 
         	 
         	 
 			drawConnector(angles);

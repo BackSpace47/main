@@ -2,8 +2,8 @@ package net.RPower.RPowermod.renderers.block;
 
 import org.lwjgl.opengl.GL11;
 
+import RPower.api.power.cable.I_PipeDirection;
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import net.RPower.RPowermod.machines.power.cable.PipeDirection;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -46,23 +46,41 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 		//binding the textures
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
 		GL11.glPushMatrix();
-		float[] test = {0F,-45F,35F};
 		//initial location (what's up with the 0.5 and 1.5 difference I wonder)
 		GL11.glTranslatef((float) x + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
 		GL11.glDisable(GL11.GL_CULL_FACE);
 		drawHub();
-		drawConnector(test);
-		test[1]=135F;
-		test[2]=-35F;
-		drawConnector(test);
+	
          //let LWGL know we're doing more matixy manipulation stuff
          
          //rotate to avoid model rendering upside down
-         /*for (PipeDirection connection : ((TileEntityFluxCable)entity).connections) {
-          * GL11.glTranslatef((float) x + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
-			drawConnector(connection.getAngle());
-			GL11.glTranslatef((float) x - 0.5F, (float) y - 0.5F, (float) z - 0.5F);
-		}*/
+         for (I_PipeDirection connection : ((TileEntityFluxCable)entity).connections) {
+        	 int[] target = connection.getTarget();
+        	 float[] angles = {0,0,0};
+        	 if(target[1]!=0)
+        	 {
+        		 if((target[0]==0)&&(target[2]==0))
+        		 {
+        			 angles[2]=-90F;
+        		 } else {
+        			 angles[2]=-35F;
+        		 }
+        	 }
+        	 if((target[0]!=0)&&(target[2]!=0))
+        	 {
+        		 angles[0]=-45;
+        		 angles[1]=-45;
+        	 } else {
+        		 angles[0]=-90;
+        		 angles[1]=-90;
+        	 }
+        	 angles[0]*=target[0];
+        	 angles[1]*=target[1];
+    		 angles[2]*=target[2];
+        	 
+        	 
+			drawConnector(angles);
+		}
         
          //pop both sections off the render stack
          
@@ -139,12 +157,23 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 
 
 	private void drawRail(int size, Tessellator tessellator) {
+		float offset=27.4F;
+		GL11.glRotatef(45F-offset, 1, 0, 0);
+		GL11.glRotatef(-offset, 1, 0, 0);
 		tessellator.startDrawingQuads();
 		 tessellator.addVertexWithUV(0, 0.5*pixel, -2*pixel, size*pixel, 1*pixel);
 		 tessellator.addVertexWithUV(size*pixel, 0.5*pixel, -2*pixel, 0*pixel, 0*pixel);
 		 tessellator.addVertexWithUV(size*pixel, -0.5*pixel, -2*pixel, 0*pixel, 0*pixel);
 		 tessellator.addVertexWithUV(0, -0.5*pixel, -2*pixel, size*pixel, 1*pixel);
 		 tessellator.draw();
+		 GL11.glRotatef(offset, 1, 0, 0);
+		 tessellator.startDrawingQuads();
+		 tessellator.addVertexWithUV(0, 0.5*pixel, -2*pixel, size*pixel, 2*pixel);
+		 tessellator.addVertexWithUV(size*pixel, 0.5*pixel, -2*pixel, 0*pixel, 1*pixel);
+		 tessellator.addVertexWithUV(size*pixel, -0.5*pixel, -2*pixel, 0*pixel, 1*pixel);
+		 tessellator.addVertexWithUV(0, -0.5*pixel, -2*pixel, size*pixel, 2*pixel);
+		 tessellator.draw();
+		 GL11.glRotatef(-45F+offset, 1, 0, 0);
 	}
 	 
 	 private void drawCore(int size)
@@ -172,7 +201,12 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 	 
 
 	private void drawConnector(float[] angle) {
-		int size = 14;
+		int size = 8;
+		if((angle[1]!=90)||(angle[1]!=90))
+			size+=3;
+		if(((angle[0]!=90)||(angle[2]!=90))&&((angle[0]!=-90)||(angle[2]!=-90)))
+			size+=3;
+		
 		GL11.glRotatef(angle[0], 1, 0, 0);
 		GL11.glRotatef(angle[1], 0, 1, 0);
 		GL11.glRotatef(angle[2], 0, 0, 1);

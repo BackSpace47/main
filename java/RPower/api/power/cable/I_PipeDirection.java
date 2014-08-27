@@ -10,4 +10,6 @@ public interface I_PipeDirection {
 	
 	public String toJSON();
 
+	void invert();
+
 }

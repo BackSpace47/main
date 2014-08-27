@@ -3,6 +3,7 @@ package net.RPower.RPowermod.machines.power.cable;
 import RPower.api.power.E_MFPacketType;
 import RPower.api.power.MFHelper;
 import RPower.api.power.MFPacket;
+import RPower.api.power.cable.I_MFCable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -23,11 +24,11 @@ public class BlockFluxCable extends BlockContainer{
 	@Override
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int metaD,  float hitX, float hitY, float hitZ)
 	{
-//		MFPacket temp = new MFPacket(E_MFPacketType.REQUEST);
-//		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
+		MFPacket temp = new MFPacket(E_MFPacketType.REQUEST);
+		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
 		
 		System.err.println("This pipe has "+((TileEntityFluxCable)world.getTileEntity(x, y, z)).getConnections().size()+" connections.");
-		System.out.println(((TileEntityFluxCable)world.getTileEntity(x, y, z)).toJSON());
+		//System.out.println(((TileEntityFluxCable)world.getTileEntity(x, y, z)).toJSON());
 		return false;
 	}
 	
@@ -47,6 +48,13 @@ public class BlockFluxCable extends BlockContainer{
 	public boolean isAir(IBlockAccess world, int x, int y, int z) {
 		return false;
 	}
+	
+	@Override
+	public void breakBlock(World world, int x, int y, int z, Block block, int metaD) {
+		((I_MFCable) world.getTileEntity(x, y, z)).breakAllConnections();
+		super.breakBlock(world, x, y, z, block, metaD);
+	}
+	
 
 	@Override
 	protected boolean canSilkHarvest() {

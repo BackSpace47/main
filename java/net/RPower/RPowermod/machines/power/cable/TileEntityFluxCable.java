@@ -37,6 +37,8 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 	//transfer mode, unbridged connections can only cross an intersection in straight lines (may be reserved for advanced cabling)
 	public boolean bridgeConnections;
+	
+	private double distLimit;
 
 	public TileEntityFluxCable()
 	{
@@ -60,6 +62,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		connections=new LinkedList<I_PipeDirection>();
 		internalBuffer=new LinkedList<MFPacket>();
 		checkLoss(insulated);
+		distLimit = insulatedCable?(4*packetSize):packetSize;
 	}
 
 	private void checkLoss(boolean insulated) {
@@ -174,8 +177,17 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	}
 
 	private I_PipeDirection randDir(byte initDirection) {
-		int randNum=(int)(Math.random()*connections.size());
-		return connections.get(randNum);
+		I_PipeDirection origin = new PipeDirection(initDirection);
+		origin.invert();
+		I_PipeDirection newDirection = origin;
+		int attempt = 0;
+		while (!connections.isEmpty()&&attempt<26&&newDirection.equals(origin))
+		{
+			attempt++;
+			int randNum=(int)(Math.random()*connections.size());
+			newDirection  = connections.get(randNum);
+		}
+		return newDirection;
 	}
 
 
@@ -185,27 +197,27 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		int x,y,z,i=0;
 		for(y=-1;y<2;y++)
 		{
-			System.out.println("Y Level: "+y);
+			//System.out.println("Y Level: "+y);
 			for(x=-1;x<2;x++)
 			{
-				System.out.println("X Position: "+x);
+				//System.out.println("X Position: "+x);
 				for(z=-1;z<2;z++)
 				{
-					System.out.println("Z Position: "+z);
+					//System.out.println("Z Position: "+z);
 					i++;
 					Block target = worldObj.getBlock(xCoord+x, yCoord+y, zCoord+z);
-					System.out.print("Test["+i+"] Checking block at ["+(xCoord+x)+","+(yCoord+y)+","+(zCoord+z)+"]");
+					//System.out.print("Test["+i+"] Checking block at ["+(xCoord+x)+","+(yCoord+y)+","+(zCoord+z)+"]");
 					if(target.hasTileEntity(target.getDamageValue(worldObj, xCoord+x, yCoord+y, zCoord+z))&&MFHelper.checkConnectable(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z)))
 					{
-							System.out.print(" - Valid!");
+							//System.out.print(" - Valid!");
 							boolean twoWay = (worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable;
 							formConnection(twoWay, x,y,z);
 						
 					}
-					System.out.print('\n');
+					//System.out.print('\n');
 				}
 			}
-			System.out.println("=================================================================");
+			//System.out.println("=================================================================");
 		}
 
 
@@ -223,27 +235,39 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 				
 				worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
 			}
-			System.out.println("connection formed");
+			//System.out.println("connection formed");
+			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 		}
 	}
-
+	
 	@Override
-	public void breakConnection(I_PipeDirection direction) {
-		//		if ((worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable)
-		//			((I_MFCable)(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))).formConnection(false, -x, -y, -z);
-		//		System.out.println("connection removed");
-		//		connections.remove(direction);
+	public void breakConnection(boolean twoWay, int x, int y, int z) {
+		if (twoWay&&(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable)
+		{
+		I_MFCable targetTile = (I_MFCable)worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z);
+		targetTile.breakConnection(false,-x, -y, -z);
+		worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
+		}
+		connections.remove(new PipeDirection(x,y,z));
+		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 
 	@Override
 	public boolean pushPacket(MFPacket packet)
 	{
+		boolean result= false;
+		if(packet.getType()==E_MFPacketType.RESPOND&&packet.getBuffer()<=0)
+		{
+			packet=null;
+		}
+		if(packet!=null&&packet.getOrigin().size()<=distLimit);
+		{
 
 		byte direction = packet.getOrigin().peek();
 		if(packet.getType()==E_MFPacketType.RESPOND)
 			packet.getOrigin().pop();
 
-		boolean result= false;
+		
 		int[]origin = {xCoord,yCoord,zCoord};
 		int[] target = new PipeDirection(direction).getTarget();
 		for(int i=0;i<3;i++)
@@ -257,6 +281,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 			result=((I_MFSink)this.worldObj.getTileEntity(target[0], target[1], target[2])).takePacket(packet);
 		if(!result)
 			powerBleed(packet.getBuffer());
+		}
 		return result;
 	}
 
@@ -317,6 +342,15 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		result+="\n}\n";
 		
 		return result;
+	}
+
+	@Override
+	public void breakAllConnections() {
+		for (I_PipeDirection direction : connections) {
+			int[] target = direction.getTarget();
+			breakConnection(true, target[0], target[1], target[2]);
+		}
+		
 	}
 
 }

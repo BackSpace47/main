@@ -190,7 +190,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		return newDirection;
 	}
 
-
+	@Override
 	public boolean checkConnections()
 	{
 		boolean result=false;
@@ -346,8 +346,9 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 	@Override
 	public void breakAllConnections() {
-		for (I_PipeDirection direction : connections) {
-			int[] target = direction.getTarget();
+		int conNum=connections.size();
+		for (int i= 0; i<conNum;i++) {
+			int[] target = connections.get(0).getTarget();
 			breakConnection(true, target[0], target[1], target[2]);
 		}
 		

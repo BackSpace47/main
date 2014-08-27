@@ -53,6 +53,7 @@ import net.RPower.RPowermod.block.blockwoodPetrified;
 import net.RPower.RPowermod.item.*;
 import net.RPower.RPowermod.machines.power.cable.BlockFluxCable;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
+import net.RPower.RPowermod.machines.power.testing.BlockCreativeFluxSource;
 import net.RPower.RPowermod.net.ItemFoodcreativeCookie;
 import net.RPower.RPowermod.proxy.CommonProxy;
 import net.RPower.RPowermod.world.RPWorldGen;
@@ -369,7 +370,7 @@ public class RPCore {
 	public static Block sandTreated;
 	public static Block TCAM;
 	public static Block oreCrusher;
-	public static Block fluxCableBasic;
+	
 	public static Block elderLeaf;
 	public static Block elderSap;
 	public static Block elderLog;
@@ -377,6 +378,13 @@ public class RPCore {
 	public static Block polymer;
 	public static Block polymerWoven;
 	public static Block blockJadeBomb;
+	
+	
+	
+	public static Block fluxCable;
+	public static Block creativeSource;
+	
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e){
 		//ToolMaterial
@@ -445,7 +453,10 @@ public class RPCore {
 		//alloySmelterIdle = new BlockAlloySmelter().setCreativeTab(RPCoreBTab).setBlockName("alloySmelter");
 		//alloySmelterActive = new BlockAlloySmelter().setBlockName("alloySmelter").setLightLevel(0.625F);
 		
-		fluxCableBasic = new BlockFluxCable(Material.iron).setCreativeTab(RPCoreBTab).setBlockName("Basic MagiFlux Rail").setBlockTextureName(modid + ":" + "fluxCable").setHardness(50F).setResistance(5F);
+		fluxCable = new BlockFluxCable(Material.iron).setCreativeTab(RPCoreBTab).setBlockName("BasicMagiFluxRail").setBlockTextureName(modid + ":" + "fluxCable").setHardness(50F).setResistance(5F);
+		
+		creativeSource = new BlockCreativeFluxSource(Material.iron).setCreativeTab(RPCoreBTab).setBlockName("CreativeMagiFluxSource").setBlockTextureName(modid + ":" + "fluxSource").setHardness(50F).setResistance(5F);
+		
 		
 		//Woods & Planks & Trees
 		elderLog = new blockREBLo().setBlockName("Red Elderberry Log").setHardness(1.5F).setResistance(1F).setStepSound(Block.soundTypeWood).setCreativeTab(RPCoreBTab).setBlockTextureName("log");
@@ -789,7 +800,8 @@ public class RPCore {
 		Recipies.registerBlock(oreSilicon,"oreSilicon");
 
 		//Cabling
-		Recipies.registerBlock(fluxCableBasic, "fluxCableBasic");
+		Recipies.registerBlock(fluxCable, "fluxCableBasic");
+		Recipies.registerBlock(creativeSource, "creativeFluxSource");
 		
 
 		Recipies.registerBlock(TCAM, "TCAM");

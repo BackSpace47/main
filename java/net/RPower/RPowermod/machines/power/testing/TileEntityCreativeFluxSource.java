@@ -6,13 +6,13 @@ import java.util.List;
 import net.RPower.RPowermod.machines.power.cable.PipeDirection;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
-import RPower.api.power.E_MFPacketType;
-import RPower.api.power.I_MFSink;
-import RPower.api.power.I_MFSource;
-import RPower.api.power.MFHelper;
-import RPower.api.power.MFPacket;
-import RPower.api.power.cable.I_MFCable;
-import RPower.api.power.cable.I_PipeDirection;
+import RPower.api.power.block.I_MFSink;
+import RPower.api.power.block.I_MFSource;
+import RPower.api.power.block.cable.I_MFCable;
+import RPower.api.power.block.cable.I_PipeDirection;
+import RPower.api.power.core.E_MFPacketType;
+import RPower.api.power.core.MFHelper;
+import RPower.api.power.core.MFPacket;
 
 public class TileEntityCreativeFluxSource extends TileEntity implements I_MFSource, I_MFSink {
 	List<I_PipeDirection> connections;
@@ -126,14 +126,19 @@ public class TileEntityCreativeFluxSource extends TileEntity implements I_MFSour
 	}
 
 	@Override
-	public void breakConnection(boolean twoWay, int x, int y, int z) {
+	public synchronized void breakConnection(boolean twoWay, int x, int y, int z) {
+		I_PipeDirection targetConnector = new PipeDirection(x,y,z);
+		if(connections.contains(targetConnector))
+		{
+			System.out.println("Connector found...");
+			System.out.println("Remove operation was "+(connections.remove(targetConnector)?"":"un")+"successful.");
+		}
 		if (twoWay&&(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable)
 		{
 		I_MFCable targetTile = (I_MFCable)worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z);
 		targetTile.breakConnection(false,-x, -y, -z);
 		worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
 		}
-		connections.remove(new PipeDirection(x,y,z));
 		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 

@@ -4,12 +4,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import RPower.api.power.E_MFPacketType;
-import RPower.api.power.I_MFSink;
-import RPower.api.power.MFHelper;
-import RPower.api.power.MFPacket;
-import RPower.api.power.cable.I_MFCable;
-import RPower.api.power.cable.I_PipeDirection;
+import RPower.api.power.block.I_MFSink;
+import RPower.api.power.block.cable.I_MFCable;
+import RPower.api.power.block.cable.I_PipeDirection;
+import RPower.api.power.core.E_MFPacketType;
+import RPower.api.power.core.MFHelper;
+import RPower.api.power.core.MFPacket;
 import net.RPower.RPowermod.core.RPCore;
 import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
@@ -225,7 +225,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	}
 
 	@Override
-	public void formConnection(boolean twoWay, int x, int y, int z) {
+	public synchronized void formConnection(boolean twoWay, int x, int y, int z) {
 		if(!(x==0&&y==0&&z==0))
 		{
 			connections.add(new PipeDirection(x, y, z));
@@ -241,14 +241,19 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	}
 	
 	@Override
-	public void breakConnection(boolean twoWay, int x, int y, int z) {
+	public synchronized void breakConnection(boolean twoWay, int x, int y, int z) {
+		I_PipeDirection targetConnector = new PipeDirection(x,y,z);
+		if(connections.contains(targetConnector))
+		{
+			System.out.println("Connector found...");
+			System.out.println("Remove operation was "+(connections.remove(targetConnector)?"":"un")+"successful.");
+		}
 		if (twoWay&&(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable)
 		{
 		I_MFCable targetTile = (I_MFCable)worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z);
 		targetTile.breakConnection(false,-x, -y, -z);
 		worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
 		}
-		connections.remove(new PipeDirection(x,y,z));
 		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 

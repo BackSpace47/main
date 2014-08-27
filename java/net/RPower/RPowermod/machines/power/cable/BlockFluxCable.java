@@ -1,9 +1,9 @@
 package net.RPower.RPowermod.machines.power.cable;
 
-import RPower.api.power.E_MFPacketType;
-import RPower.api.power.MFHelper;
-import RPower.api.power.MFPacket;
-import RPower.api.power.cable.I_MFCable;
+import RPower.api.power.block.cable.I_MFCable;
+import RPower.api.power.core.E_MFPacketType;
+import RPower.api.power.core.MFHelper;
+import RPower.api.power.core.MFPacket;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;

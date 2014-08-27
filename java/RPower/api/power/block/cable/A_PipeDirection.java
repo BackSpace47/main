@@ -1,4 +1,4 @@
-package RPower.api.power.cable;
+package RPower.api.power.block.cable;
 
 import net.RPower.RPowermod.machines.power.cable.PipeDirection;
 

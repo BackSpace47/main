@@ -2,7 +2,7 @@ package net.RPower.RPowermod.renderers.block;
 
 import org.lwjgl.opengl.GL11;
 
-import RPower.api.power.cable.I_PipeDirection;
+import RPower.api.power.block.cable.I_PipeDirection;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.minecraft.block.Block;

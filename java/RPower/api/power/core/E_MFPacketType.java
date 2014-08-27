@@ -1,4 +1,4 @@
-package RPower.api.power;
+package RPower.api.power.core;
 
 import java.util.LinkedList;
 import java.util.List;

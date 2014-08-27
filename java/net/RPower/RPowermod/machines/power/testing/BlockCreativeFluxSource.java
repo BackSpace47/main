@@ -1,7 +1,7 @@
 package net.RPower.RPowermod.machines.power.testing;
 
-import RPower.api.power.I_MFSource;
-import RPower.api.power.cable.I_MFCable;
+import RPower.api.power.block.I_MFSource;
+import RPower.api.power.block.cable.I_MFCable;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

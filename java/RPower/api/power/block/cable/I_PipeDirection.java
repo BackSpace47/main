@@ -1,4 +1,4 @@
-package RPower.api.power.cable;
+package RPower.api.power.block.cable;
 
 public interface I_PipeDirection {
 	

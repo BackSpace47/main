@@ -1,7 +1,9 @@
-package RPower.api.power;
+package RPower.api.power.core;
 
-import RPower.api.power.cable.I_MFCable;
-import RPower.api.power.cable.I_PipeDirection;
+import RPower.api.power.block.I_MFSink;
+import RPower.api.power.block.I_MFSource;
+import RPower.api.power.block.cable.I_MFCable;
+import RPower.api.power.block.cable.I_PipeDirection;
 import net.RPower.RPowermod.machines.power.cable.PipeDirection;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.minecraft.tileentity.TileEntity;

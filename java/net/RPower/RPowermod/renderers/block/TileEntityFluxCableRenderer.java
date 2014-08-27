@@ -31,9 +31,10 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 	private final ResourceLocation texture;
 	public static int blockRenderId;
 	public static final float pixel = 1.0F/16; 
-	
+	public Tessellator tessellator;
 	
 	public TileEntityFluxCableRenderer() {
+		tessellator = Tessellator.instance;
 		blockRenderId = RenderingRegistry.getNextAvailableRenderId();
 		texture = new ResourceLocation(net.RPower.RPowermod.core.RPCore.modid+":textures/blocks/fluxCable.png");
 		
@@ -62,6 +63,9 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
         	 
         	 float xMod=0;
         	 float xDir=0;
+        	 
+        	 float zDir=0;
+        	 float zMod=0;
         	 if(target[1]==0)
         		 xMod=-90F;
         	 if(target[0]==0)
@@ -83,11 +87,44 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
         	 }
         	 if(target[0]!=0&&target[2]!=0)
         	 {
-        		 xDir*=-1;
-        		 xMod-=45F;
+        		 if(target[2]>0)
+        		 {
+        			 xDir=1;
+        			 xMod=-135;
+        			 if(target[0]>0)
+        			 {
+        				 xDir*=-1;
+        				 xMod=45F;
+        				 yMod-=10;
+        				 
+        			 }
+        		 } else if(target[0]<0)
+    			 {
+    				 zDir=1;
+    				 xDir=-1;
+    				 zMod=360F;
+    				 xMod=225F;
+    				 yMod-=10;
+    			 } else if(target[0]>0)
+				 {
+    				 if(target[2]<0)
+    				 {
+    					 xDir=1;
+    					 xMod=45;
+    					 yMod-=10;
+    				 }
+				 }
+        		 if(target[0]<0&&target[2]>0)
+        		 {
+        			 if(target[1]<0)
+        			 yMod=35F;
+        			 if(target[1]>0)
+        				 yMod=35F;
+        		 }
+        		 
         	 }
         	 
-        	 angles[0]=0;
+        	 angles[0]=zDir*zMod;
         	 angles[1]=xDir*xMod;
     		 angles[2]=target[1]*yMod;
     		 
@@ -103,7 +140,7 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
          GL11.glEnable(GL11.GL_CULL_FACE);
 	}
 	 private void drawHub() {
-		Tessellator tessellator = Tessellator.instance;
+		
 		tessellator.startDrawingQuads();
 		tessellator.addVertexWithUV(2*pixel, 2*pixel, 2*pixel, 4*pixel,1);
 		tessellator.addVertexWithUV(-2*pixel, 2*pixel, 2*pixel, 0,1);
@@ -193,7 +230,7 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 	 private void drawCore(int size)
 	 {
 		 GL11.glPushMatrix();
-		 Tessellator tessellator = Tessellator.instance;
+		
 		 
 		 tessellator.startDrawingQuads();
 		 tessellator.addVertexWithUV(0, 1*pixel, 0, size*pixel, 8*pixel);
@@ -236,12 +273,12 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 
 
 	private void adjustLightFixture(World world, int x, int y, int z, Block block) {
-         Tessellator tess = Tessellator.instance;
+         
          float brightness = block.getLightValue(world, x, y, z);
          int skyLight = world.getLightBrightnessForSkyBlocks(x, y, z, 0);
          int modulousModifier = skyLight % 65536;
          int divModifier = skyLight / 65536;
-         tess.setColorOpaque_F(brightness, brightness, brightness);
+         tessellator.setColorOpaque_F(brightness, brightness, brightness);
          OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit,  modulousModifier,  divModifier);
  }
 

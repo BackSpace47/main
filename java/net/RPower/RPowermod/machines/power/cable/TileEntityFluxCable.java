@@ -84,7 +84,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		}
 		if(packet.getBuffer()>packetSizeLimit)
 		{
-			excess += packet.getBuffer()-packetSizeLimit;
+			excess += (packet.getBuffer()-packetSizeLimit);
 			packet.setBuffer(packetSizeLimit);
 		}
 		powerBleed(excess);
@@ -136,7 +136,6 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		Packet packet = super.getDescriptionPacket();
     	NBTTagCompound nbtTag = packet != null ? ((S35PacketUpdateTileEntity)packet).func_148857_g() : new NBTTagCompound();
         writeToNBT(nbtTag);
-		this.writeToNBT(nbtTag);
 		//TODO: Get this damn working!
 		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTag);
 	}

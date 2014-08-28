@@ -130,16 +130,20 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		super.readFromNBT(nbtTag);
 	}
 
+	//Fixed by Whov
 	@Override
 	public Packet getDescriptionPacket() {
-		NBTTagCompound nbtTag = new NBTTagCompound();
+		Packet packet = super.getDescriptionPacket();
+    	NBTTagCompound nbtTag = packet != null ? ((S35PacketUpdateTileEntity)packet).func_148857_g() : new NBTTagCompound();
+        writeToNBT(nbtTag);
 		this.writeToNBT(nbtTag);
 		//TODO: Get this damn working!
 		return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, 1, nbtTag);
 	}
-
+	//Fixed by Whov
 	@Override
 	public void onDataPacket(NetworkManager networkManager, S35PacketUpdateTileEntity packet) {
+		super.onDataPacket(networkManager, packet);
 		readFromNBT(packet.func_148857_g());
 	}
 
@@ -220,7 +224,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 			//System.out.println("=================================================================");
 		}
 
-
+		updateContainingBlockInfo();
 		return result;
 	}
 
@@ -252,8 +256,10 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		{
 		I_MFCable targetTile = (I_MFCable)worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z);
 		targetTile.breakConnection(false,-x, -y, -z);
+		((TileEntity)targetTile).updateContainingBlockInfo();
 		worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
 		}
+		updateContainingBlockInfo();
 		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
 	}
 
@@ -331,6 +337,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 
 	@Override
 	public List<I_PipeDirection> getConnections() {
+		System.out.println("Getting "+(worldObj.isRemote?"Client":"Server")+" connections");
 		return connections;
 	}
 

@@ -130,7 +130,7 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
     		 
         	 
         	 
-			drawConnector(angles);
+			drawConnector(angles, target);
 		}
         
          //pop both sections off the render stack
@@ -187,19 +187,19 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 		
 	}
 
-	 private void drawRails(int size)
+	 private void drawRails(float size)
 	 {
 		 
 		 GL11.glPushMatrix();
 		 GL11.glRotatef(45, 1, 0, 0);
 		 Tessellator tessellator = Tessellator.instance;
-		 drawRail(size, tessellator);
+		 drawRail(size, tessellator,45);
 		 GL11.glRotatef(90, 1, 0, 0);
-		 drawRail(size, tessellator);
+		 drawRail(size, tessellator, 90);
 		 GL11.glRotatef(90, 1, 0, 0);
-		 drawRail(size, tessellator);
+		 drawRail(size, tessellator,90);
 		 GL11.glRotatef(90, 1, 0, 0);
-		 drawRail(size, tessellator);
+		 drawRail(size, tessellator,90);
 		 GL11.glRotatef(90, 1, 0, 0);
 		 GL11.glRotatef(-45, 1, 0, 0);
 		 GL11.glPopMatrix();
@@ -207,43 +207,45 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 
 
 
-	private void drawRail(int size, Tessellator tessellator) {
+	private void drawRail(float size, Tessellator tessellator, float angle) {
 		float offset=27.4F;
 		GL11.glRotatef(45F-offset, 1, 0, 0);
 		GL11.glRotatef(-offset, 1, 0, 0);
 		tessellator.startDrawingQuads();
-		 tessellator.addVertexWithUV(0, 0.5*pixel, -2*pixel, size*pixel, 1*pixel);
+		 tessellator.addVertexWithUV(0, 0.5*pixel, -2*pixel, (int)size*pixel, 1*pixel);
 		 tessellator.addVertexWithUV(size*pixel, 0.5*pixel, -2*pixel, 0*pixel, 0*pixel);
 		 tessellator.addVertexWithUV(size*pixel, -0.5*pixel, -2*pixel, 0*pixel, 0*pixel);
-		 tessellator.addVertexWithUV(0, -0.5*pixel, -2*pixel, size*pixel, 1*pixel);
+		 tessellator.addVertexWithUV(0, -0.5*pixel, -2*pixel, (int)size*pixel, 1*pixel);
+		 tessellator.setNormal(-angle/2, -angle/2, -angle/2);
 		 tessellator.draw();
 		 GL11.glRotatef(offset, 1, 0, 0);
 		 tessellator.startDrawingQuads();
-		 tessellator.addVertexWithUV(0, 0.5*pixel, -2*pixel, size*pixel, 2*pixel);
+		 tessellator.addVertexWithUV(0, 0.5*pixel, -2*pixel, (int)size*pixel, 2*pixel);
 		 tessellator.addVertexWithUV(size*pixel, 0.5*pixel, -2*pixel, 0*pixel, 1*pixel);
 		 tessellator.addVertexWithUV(size*pixel, -0.5*pixel, -2*pixel, 0*pixel, 1*pixel);
-		 tessellator.addVertexWithUV(0, -0.5*pixel, -2*pixel, size*pixel, 2*pixel);
+		 tessellator.addVertexWithUV(0, -0.5*pixel, -2*pixel, (int)size*pixel, 2*pixel);
+		 tessellator.setNormal(-angle/2, -angle/2, -angle/2);
 		 tessellator.draw();
 		 GL11.glRotatef(-45F+offset, 1, 0, 0);
 	}
 	 
-	 private void drawCore(int size)
+	 private void drawCore(float size)
 	 {
 		 GL11.glPushMatrix();
 		
 		 
 		 tessellator.startDrawingQuads();
-		 tessellator.addVertexWithUV(0, 1*pixel, 0, size*pixel, 8*pixel);
+		 tessellator.addVertexWithUV(0, 1*pixel, 0, (int)size*pixel, 8*pixel);
 		 tessellator.addVertexWithUV(size*pixel, 1*pixel, 0, 0*pixel, 8*pixel);
 		 tessellator.addVertexWithUV(size*pixel, -1*pixel, 0, 0*pixel, 6*pixel);
-		 tessellator.addVertexWithUV(0, -1*pixel, 0, size*pixel, 6*pixel);
+		 tessellator.addVertexWithUV(0, -1*pixel, 0, (int)size*pixel, 6*pixel);
 		 tessellator.draw();
 		 GL11.glRotatef(90, 1, 0, 0);
 		 tessellator.startDrawingQuads();
-		 tessellator.addVertexWithUV(0, 1*pixel, 0, size*pixel, 8*pixel);
+		 tessellator.addVertexWithUV(0, 1*pixel, 0, (int)size*pixel, 8*pixel);
 		 tessellator.addVertexWithUV(size*pixel, 1*pixel, 0, 0*pixel, 8*pixel);
 		 tessellator.addVertexWithUV(size*pixel, -1*pixel, 0, 0*pixel, 6*pixel);
-		 tessellator.addVertexWithUV(0, -1*pixel, 0, size*pixel, 6*pixel);
+		 tessellator.addVertexWithUV(0, -1*pixel, 0, (int)size*pixel, 6*pixel);
 		 tessellator.draw();
 		 GL11.glRotatef(90, -1, 0, 0);
 		 GL11.glPopMatrix();
@@ -251,12 +253,24 @@ public class TileEntityFluxCableRenderer extends TileEntitySpecialRenderer {
 	 
 	 
 
-	private void drawConnector(float[] angle) {
-		int size = 8;
-		if((angle[1]!=90)||(angle[1]!=90))
-			size+=3;
-		if(((angle[0]!=90)||(angle[2]!=90))&&((angle[0]!=-90)||(angle[2]!=-90)))
-			size+=3;
+	private void drawConnector(float[] angle, int[] target) {
+		float size = 8;
+		
+		boolean horiDiag = false, vertDiag = false;
+		
+		if(target[0]!=0&&target[2]!=0)
+			horiDiag=true;
+		
+		if(target[1]!=0&&(target[0]!=0||target[2]!=0))
+			vertDiag=true;
+		
+		if(vertDiag&&!horiDiag)
+			size+=0.72;
+		
+		if(horiDiag)
+			size+=3.3;
+		if(vertDiag)
+			size+=2.6;
 		
 		GL11.glRotatef(angle[0], 1, 0, 0);
 		GL11.glRotatef(angle[1], 0, 1, 0);

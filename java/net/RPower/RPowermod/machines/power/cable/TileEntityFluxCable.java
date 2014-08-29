@@ -227,41 +227,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		updateContainingBlockInfo();
 		return result;
 	}
-
-	@Override
-	public synchronized void formConnection(boolean twoWay, int x, int y, int z) {
-		if(!(x==0&&y==0&&z==0))
-		{
-			connections.add(new PipeDirection(x, y, z));
-			if (twoWay)
-			{
-				((I_MFCable)(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))).formConnection(false, -x, -y, -z);
-				
-				worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
-			}
-			//System.out.println("connection formed");
-			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-		}
-	}
 	
-	@Override
-	public synchronized void breakConnection(boolean twoWay, int x, int y, int z) {
-		I_PipeDirection targetConnector = new PipeDirection(x,y,z);
-		if(connections.contains(targetConnector))
-		{
-			System.out.println("Connector found...");
-			System.out.println("Remove operation was "+(connections.remove(targetConnector)?"":"un")+"successful.");
-		}
-		if (twoWay&&(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable)
-		{
-		I_MFCable targetTile = (I_MFCable)worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z);
-		targetTile.breakConnection(false,-x, -y, -z);
-		((TileEntity)targetTile).updateContainingBlockInfo();
-		worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
-		}
-		updateContainingBlockInfo();
-		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-	}
 
 	@Override
 	public boolean pushPacket(MFPacket packet)

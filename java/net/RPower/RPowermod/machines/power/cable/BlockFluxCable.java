@@ -34,7 +34,8 @@ public class BlockFluxCable extends BlockContainer{
 	
 	@Override
 	public void onBlockAdded(World world, int x, int y, int z) {
-		((TileEntityFluxCable)world.getTileEntity(x, y, z)).checkConnections();
+		int[] origin = {x, y ,z,};
+		MFHelper.checkConnections(world, origin);
 		super.onBlockAdded(world, x, y, z);
 	}
 
@@ -51,7 +52,8 @@ public class BlockFluxCable extends BlockContainer{
 	
 	@Override
 	public void breakBlock(World world, int x, int y, int z, Block block, int metaD) {
-		((I_MFCable) world.getTileEntity(x, y, z)).breakAllConnections();
+		int[] origin = {x, y ,z,};
+		MFHelper.breakAllConnections(world, origin);
 		super.breakBlock(world, x, y, z, block, metaD);
 	}
 	

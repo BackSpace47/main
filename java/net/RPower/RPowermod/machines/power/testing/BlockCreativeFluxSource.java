@@ -2,6 +2,7 @@ package net.RPower.RPowermod.machines.power.testing;
 
 import RPower.api.power.block.I_MFSource;
 import RPower.api.power.block.cable.I_MFCable;
+import RPower.api.power.core.MFHelper;
 import net.RPower.RPowermod.machines.power.cable.TileEntityFluxCable;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -32,7 +33,8 @@ public class BlockCreativeFluxSource extends Block {
 	
 	@Override
 	public void breakBlock(World world, int x, int y, int z, Block block, int metaD) {
-		((I_MFSource) world.getTileEntity(x, y, z)).breakAllConnections();
+		int[] origin = {x,y,z};
+		MFHelper.breakAllConnections(world, origin);
 		super.breakBlock(world, x, y, z, block, metaD);
 	}
 }

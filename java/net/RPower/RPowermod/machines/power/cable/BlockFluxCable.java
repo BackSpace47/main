@@ -11,6 +11,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -27,7 +28,7 @@ public class BlockFluxCable extends BlockContainer{
 		MFPacket temp = new MFPacket(E_MFPacketType.REQUEST);
 		((TileEntityFluxCable)world.getTileEntity(x, y, z)).takePacket(temp);
 		
-		System.err.println("This pipe has "+((TileEntityFluxCable)world.getTileEntity(x, y, z)).getConnections().size()+" connections.");
+		System.out.println("This pipe has "+((TileEntityFluxCable)world.getTileEntity(x, y, z)).getConnections().size()+" connections.");
 		//System.out.println(((TileEntityFluxCable)world.getTileEntity(x, y, z)).toJSON());
 		return false;
 	}
@@ -57,6 +58,12 @@ public class BlockFluxCable extends BlockContainer{
 		super.breakBlock(world, x, y, z, block, metaD);
 	}
 	
+	@Override
+	public void onBlockPreDestroy(World world, int x, int y, int z, int metaD) {
+		int[] origin = {x, y ,z,};
+		MFHelper.breakAllConnections(world, origin);
+		super.onBlockPreDestroy(world, x, y, z,	metaD);
+	}
 
 	@Override
 	protected boolean canSilkHarvest() {

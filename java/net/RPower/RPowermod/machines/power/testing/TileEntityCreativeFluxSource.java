@@ -70,37 +70,7 @@ public class TileEntityCreativeFluxSource extends TileEntity implements I_MFSour
 		//creative source will just send out another packet
 	}
 
-	@Override
-	public boolean checkConnections()
-	{
-		boolean result=false;
-		int x,y,z,i=0;
-		for(y=-1;y<2;y++)
-		{
-			//System.out.println("Y Level: "+y);
-			for(x=-1;x<2;x++)
-			{
-				//System.out.println("X Position: "+x);
-				for(z=-1;z<2;z++)
-				{
-					//System.out.println("Z Position: "+z);
-					i++;
-					Block target = worldObj.getBlock(xCoord+x, yCoord+y, zCoord+z);
-					//System.out.print("Test["+i+"] Checking block at ["+(xCoord+x)+","+(yCoord+y)+","+(zCoord+z)+"]");
-					if(target.hasTileEntity(target.getDamageValue(worldObj, xCoord+x, yCoord+y, zCoord+z))&&MFHelper.checkConnectable(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z)))
-					{
-							//System.out.print(" - Valid!");
-							boolean twoWay = (worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable;
-							formConnection(twoWay, x,y,z);
-						
-					}
-					//System.out.print('\n');
-				}
-			}
-			//System.out.println("=================================================================");
-		}
-		return result;
-	}
+	
 
 	
 	@Override
@@ -110,46 +80,12 @@ public class TileEntityCreativeFluxSource extends TileEntity implements I_MFSour
 	}
 
 	@Override
-	public void formConnection(boolean twoWay, int x, int y, int z) {
-		if(!(x==0&&y==0&&z==0))
-		{
-			connections.add(new PipeDirection(x, y, z));
-			if (twoWay)
-			{
-				((I_MFCable)(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))).formConnection(false, -x, -y, -z);
-				
-				worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
-			}
-			//System.out.println("connection formed");
-			worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-		}
+	public boolean checkConnections() {
+		int[] origin = {xCoord,yCoord,zCoord};
+		return MFHelper.checkConnections(worldObj, origin);
 	}
+	
 
-	@Override
-	public synchronized void breakConnection(boolean twoWay, int x, int y, int z) {
-		I_PipeDirection targetConnector = new PipeDirection(x,y,z);
-		if(connections.contains(targetConnector))
-		{
-			System.out.println("Connector found...");
-			System.out.println("Remove operation was "+(connections.remove(targetConnector)?"":"un")+"successful.");
-		}
-		if (twoWay&&(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable)
-		{
-		I_MFCable targetTile = (I_MFCable)worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z);
-		targetTile.breakConnection(false,-x, -y, -z);
-		worldObj.markBlockForUpdate(xCoord+x, yCoord+y, zCoord+z);
-		}
-		worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
-	}
-
-	@Override
-	public void breakAllConnections() {
-		int conNum=connections.size();
-		for (int i= 0; i<conNum;i++) {
-			int[] target = connections.get(0).getTarget();
-			breakConnection(true, target[0], target[1], target[2]);
-		}
-		
-	}
+	
 
 }

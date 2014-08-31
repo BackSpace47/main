@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import javax.sound.midi.spi.MidiFileReader;
+
 import RPower.api.power.block.I_MFSink;
 import RPower.api.power.block.cable.I_MFCable;
 import RPower.api.power.block.cable.I_PipeDirection;
@@ -193,39 +195,7 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 		return newDirection;
 	}
 
-	@Override
-	public boolean checkConnections()
-	{
-		boolean result=false;
-		int x,y,z,i=0;
-		for(y=-1;y<2;y++)
-		{
-			//System.out.println("Y Level: "+y);
-			for(x=-1;x<2;x++)
-			{
-				//System.out.println("X Position: "+x);
-				for(z=-1;z<2;z++)
-				{
-					//System.out.println("Z Position: "+z);
-					i++;
-					Block target = worldObj.getBlock(xCoord+x, yCoord+y, zCoord+z);
-					//System.out.print("Test["+i+"] Checking block at ["+(xCoord+x)+","+(yCoord+y)+","+(zCoord+z)+"]");
-					if(target.hasTileEntity(target.getDamageValue(worldObj, xCoord+x, yCoord+y, zCoord+z))&&MFHelper.checkConnectable(worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z)))
-					{
-							//System.out.print(" - Valid!");
-							boolean twoWay = (worldObj.getTileEntity(xCoord+x, yCoord+y, zCoord+z))instanceof I_MFCable;
-							formConnection(twoWay, x,y,z);
-						
-					}
-					//System.out.print('\n');
-				}
-			}
-			//System.out.println("=================================================================");
-		}
-
-		updateContainingBlockInfo();
-		return result;
-	}
+	
 	
 
 	@Override
@@ -322,13 +292,8 @@ public class TileEntityFluxCable extends TileEntity implements I_MFCable {
 	}
 
 	@Override
-	public void breakAllConnections() {
-		int conNum=connections.size();
-		for (int i= 0; i<conNum;i++) {
-			int[] target = connections.get(0).getTarget();
-			breakConnection(true, target[0], target[1], target[2]);
-		}
-		
+	public boolean checkConnections() {
+		int[] origin = {xCoord,yCoord,zCoord};
+		return MFHelper.checkConnections(worldObj, origin);
 	}
-
 }

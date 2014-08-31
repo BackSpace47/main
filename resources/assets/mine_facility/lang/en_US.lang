@@ -36,10 +36,10 @@ item.Magnus Cookie.name=Op Cookie (Creative Only)
 item.Foil.name=Foil
 item.Aluminum Oxide Foil.name=Aluminum Oxide Foil
 item.Electrolized Paper.name=Electrolized Paper
-item.Basic Capasitor.name=10µF Electrolytic Capasitor
-item.Copper Capasitor.name=33µF Electrolytic Capasitor
-item.Diamond Capasitor.name=100µF Electrolytic Capasitor
-item.Gold Capasitor.name=470µF Electrolytic Capasitor
+item.Basic Capasitor.name=10ï¿½F Electrolytic Capasitor
+item.Copper Capasitor.name=33ï¿½F Electrolytic Capasitor
+item.Diamond Capasitor.name=100ï¿½F Electrolytic Capasitor
+item.Gold Capasitor.name=470ï¿½F Electrolytic Capasitor
 item.Tungstencarbide Capasitor.name=10mF Electrolytic Capasitor
 item.Treated Clay.name=Treated Clay
 item.Baked Treated Clay.name=Baked Treated Clay
@@ -193,7 +193,7 @@ item.Elite Chip.name=Elite Chipset
 item.Low-Voltage Chip.name=Low-Voltage Chipset
 item.Pouch Of Sugar.name=Sugar Pouch
 //Tabs
-itemGroup.rpower=Mine Facility Platinum Edition
+itemGroup.mine_facility=Mine Facility Platinum Edition
 //Guis
 container.AlloySmelter=Alloy Smelter
 tile.Troll Emerald.name=Emerald?

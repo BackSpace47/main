@@ -34,10 +34,4 @@ public class Recipies {
 		GameRegistry.addSmelting(inputItem, new ItemStack(result), exp);
 	}
 
-	public static void registerBlock(fluidRPdestabilizedOre destabilizedOre,
-			String name) {
-		// TODO Auto-generated method stub
-
-	}
-
 }

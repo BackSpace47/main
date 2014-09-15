@@ -42,7 +42,7 @@ public class MFHelper {
 					{
 						System.out.print("["+(origin[0]+x)+","+(origin[1]+y)+","+(origin[2]+z)+"] - Valid!");
 						int[] connectorTarget = {x,y,z};
-						MFHelper.formConnection(world, origin, connectorTarget);
+						formConnection(world, origin, connectorTarget);
 
 					}
 					//System.out.print('\n');
@@ -122,27 +122,13 @@ public class MFHelper {
 
 
 
-	public static synchronized void breakAllConnections(World world, int[] origin)
+	public static synchronized boolean breakAllConnections(World world, int[] origin)
 	{
 		boolean result = false;
-		result=(world.blockExists(origin[0], origin[1], origin[2]));
-		if(result)
-			result=world.getBlock(origin[0], origin[1], origin[2]).hasTileEntity(world.getBlock(origin[0], origin[1], origin[2]).getDamageValue(world, origin[0], origin[1], origin[2]));
-		if (result)
-			result=world.getTileEntity(origin[0], origin[1], origin[2])instanceof I_MFCommon;
-
-		if(result)
-		{
-			List<I_PipeDirection> allConnections = Collections.synchronizedList(((I_MFCommon)world.getTileEntity(origin[0], origin[1], origin[2])).getConnections());
-			synchronized (allConnections) {
-				Iterator processConnections = allConnections.iterator();
-				while(processConnections.hasNext())
-				{
-					MFHelper.breakConnection(world, origin, ((I_PipeDirection)processConnections.next()).getTarget());
-				}
-			}
-		}
-		System.out.println("All connections to +"+world.toString()+"["+origin[0]+","+origin[1]+","+origin[2]+"] beroken");
+		
+		
+		System.out.println("All connections to +"+world.toString()+"["+origin[0]+","+origin[1]+","+origin[2]+"] broken");
+		return result;
 	}
 
 }

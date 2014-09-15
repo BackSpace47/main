@@ -62,7 +62,7 @@ public boolean func_149662_c()
 
   public Item func_149694_d(World world, int x, int y, int z)
   {
-    return RPCore.enderCakefresh;
+    return null; //RPCore.enderCakefresh;
   }
 
   public ArrayList<ItemStack> getDrops(World world, int arg1, int arg2, int arg3, int arg4, int arg5)

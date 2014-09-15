@@ -12,11 +12,5 @@ public class blockRPBlock extends Block{
 	public blockRPBlock(Material m) {
 		super(m);
 	}
-	
-	public void onUpdate(ItemStack itemstack, World world, Entity entity, int pint, boolean pboolean){
-		if(itemstack.isItemEnchanted() == false){
-			itemstack.addEnchantment(Enchantment.knockback, 20);
-		}
-	}
 
 }

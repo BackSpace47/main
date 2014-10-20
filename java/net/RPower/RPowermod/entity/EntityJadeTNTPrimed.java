@@ -121,7 +121,11 @@ public class EntityJadeTNTPrimed extends Entity
     		exXcord = (int) this.posX;
     	}
     	exYcord = (int) this.posY;
-    	exZcord = (int) this.posZ;
+    	if (this.posZ < 0){
+                exZcord = (int) this.posZ - 1;
+        } else {
+                exZcord = (int) this.posZ;
+        }
     	int radius = 4;
         int radiusSquared = (radius*radius)+1;
     	for(int targetX=-(radius);targetX<=(radius); targetX++)

@@ -1,10 +1,3 @@
-IMPORTANT NOTE FOR ALL DEVS
-I BACKSPACE47 cannot continue this project I am leaving Magnus and Mino in charge in my absence. I will try and get back to it but currently I cannot and I do not want my dream to be lost. So Its up to you guys!! recruit members. Make it more open source you guys are the bomb sorry that it is like this but life gets in the way ans is more important. So with that i will leave you 2 videos that dont relate at all to my dissapearence
-
-the first:https://www.youtube.com/watch?v=FavUpD_IjVY#t=69
-The Seccond:https://www.youtube.com/watch?v=NQ98HvK4pvo
-
-
 Welcome to the Mine Facility Git-Hub Repository!!
 
 You have stumbled upon "next-gen" like mod that will combine tech and magic!
